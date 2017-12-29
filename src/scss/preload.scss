@@ -1,0 +1,76 @@
+.preload {
+    position: fixed;
+    background-color: #303030;
+    left: 0;
+    right: 0;
+    top:0;
+    bottom: 0;
+    z-index: 99;
+}
+
+.preload.delete{
+    display: none;
+}
+
+.preload .preloadText {
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    left: 0;
+    right:0;
+    text-align: center;
+    font-size: 70px;
+    color: #fff;
+}
+
+.preload .spin{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50px;
+    background-color: #fff;
+    margin: 0 5px;
+    animation:animateSpin infinite normal 1.5s;
+    transform:scale(.3);
+    vertical-align: middle;
+}
+.preload .world{
+    display: inline-block;
+    animation:animateSpin infinite normal 1.5s;
+    transform:scale(.3);
+}
+.preload .world:nth-child(1){
+    animation-delay:0.6s;
+}
+
+.preload .world:nth-child(2){
+    animation-delay:0.75s;
+}
+
+.preload .world:nth-child(3){
+    animation-delay:0.9s;
+}
+.preload .world:nth-child(4){
+    animation-delay:1.05s;
+}
+
+.preload .spin:nth-child(5){
+    animation-delay:1.2s;
+}
+
+.preload .spin:nth-child(6){
+    animation-delay:1.35s;
+}
+
+.preload .spin:nth-child(7){
+    animation-delay:1.5s;
+}
+
+@keyframes animateSpin{
+    0%{
+        transform:scale(1);
+    }
+    100%{
+        transform:scale(.3);
+    }
+}
