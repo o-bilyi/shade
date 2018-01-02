@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import i18n from 'i18n-react';
+import React, {Component} from "react";
+import {Link} from "react-router-dom";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import i18n from "i18n-react";
 
 const projects = [
     {
@@ -89,7 +89,7 @@ export default class Portfolio extends Component {
            <div className={item.animationClass} key={key} data-wow-duration="1.5s">
                <figure>
                    <Link to={item.website} target="_blank" rel="noopener noreferrer">
-                       <img src={item.img} alt={item.altImg}/></Link>
+                       <img className="item-img" src={item.img} alt={item.altImg}/></Link>
                    <figcaption>
                        <div className="left">
                            <h2>{item.nameProject}</h2>

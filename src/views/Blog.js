@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import i18n from 'i18n-react';
+import React, {Component} from "react";
+import {Link} from "react-router-dom";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import i18n from "i18n-react";
 
 const blog = [
     {
@@ -11,7 +11,7 @@ const blog = [
         "blogTitleSpan": "identity, inspiration",
         "blogDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamcolaboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in",
         "animateClass": "wow animated fadeIn item",
-        "learnMore": 'https://reactjs.org/'
+        "learnMore": "https://reactjs.org/"
     },
     {
         "blogImg": "/img/main/blog-img.jpg",
@@ -19,7 +19,7 @@ const blog = [
         "blogTitleSpan": "identity, inspiration",
         "blogDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamcolaboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in",
         "animateClass": "wow animated fadeIn item",
-        "learnMore": 'https://reactjs.org/'
+        "learnMore": "https://reactjs.org/"
     },
     {
         "blogImg": "/img/main/blog-img.jpg",
@@ -27,7 +27,7 @@ const blog = [
         "blogTitleSpan": "identity, inspiration",
         "blogDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamcolaboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in",
         "animateClass": "wow animated fadeIn item",
-        "learnMore": 'https://reactjs.org/'
+        "learnMore": "https://reactjs.org/"
     },
     {
         "blogImg": "/img/main/blog-img.jpg",
@@ -35,7 +35,7 @@ const blog = [
         "blogTitleSpan": "identity, inspiration",
         "blogDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamcolaboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in",
         "animateClass": "wow animated fadeIn item",
-        "learnMore": 'https://reactjs.org/'
+        "learnMore": "https://reactjs.org/"
     }
 ];
 
@@ -65,12 +65,12 @@ export default class Blog extends Component {
 
     render() {
         return (
-            <div className='ContactUs'>
+            <div className="ContactUs">
                 <Header/>
                 <section className="contentMobileAnimate blog-background">
                     <div data-wow-duration="1.5s" className="wow animated fadeInDown title-blog-container">
                         <div className="title-page">
-                            <i18n.text tag='h2' text={{key: "blog"}}/>
+                            <i18n.text tag="h2" text={{key: "blog"}}/>
                             <i18n.span text={{key: "from-designers"}}/>
                         </div>
                     </div>

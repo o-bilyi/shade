@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component} from "react";
 import SVGInline from "react-svg-inline";
 
 const facebook = "https://www.facebook.com/sasha.beluy.56";

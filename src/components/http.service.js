@@ -27,7 +27,7 @@ class HttpService {
 		credentials : "include"
 	};
 
-	/* All possible options for the response convert from the raw source. This format like enum  but isn't.  */
+	/* All possible options for the response convert from the raw source. This format like enum  but isn"t.  */
 	responseConvertOptions = {
 		"json" : "json",
 		"blob" : "blob",
@@ -254,7 +254,7 @@ class HttpService {
 
 	/**
 	 * private: the fetch core that used to create a request
-	 * if any response converter (for ex: json) isn't chosen converterResponse will be the same like rawResponse
+	 * if any response converter (for ex: json) isn"t chosen converterResponse will be the same like rawResponse
 	 * @param { string } url ->url to request
 	 * @param { Object } config -> a fetch config object
 	 * @returns {*|Promise|Promise<U>|Promise.<T>}

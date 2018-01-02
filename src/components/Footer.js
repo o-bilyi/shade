@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component} from "react";
 import FindUs from "../components/FindUs";
 
 export default class Footer extends Component {

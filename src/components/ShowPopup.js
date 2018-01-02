@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
+import React, {Component} from "react";
 
 export const showPopup = () => {
-    const popup = document.getElementById('popupMessage');
-    popup.classList.toggle('active');
+    const popup = document.getElementById("popupMessage");
+    popup.classList.toggle("active");
     setTimeout(function () {
-        popup.classList.toggle('active');
+        popup.classList.toggle("active");
     }, 4500);
 };
 

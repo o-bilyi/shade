@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import Feedback from '../components/Modal';
-import i18n from 'i18n-react';
+import React, {Component} from "react";
+import {Link} from "react-router-dom";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Feedback from "../components/Modal";
+import i18n from "i18n-react";
 
 const team = [
     {
@@ -57,7 +57,7 @@ export default class AboutUs extends Component {
     };
     render() {
         return (
-            <div className='AboutUs'>
+            <div className="AboutUs">
                 <Header/>
                 <div className="contentMobileAnimate">
                     <div data-wow-duration="1.5s" className="wow animated fadeInDown title-about-container">

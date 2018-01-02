@@ -1,23 +1,23 @@
-import React, {Component} from 'react';
-import $ from 'jquery';
+import React, {Component} from "react";
+import $ from "jquery";
 import SVGInline from "react-svg-inline";
-import {showPopup} from '../components/ShowPopup';
-import i18n from 'i18n-react';
+import {showPopup} from "../components/ShowPopup";
+import i18n from "i18n-react";
 
 export default class Form extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            user: '',
-            site: '',
-            email: ''
+            user: "",
+            site: "",
+            email: ""
         };
     }
 
     componentDidMount() {
-        $('.form-control').click(function () {
-            $('.input-field label').removeClass('active');
-            $(this).prev('label').toggleClass('active');
+        $(".form-control").click(function () {
+            $(".input-field label").removeClass("active");
+            $(this).prev("label").toggleClass("active");
         });
     }
 
@@ -35,19 +35,19 @@ export default class Form extends Component {
                 return Promise.reject(new Error(response.statusText))
             }
         }
-        fetch('/send.php',{
-            method: 'post',
+        fetch("/send.php",{
+            method: "post",
             body: formData
         })
         .then(status)
         .then(() => {
-            $('#feedback').modal('hide');
+            $("#feedback").modal("hide");
             showPopup();
             form.reset();
             event.target.reset();
         })
         .catch(function(error) {
-            console.log('Request failed', error);
+            console.log("Request failed", error);
         });
     };
 

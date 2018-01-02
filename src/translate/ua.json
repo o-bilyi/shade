@@ -7,7 +7,7 @@
   "are-you-ready-to":"Ви готові до",
   "realize-your-ideas":"Реалізуй свої ідеї",
   "in-to-something-perfected":"в щось ідальне ?",
-  "press-to-continue":"Нажміть щоб продовжити",
+  "press-to-continue":"продовжити",
 
   "from-designers":"від дизайнера для дизайнерів",
   "lear-more":"Детальніше",
@@ -49,7 +49,11 @@
   "descriptionProjectSMM":"Імпорт-експорт оптової кави",
   "descriptionProjectAdvocate":"надання юридичних послуг",
   "descriptionProjectPrint_Glass_Furniture":"продаж кухонь",
-  "descriptionProjectPromo_Finance":"Фінансування аутсорсингової реклами"
+  "descriptionProjectPromo_Finance":"Фінансування аутсорсингової реклами",
+
+  "realizeYourIdeas" : "реалізовуйте ваші ідеї з",
+  "changeTextOne" : "натхненням",
+  "changeTextTwo" : "підтримкою"
 
 
 

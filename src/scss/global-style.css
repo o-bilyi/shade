@@ -5,7 +5,7 @@
 
 html {
   font-size: 14px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto-Regular", sans-serif;
   transition: all 0.3s ease-in-out; }
 
 body .modal-backdrop {
@@ -29,20 +29,15 @@ input, button, textarea {
   cursor: pointer;
   border: none;
   display: inline-block;
-  font-family: 'Roboto', sans-serif; }
+  font-family: "Roboto", sans-serif; }
 
 .wrapper {
   overflow: hidden; }
 
 .width-container {
-  max-width: 1070px;
+  max-width: 1230px;
   padding: 0 10px;
   margin: auto; }
-
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  transition: width .3s ease-in-out; }
 
 input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none !important;
@@ -120,3 +115,13 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
     .small-btn:hover span {
       width: 225%;
       height: 562.5px; }
+
+.letter {
+  width: 45px; }
+  .letter:hover .letter-1 {
+    fill: #646464; }
+  .letter .letter-1 {
+    fill: #3c3c3c;
+    transition: all .3s ease-in; }
+  .letter .letter-2 {
+    fill: #646464; }

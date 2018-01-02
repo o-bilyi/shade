@@ -1,3 +1,11 @@
+$FashionSmallCaps: "FashionFetishSmallCaps", sans-serif;
+$FashionFetishRegular: "FashionFetishRegular", sans-serif;
+$FashionFetishBold: "FashionFetishBold", sans-serif;
+$FashionFetishLight: "FashionFetishLight", sans-serif;
+$FashionFetishHeavy: "FashionFetishHeavy", sans-serif;
+$RobotoRegular: "Roboto-Regular", sans-serif;
+$RobotoLight: "Roboto-Light", sans-serif;
+$RobotoMedium: "Roboto-Medium", sans-serif;
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +14,7 @@
 
 html {
   font-size: 14px;
-  font-family: 'Roboto', sans-serif;
+  font-family: $RobotoRegular;
   transition: all 0.3s ease-in-out;
 }
 
@@ -18,10 +26,6 @@ body {
     }
   }
 }
-
-.logo-sd-1{fill:#979695;}
-.logo-sd-2{fill:none;stroke:#afafaf;stroke-miterlimit:10;stroke-width:0.25px;}
-.logo-sd-3{fill:#201600;}.cls-4{fill:#3b3c3b;}
 
 img {
   max-width: 100%;
@@ -42,7 +46,7 @@ input, button, textarea {
   cursor: pointer;
   border: none;
   display: inline-block;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 .wrapper {
@@ -50,15 +54,29 @@ input, button, textarea {
 }
 
 .width-container {
-  max-width: 1070px;
+  max-width: 1230px;
   padding: 0 10px;
   margin: auto;
 }
 
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  transition: width .3s ease-in-out;
+@mixin transition($type : all, $time : .3s, $nameAnimation : ease-in) {
+  transition: $type $time $nameAnimation;
+}
+
+@mixin width-container($maxWidth : 1230px,$margin : auto,$padding : 0 10px, $width : 100%) {
+  max-width: $maxWidth;
+  margin: $margin;
+  padding: $padding;
+  width: $width;
+}
+
+@mixin flex($flex : flex, $wrap : wrap, $center : flex-start , $between : space-between, $direction : row) {
+  display: $flex;
+  flex-wrap: $wrap;
+  align-items: $center;
+  justify-content: $between;
+  flex-direction: $direction;
+  @include transition(width)
 }
 
 input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
@@ -141,9 +159,6 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 }
 
 .small-btn {
-  //height: 30px;
-  //line-height: 30px;
-  //width: 90px;
   margin: auto;
   border-radius: 5px;
 
@@ -166,21 +181,21 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
       height: 562.5px;
     }
   }
-  //&:before {
-  //  content: "";
-  //  position: absolute;
-  //  left: 0;
-  //  right: 0;
-  //  margin: auto;
-  //  width: 18px;
-  //  height: 12px;
-  //  top: 50%;
-  //  transform: translateY(-50%);
-  //  background: url("/img/main/hover-eye.png") no-repeat;
-  //  opacity: 0;
-  //}
-  //&:hover:before {
-  //  opacity: 1;
-  //}
 
+}
+
+.letter {
+  width: 45px;
+  &:hover {
+    .letter-1 {
+      fill: #646464;
+    }
+  }
+  .letter-1 {
+    fill: #3c3c3c;
+    transition: all .3s ease-in;
+  }
+  .letter-2 {
+    fill: #646464;
+  }
 }

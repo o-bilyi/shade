@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component} from "react";
 
 export default class Preload extends Component {
 
@@ -24,9 +24,9 @@ export default class Preload extends Component {
                     <span className="world">o</span>
                     <span className="world">a</span>
                     <span className="world">d</span>
-                    <span className="spin"></span>
-                    <span className="spin"></span>
-                    <span className="spin"></span>
+                    <span className="spin"/>
+                    <span className="spin"/>
+                    <span className="spin"/>
                 </span>
             </div>
         );

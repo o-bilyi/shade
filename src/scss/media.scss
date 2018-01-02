@@ -89,14 +89,6 @@
 
 @media only screen and (max-width: 768px) {
 
-  //.title-about-container {
-  //  .title-about {
-  //    h2 {
-  //      font-size: 3rem;
-  //    }
-  //  }
-  //}
-
   .form-contact {
     flex-direction: column;
     padding: 0 10px;
@@ -140,7 +132,7 @@
 
   .header-container-width {
 
-    .logo{
+    .header-logo{
       order: 2;
     }
 

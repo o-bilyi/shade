@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import Form from './Form';
-import i18n from 'i18n-react';
+import React, { Component } from "react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Form from "../components/Form";
+import i18n from "i18n-react";
 
 
 export default class ContactUs extends Component {
     render() {
         return (
-            <div className='ContactUs'>
+            <div className="ContactUs">
                 <Header/>
                 <main className="wow animated fadeIn contact contentMobileAnimate" data-wow-duration="1.5s">
                     <div data-wow-offset="100" data-wow-duration="1.5s" className="wow animated fadeInDown title-page">
@@ -28,7 +28,7 @@ export default class ContactUs extends Component {
                             </div>
                             <div className="phone-us">
                                 <div className="img-container">
-                                    <img src="img/main/domestic-phone-white.png" alt="phone-icon"/>
+                                    <img src="../../public/img/main/domestic-phone-white.png" alt="phone-icon"/>
                                 </div>
                                 <div className="phone-container">
                                     <i18n.span text={{ key: "phone-us" }}/>
