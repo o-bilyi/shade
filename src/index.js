@@ -1,7 +1,15 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { render } from "react-dom";
+import {Provider} from "react-redux";
 import "./style.css";
 import App from "./app/App";
+import configStore from "./store/configStore";
 
-ReactDOM.render(<App/>,
-    document.getElementById("root"));
+const store = configStore();
+
+render(
+	<Provider store={store}>
+		<App/>
+	</Provider>,
+	document.getElementById("root")
+);

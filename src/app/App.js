@@ -11,76 +11,88 @@ import AboutUs from "../views/AboutUs";
 import ContactUs from "../views/ContactUs";
 import Blog from "../views/Blog";
 import Preload from "../components/Preload";
-// import Feedback from "../components/Modal";
 import ShowPopup from "../components/ShowPopup";
 import ChangeLanguage from "../components/ChangeLanguage";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import Feedback from "../components/Modal";
 
-export default class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            language: "en"
-        };
-        let setLanStorage = localStorage.getItem("language");
-        if(setLanStorage){
-            this.setLang(setLanStorage);
-        }else {
-            this.setLang(this.state.language);
-        }
-    }
+class App extends Component {
+	static propTypes = {
+		lan : PropTypes.string
+	};
 
-    componentDidMount() {
-        this.initWow();
-        // this.changeLang();
-        // document.addEventListener("changeLang",this.toggleLang);
-    }
+	constructor(props) {
+		super(props);
 
-    // changeLang = (lan) => this.toggleLang;
+		const setLanStorage = localStorage.getItem("language");
+		if (setLanStorage) {
+			this.setLang(setLanStorage);
+		} else {
+			this.setLang(this.props.lan);
+		}
+	}
 
-    setLang = (newLan) => {
-        let lang = require(`../translate/${newLan}.json`);
-        i18n.setTexts(lang);
-    };
+	componentDidMount() {
+		this.initWow();
+		// this.changeLang();
+		// document.addEventListener("changeLang",this.toggleLang);
+	}
 
-    toggleLang = (lan) => {
-        // if(typeof (lan) === "object"){
-        //     lan = lan.detail.newLan;
-        // }
-        this.setLang(lan);
-        this.setState({language: lan});
-        localStorage.setItem("language",lan);
-    };
+	// changeLang = (lan) => this.toggleLang;
 
-    initWow = () =>{
-        new WOW.WOW(
-            {
-                boxClass: "wow",
-                animateClass: "animated",
-                offset: 300,
-                mobile: false,
-                live: false,
-            }
-        ).init();
-    };
+	setLang = (newLan) => {
+		const lang = require(`../translate/${newLan}.json`);
+		i18n.setTexts(lang);
+	};
 
-    render() {
-        return (
-            <Router>
-                <div className="App">
-                    <Switch>
-                        <Route exact path="/" component={Home}/>
-                        <Route path="/Portfolio" component={Portfolio}/>
-                        <Route path="/AboutUs" component={AboutUs}/>
-                        <Route path="/ContactUs" component={ContactUs}/>
-                        <Route path="/Blog" component={Blog}/>
-                        <Redirect path="*" to="/"/>
-                    </Switch>
-                    {/*<Feedback/>*/}
-                    <ShowPopup/>
-                    <Preload/>
-                    <ChangeLanguage toggleLang={this.toggleLang}/>
-                </div>
-            </Router>
-        );
-    }
+	toggleLang = (lan) => {
+		// if(typeof (lan) === "object"){
+		//     lan = lan.detail.newLan;
+		// }
+		this.setLang(lan);
+		this.setState({language : lan});
+		localStorage.setItem("language", lan);
+	};
+
+	initWow = () => {
+		new WOW.WOW(
+			{
+				boxClass : "wow",
+				animateClass : "animated",
+				offset : 300,
+				mobile : false,
+				live : false,
+			}
+		).init();
+	};
+
+	render() {
+		console.warn(this.props.lan);
+		return (
+			<Router>
+				<div className="App">
+					<Switch>
+						<Route exact path="/" component={Home}/>
+						<Route path="/Portfolio" component={Portfolio}/>
+						<Route path="/AboutUs" component={AboutUs}/>
+						<Route path="/ContactUs" component={ContactUs}/>
+						<Route path="/Blog" component={Blog}/>
+						<Redirect path="*" to="/"/>
+					</Switch>
+					 <Feedback/>
+					<ShowPopup/>
+					<Preload/>
+					<ChangeLanguage toggleLang={this.toggleLang}/>
+				</div>
+			</Router>
+		);
+	}
 }
+const mapStateToProps = state => {
+	return {
+		lan : state.lan
+	};
+};
+
+export default connect(mapStateToProps)(App);
