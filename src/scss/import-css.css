@@ -2571,11 +2571,6 @@ html {
   font-family: "Roboto-Regular", sans-serif;
   transition: all 0.3s ease-in-out; }
 
-body .modal-backdrop {
-  background-color: rgba(48, 48, 48, 0.8); }
-  body .modal-backdrop.fade {
-    opacity: 1; }
-
 img {
   max-width: 100%; }
 
@@ -2617,67 +2612,6 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
   width: 7px;
   border: 1px solid #bbbbbb;
   background: transparent; }
-
-.big-btn, .small-btn {
-  position: relative;
-  display: block;
-  overflow: hidden;
-  font-size: 12px;
-  text-align: center;
-  text-transform: uppercase;
-  border: 1px solid rgba(56, 56, 56, 0.4);
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-  .big-btn .more-projects_link, .big-btn .projects_button, .small-btn .more-projects_link, .small-btn .projects_button {
-    display: block;
-    color: rgba(56, 56, 56, 0.7);
-    transition: color 0.3s ease-in-out;
-    position: relative; }
-  .big-btn span, .small-btn span {
-    position: absolute;
-    display: block;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background-color: #383838;
-    -webkit-transition: width .3s ease-in-out, height .3s ease-in-out;
-    transition: width .3s ease-in-out, height .3s ease-in-out;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    z-index: -1; }
-  .big-btn:active, .small-btn:active {
-    background-color: #383838; }
-  .big-btn:hover .more-projects_link, .big-btn:hover .projects_button, .small-btn:hover .more-projects_link, .small-btn:hover .projects_button {
-    color: #fff;
-    border-color: rgba(56, 56, 56, 0.4); }
-  .big-btn:hover span, .small-btn:hover span {
-    width: 225%;
-    height: 562.5px; }
-
-.big-btn {
-  height: 50px;
-  line-height: 50px;
-  width: 200px;
-  margin: 0 auto 170px;
-  border-radius: 10px; }
-
-.small-btn {
-  margin: auto;
-  border-radius: 5px; }
-  .small-btn a {
-    font-size: 10px;
-    padding: 8px; }
-  .small-btn:active {
-    background-color: #383838; }
-  .small-btn:hover {
-    border-color: #383838; }
-    .small-btn:hover .more-projects_link, .small-btn:hover .projects_button {
-      color: #fff;
-      font-size: 0; }
-    .small-btn:hover span {
-      width: 225%;
-      height: 562.5px; }
 
 .letter {
   width: 45px; }

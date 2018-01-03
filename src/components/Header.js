@@ -52,22 +52,22 @@ export default class Header extends Component {
 						<div className={menuClass}>
 							<div className="scroll-menu">
 								<ul id="menu" className="menu">
-									<li>
+									<li className="item-menu">
 										<NavLink to="/portfolio" activeClassName="active" className="link">
 											<i18n.span text={{key : "portfolio"}}/>
 										</NavLink>
 									</li>
-									<li>
+									<li className="item-menu">
 										<NavLink to="/aboutUs" activeClassName="active" className="link">
 											<i18n.span text={{key : "about-us"}}/>
 										</NavLink>
 									</li>
-									<li>
+									<li className="item-menu">
 										<NavLink to="/blog" activeClassName="active" className="link">
 											<i18n.span text={{key : "blog"}}/>
 										</NavLink>
 									</li>
-									<li>
+									<li className="item-menu">
 										<NavLink to="/contactUs" activeClassName="active" className="link scroll">
 											<i18n.span text={{key : "contact-us"}}/>
 										</NavLink>
