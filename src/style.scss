@@ -148,9 +148,7 @@ header {
 .header-container-width {
   @include flex(flex, wrap, center);
   @include width-container(1290px);
-  width: 100%;
-  margin: auto;
-  padding: 0 10px;
+  height: 50px;
 
   .logo {
     height: 50px;
@@ -179,7 +177,6 @@ header {
 nav {
   max-width: 485px;
   width: 100%;
-  color: rgba(254, 254, 254, 0.3);
 
   .background-menu {
 
@@ -251,56 +248,71 @@ nav {
     }
   }
 
-  ul {
+  .menu {
     margin: 0 auto;
     list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: space-between;
+    @include flex(flex,wrap,center,center)
   }
 
-  li {
-    transition: all 0.5s ease-in;
-    &.active a:after {
-      content: "";
-      background-color: #a2a2a2;
-    }
+  .item-menu {
+    margin: 0 auto;
+    text-align: center;
+    flex-basis: 70px;
   }
 
   .link {
-    color: inherit;
-    font-size: 18px;
+    position: relative;
+    font-family: $RobotoLight;
+    color: rgba(243, 243, 243, 0.6);
+    font-size: 16px;
     font-weight: 300;
     transition: all .3s ease-out;
-    height: 50px;
-    line-height: 50px;
     text-transform: capitalize;
-    &:hover {
-      color: rgba(254, 254, 254, 1);
-    }
-
-    &:hover:after {
-      background-color: rgb(188, 188, 188);
-    }
-
-    &.active {
-      color: rgba(254, 254, 254, 1);
+    width: 100%;
+    &:hover,&.active {
+      color: #f3f3f3;
+      &:before {
+        background-color: #5c5c5c;
+        width: 100%;
+        transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+      }
       &:after {
-        background-color: rgb(188, 188, 188);
+        background-color: transparent;
+        width: 100%;
+        transition: 0s;
       }
     }
-
-    &:after {
+    &:before {
       content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      width: 0;
+      transform: translateY(-50%);
       display: block;
-      background-color: transparent;
-      height: 6px;
-      border-radius: 5px 5px 0 0;
-      transition: all .3s ease-out;
-      transform: translateY(-6px);
-      //margin-bottom: -4px;
+      height: 1px;
+      background-color: #5c5c5c;
     }
+    &:after {
+      transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      width: 0;
+      //margin: auto;
+      transform: translateY(-50%);
+      display: block;
+      height: 1px;
+      background-color: #5c5c5c;
+    }
+    &.active:after {
+      background-color: #5c5c5c;
+      width: 100%;
+    }
+
   }
 
 }
@@ -364,33 +376,54 @@ nav {
 }
 
 .home-page {
-  margin-top: 80px;
+  margin-top: 50px;
 }
-
+.portfolio {
+  .title-page {
+    padding: 55px 0 65px;
+    font-size: 24px;
+    color: #303030;
+    font-family: $RobotoLight;
+    strong {
+      font-family: $RobotoBold;
+      position: relative;
+      width: 90px;
+      display: inline-block;
+      text-align: center;
+      &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        margin: auto;
+        transform: translateY(-50%);
+        display: block;
+        height: 1px;
+        background-color: #838383;
+      }
+    }
+  }
+}
 .projects {
-
   justify-content: space-between;
   width: 48%;
-
   color: #797979;
   margin-bottom: 90px;
 
   .item-img {
+    @include transition();
     position: relative;
     filter: grayscale(100%);
-    @include transition();
+    box-shadow: 0.347px 1.97px 4px 0 rgba(66, 67, 67, 0.52);
     &:hover {
       filter: grayscale(0);
     }
   }
 
-  img {
-    box-shadow: 0.347px 1.97px 4px 0 rgba(66, 67, 67, 0.52);
-  }
-
   figcaption {
-    margin: 25px auto 0;
     @include flex();
+    margin: 25px auto 0;
 
   }
 
@@ -405,12 +438,25 @@ nav {
     }
   }
 
+  .title-project{
+    text-transform: uppercase;
+    font-family: $RobotoBold;
+    font-size: 14px;
+    padding-right: 5px;
+  }
+  .description-project {
+    text-transform: capitalize;
+    font-family: $RobotoLight;
+    font-size: 14px;
+  }
+
   .left {
-    width: 70%;
     @include flex(flex,wrap,center,flex-start);
+    width: 70%;
     background-color: #333333;
     color: #fff;
-    font-size: 14px;
+    height: 30px;
+    padding-left: 10px;
   }
   .right {
     width: 30%;

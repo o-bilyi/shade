@@ -92,22 +92,22 @@ export default class Portfolio extends Component {
                        <img className="item-img" src={item.img} alt={item.altImg}/></Link>
                    <figcaption>
                        <div className="left">
-                           <h2>{item.nameProject}</h2>
-                           <i18n.text tag="p" text={{key: localizationDescription}}/>
+                           <h2 className="title-project">{item.nameProject}</h2>
+                           <i18n.text className="description-project" tag="p" text={{key: localizationDescription}}/>
                        </div>
                        <div className="right">
                            <div className="small-btn">
                                <Link to={item.website} target="_blank" rel="noopener noreferrer"
                                      className="projects_button website">
                                    <i18n.text tag="b" text={{key: "website"}}/>
-                                   <span> </span>
+                                   <span/>
                                </Link>
                            </div>
                            <div className="small-btn">
                                <Link to={item.preview} target="_blank" rel="noopener noreferrer"
                                      className="projects_button preview">
                                    <i18n.text tag="b" text={{key: "preview"}}/>
-                                   <span> </span>
+                                   <span/>
                                </Link>
                            </div>
                        </div>
@@ -121,9 +121,12 @@ export default class Portfolio extends Component {
         return (
             <div>
                 <Header/>
-                <main id="portfolio" className="home-page wow animated fadeInUp" data-wow-duration="1.5s">
-                    <div className="contentMobileAnimate width-container flex-container">
-                        {projects.map(this.getProject)}
+                <main id="portfolio" className="home-page portfolio wow animated fadeIn" data-wow-duration="1.5s">
+                    <div className="contentMobileAnimate width-container">
+                        <h2 className="title-page"><strong>Works.</strong> Solutions for your ideas</h2>
+                        <div className="flex-container">
+                            {projects.map(this.getProject)}
+                        </div>
                     </div>
                 </main>
                 <Footer/>
