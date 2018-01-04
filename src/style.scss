@@ -375,9 +375,10 @@ nav {
   @include flex();
 }
 
-.home-page {
+.offset-section {
   margin-top: 50px;
 }
+
 .portfolio {
   .title-page {
     padding: 55px 0 65px;
@@ -406,16 +407,15 @@ nav {
   }
 }
 .projects {
-  justify-content: space-between;
   width: 48%;
   color: #797979;
-  margin-bottom: 90px;
+  margin-bottom: 45px;
 
   .item-img {
     @include transition();
     position: relative;
     filter: grayscale(100%);
-    box-shadow: 0.347px 1.97px 4px 0 rgba(66, 67, 67, 0.52);
+    box-shadow: 0px 1px 2px 0px rgba(66, 67, 67, 0.52);
     &:hover {
       filter: grayscale(0);
     }
@@ -423,16 +423,24 @@ nav {
 
   figcaption {
     @include flex();
-    margin: 25px auto 0;
+    margin: 10px auto 0;
 
-  }
-
-  .right {
-    text-align: right;
   }
 
   .small-btn {
-    display: inline-block;
+    @include flex(inline-flex,wrap,center,center);
+    text-transform: uppercase;
+    font-family: $RobotoMedium;
+    font-size: 12px;
+    color: #383838;
+    border: 1px solid #383838;
+    height: 30px;
+    width: 80px;
+    @include transition();
+    &:hover{
+      color: #afafaf;
+      border-color: #afafaf;
+    }
     &:first-child {
       margin-right: 10px;
     }
@@ -452,16 +460,37 @@ nav {
 
   .left {
     @include flex(flex,wrap,center,flex-start);
-    width: 70%;
+    max-width: 400px;
+    width: 100%;
     background-color: #333333;
     color: #fff;
     height: 30px;
     padding-left: 10px;
   }
   .right {
-    width: 30%;
+    max-width: 170px;
+    width: 100%;
+    text-align: right;
   }
 
+}
+
+.more-project {
+  @include flex(flex,wrap,center,center);
+  @include transition();
+  display: block;
+  width: 200px;
+  height: 50px;
+  margin: auto;
+  border: 1px solid #9b9b9b;
+  color: #9b9b9b;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-family: $RobotoMedium;
+  &:hover {
+    border-color: #24272c;
+    color: #24272c;
+  }
 }
 
 .about-container {
