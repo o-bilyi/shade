@@ -72,6 +72,7 @@
     text-align: left;
     margin-left: 5px;
     font-weight: bold;
+    list-style: none;
   }
 
   .continue-text {
@@ -492,6 +493,33 @@ nav {
     color: #24272c;
   }
 }
+.bottom-main {
+  background: url("/img/main/bg-main.jpg") no-repeat top;
+  background-size: cover;
+  min-height: 620px;
+}
+.form-container {
+  padding: 225px 0 0;
+  .title-form {
+    font-family: $RobotoBold;
+    font-size: 40px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .form {
+    padding-top: 60px;
+  }
+  form {
+    @include flex();
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+  }
+  .input-field {
+    margin: 0;
+    width: 32%;
+  }
+}
 
 .about-container {
   .container {
@@ -703,26 +731,12 @@ nav {
 
 form {
   position: relative;
-  border: 1px solid #959595;
-  background: #fff;
-  border-radius: 10px;
   z-index: 1;
-  padding: 45px;
-
-  .envelope {
-    position: absolute;
-    top: -8px;
-    right: 10px;
-    z-index: 1;
-  }
-
-  .SVGInline-svg {
-    width: 71px;
-  }
 
   .input-field {
     margin-bottom: 50px;
   }
+
   input {
     border: none;
     border-bottom: 1px solid #e5e5e5;
@@ -730,32 +744,42 @@ form {
     padding-bottom: 10px;
     width: 100%;
     outline: none;
+    font-size: 16px;
+    color: #595959;
+    font-family: $RobotoLight;
+    text-transform: capitalize;
+  }
+
+  label {
+    font-size: 14px;
+    color: #242424;
+    font-family: $RobotoMedium;
   }
 
   .big-btn {
     margin: 0 auto 0;
   }
+
   button {
-    border: transparent;
+    @include flex(flex,wrap,center,center);
+    @include transition();
+    width: 240px;
+    height: 40px;
     z-index: 1;
-    position: relative;
-    display: block;
     margin: auto;
     cursor: pointer;
-    background-color: transparent;
-    height: 50px;
-    line-height: 50px;
-    width: 100%;
-    font-size: 1rem;
+    font-size: 14px;
     text-transform: uppercase;
+    font-family: $RobotoMedium;
+    border: 1px solid #333333;
+    background-color: transparent;
+    &:hover {
+      background-color: #333333;
+      color: #fff;
+    }
   }
 
 }
-
-//.SVGInline-svg{
-//  width: 32px;
-//  fill:#fff;
-//}
 
 .have-nice-day {
   padding: 170px 0 60px;
@@ -1059,10 +1083,17 @@ footer {
     background-color: #737373;
   }
   .button-lan {
+    font-size: 24px;
+    color: #fff;
+    font-family: $RobotoLight;
     &.active {
       color: #7d7d7d;
+      font-family: $RobotoMedium;
     }
   }
+}
+#feedback {
+  display: none;
 }
 
 @import "scss/media.scss";

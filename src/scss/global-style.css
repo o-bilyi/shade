@@ -5,8 +5,7 @@
 
 html {
   font-size: 14px;
-  font-family: "Roboto-Regular", sans-serif;
-  transition: all 0.3s ease-in-out; }
+  font-family: "Roboto-Regular", sans-serif; }
 
 img {
   max-width: 100%; }
@@ -24,7 +23,9 @@ input, button, textarea {
   cursor: pointer;
   border: none;
   display: inline-block;
-  font-family: "Roboto", sans-serif; }
+  font-family: "Roboto-Regular", sans-serif;
+  background: transparent;
+  outline: none; }
 
 .wrapper {
   overflow: hidden; }

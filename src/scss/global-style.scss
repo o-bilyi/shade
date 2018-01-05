@@ -16,11 +16,6 @@ $RobotoBold: "Roboto-Bold", sans-serif;
 html {
   font-size: 14px;
   font-family: $RobotoRegular;
-  transition: all 0.3s ease-in-out;
-}
-
-body {
-
 }
 
 img {
@@ -42,7 +37,9 @@ input, button, textarea {
   cursor: pointer;
   border: none;
   display: inline-block;
-  font-family: "Roboto", sans-serif;
+  font-family: $RobotoRegular;
+  background: transparent;
+  outline: none;
 }
 
 .wrapper {

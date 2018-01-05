@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import i18n from "i18n-react";
+import Form from "../components/Form";
 
 const projects = [
     {
@@ -116,11 +117,21 @@ export default class Portfolio extends Component {
             <div>
                 <Header/>
                 <main id="portfolio" className="offset-section portfolio wow animated fadeIn" data-wow-duration="1.5s">
-                    <div className="contentMobileAnimate width-container">
-                        <h2 className="title-page"><strong>Works.</strong> Solutions for your ideas</h2>
-                        <div className="flex-container">
-                            {projects.map(this.getProject)}
-                            <button className="more-project"><i18n.text tag="span" text={{key: "more-projects"}}/></button>
+                    <div className="contentMobileAnimate">
+                        <div className="top-main width-container">
+                            <h2 className="title-page"><strong>Works.</strong> Solutions for your ideas</h2>
+                            <div className="flex-container">
+                                {projects.map(this.getProject)}
+                                <button className="more-project"><i18n.text tag="span" text={{key: "more-projects"}}/></button>
+                            </div>
+                        </div>
+                        <div className="bottom-main">
+                            <div className="width-container">
+                                <div className="form-container">
+                                    <h2 className="title-form">U’VE LIKED OUR WORKS. get in touch</h2>
+                                    <Form/>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </main>
