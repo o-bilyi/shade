@@ -5,8 +5,7 @@
 
 html {
   font-size: 14px;
-  font-family: "Roboto-Regular", sans-serif;
-  transition: all 0.3s ease-in-out; }
+  font-family: "Roboto-Regular", sans-serif; }
 
 img {
   max-width: 100%; }
@@ -24,7 +23,9 @@ input, button, textarea {
   cursor: pointer;
   border: none;
   display: inline-block;
-  font-family: "Roboto", sans-serif; }
+  font-family: "Roboto-Regular", sans-serif;
+  background: transparent;
+  outline: none; }
 
 .wrapper {
   overflow: hidden; }
@@ -52,10 +53,32 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 
 .letter {
   width: 45px; }
-  .letter:hover .letter-1 {
-    fill: #646464; }
   .letter .letter-1 {
     fill: #3c3c3c;
     transition: all .3s ease-in; }
   .letter .letter-2 {
     fill: #646464; }
+  .letter:hover .letter-1 {
+    fill: #646464; }
+
+.faceBook-icon {
+  width: 40px;
+  height: 40px; }
+  .faceBook-icon .faceBook-icon-1 {
+    fill: #979695; }
+  .faceBook-icon .faceBook-icon-2 {
+    fill: #646464;
+    transition: all 0.3s ease-in; }
+  .faceBook-icon:hover .faceBook-icon-2 {
+    fill: #c7c7c7; }
+
+.linked-icon {
+  width: 40px;
+  height: 40px; }
+  .linked-icon .linked-icon-1 {
+    fill: #979695; }
+  .linked-icon .linked-icon-2 {
+    fill: #646464;
+    transition: all 0.3s ease-in; }
+  .linked-icon:hover .linked-icon-2 {
+    fill: #c7c7c7; }

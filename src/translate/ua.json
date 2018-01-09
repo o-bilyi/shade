@@ -1,31 +1,36 @@
 {
-  "portfolio": "портфоліо",
+  "portfolio": "роботи",
   "about-us": "про нас",
   "blog": "блог",
-
   "contact-us": "Контакти",
-  "are-you-ready-to":"Ви готові до",
-  "realize-your-ideas":"Реалізуй свої ідеї",
-  "in-to-something-perfected":"в щось ідальне ?",
+
   "press-to-continue":"Продовжити",
 
-  "from-designers":"від дизайнера для дизайнерів",
   "lear-more":"Детальніше",
   "more-articles":"Більше статтей",
 
-  "ourTeam":"і наша команда",
-  "aboutDescription":"Працюємо вже близько 3-х років, завжди намагаємось допомогти клієнту з реалізацює його задумів. Використовуємо найновіші технології для ідеальної розробки ваших ідей.",
-  "interestedInCooperation":"Якщо ви зацікавлені у співпраці",
+  "solutionsForYourIdeas": "Solutions for your ideas",
+  "teamInspired": "A team inspired by the design",
 
   "suitable-manner": "",
   "mail-us":"напишите нам",
   "phone-us":"подзвоніть нам",
 
   "my-name-is": "Моє ім'я",
+
   "i-liked" : "Замовити сайт",
-  "more-details-e-mail": "Більше деталей можете отримати на E-mail",
+
+  "more-details-email": "Більше деталей можете отримати на E-mail",
+
   "send-message" : "відправити",
-  "find-us-here":"Знайти нас можна тут",
+  "website":"веб сайт",
+  "preview":"перед показ",
+
+
+  "changeTextOne" : "натхненням",
+  "changeTextTwo" : "підтримкою",
+
+  "aboutUsDescription" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.",
 
   "userDescriptionSerhii_Henyk":"Напрямок та дизайн мистецтва Визначте креативне бачення та залучення концепцій для створення інтерактивного дизайну Створення міцних дизайнерських рішень, які відповідають стратегічним цілям бізнесу Наставник, лідер, і надихає дизайнерів вигадувати інноваційні ідеї Досягти стратегічних цілей за допомогою дизайну . Маю міцне розуміння досвіду користувачів Управління кілька проектів Вирішіть бізнес-проблеми",
   "userDescriptionOlexander_Bilyi":"Високо винахідливий, інноваційний розробник Front-End з досвідом компонування, дизайну та кодування веб-сайтів. Маючи знання про розробку веб-сайтів та сценаріїв за допомогою мови програмування JS.",
@@ -39,8 +44,6 @@
   "blogDescriptionArticle_three":"Укр переклад lorem Ipsona дуже жахливий,тому тут буду якась фігня написана,щоб не було пусто місця 3",
   "blogDescriptionArticle_four":"Укр переклад lorem Ipsona дуже жахливий,тому тут буду якась фігня написана,щоб не було пусто місця 4",
 
-  "website":"веб сайт",
-  "preview":"перед показ",
 
   "descriptionProjectRivoli" : "Готель Ресторан",
   "descriptionProjectConsult_Group": "Оформлення румунського паспорта",
@@ -49,11 +52,7 @@
   "descriptionProjectSMM":"Імпорт-експорт оптової кави",
   "descriptionProjectAdvocate":"надання юридичних послуг",
   "descriptionProjectPrint_Glass_Furniture":"продаж кухонь",
-  "descriptionProjectPromo_Finance":"Фінансування аутсорсингової реклами",
-
-  "realizeYourIdeas" : "реалізовуйте ваші ідеї з",
-  "changeTextOne" : "натхненням",
-  "changeTextTwo" : "підтримкою"
+  "descriptionProjectPromo_Finance":"Фінансування аутсорсингової реклами"
 
 
 

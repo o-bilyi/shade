@@ -1,8 +1,9 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
+import i18n from "i18n-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import i18n from "i18n-react";
+import BottomMainForm from "../components/bottom-main-form";
 
 const projects = [
     {
@@ -96,20 +97,14 @@ export default class Portfolio extends Component {
                            <i18n.text className="description-project" tag="p" text={{key: localizationDescription}}/>
                        </div>
                        <div className="right">
-                           <div className="small-btn">
-                               <Link to={item.website} target="_blank" rel="noopener noreferrer"
-                                     className="projects_button website">
-                                   <i18n.text tag="b" text={{key: "website"}}/>
-                                   <span/>
-                               </Link>
-                           </div>
-                           <div className="small-btn">
-                               <Link to={item.preview} target="_blank" rel="noopener noreferrer"
-                                     className="projects_button preview">
-                                   <i18n.text tag="b" text={{key: "preview"}}/>
-                                   <span/>
-                               </Link>
-                           </div>
+                           <Link to={item.website} target="_blank" rel="noopener noreferrer"
+                                 className="small-btn website">
+                               <i18n.text tag="span" text={{key: "website"}}/>
+                           </Link>
+                           <Link to={item.preview} target="_blank" rel="noopener noreferrer"
+                                 className="small-btn preview">
+                               <i18n.text tag="span" text={{key: "preview"}}/>
+                           </Link>
                        </div>
                    </figcaption>
                </figure>
@@ -121,12 +116,19 @@ export default class Portfolio extends Component {
         return (
             <div>
                 <Header/>
-                <main id="portfolio" className="home-page portfolio wow animated fadeIn" data-wow-duration="1.5s">
-                    <div className="contentMobileAnimate width-container">
-                        <h2 className="title-page"><strong>Works.</strong> Solutions for your ideas</h2>
-                        <div className="flex-container">
-                            {projects.map(this.getProject)}
+                <main id="portfolio" className="offset-section portfolio wow animated fadeIn" data-wow-duration="1.5s">
+                    <div className="contentMobileAnimate">
+                        <div className="top-main width-container">
+                            <h2 className="title-page">
+                                <i18n.text className="crossed-out" tag="strong" text={{key: "works"}}/>
+                                <i18n.span text={{ key: "solutionsForYourIdeas" }}/>
+                            </h2>
+                            <div className="flex-container">
+                                {projects.map(this.getProject)}
+                                <button className="more-project"><i18n.text tag="span" text={{key: "more-projects"}}/></button>
+                            </div>
                         </div>
+                        <BottomMainForm/>
                     </div>
                 </main>
                 <Footer/>

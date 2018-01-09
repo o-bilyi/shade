@@ -1,0 +1,19 @@
+@mixin transition($type : all, $time : .3s, $nameAnimation : ease-in) {
+  transition: $type $time $nameAnimation;
+}
+
+@mixin width-container($maxWidth : 1230px,$margin : auto,$padding : 0 10px, $width : 100%) {
+  max-width: $maxWidth;
+  margin: $margin;
+  padding: $padding;
+  width: $width;
+}
+
+@mixin flex($flex : flex, $wrap : wrap, $center : flex-start , $between : space-between, $direction : row) {
+  display: $flex;
+  flex-wrap: $wrap;
+  align-items: $center;
+  justify-content: $between;
+  flex-direction: $direction;
+  @include transition(width);
+}
