@@ -32,7 +32,6 @@ export default class Form extends Component {
         .then(status)
         .then(() => {
             showPopup();
-            // form.reset();
             event.target.reset();
         })
         .catch(function(error) {
@@ -42,8 +41,7 @@ export default class Form extends Component {
 
     render() {
         return (
-            <div className="form">
-                <form method="post" onSubmit={this.handleSubmit}>
+            <form  className="form" method="post" onSubmit={this.handleSubmit}>
                     <div className="input-field max-width-input">
                         <i18n.text tag="label" htmlFor="your-name" text={{ key: "my-name-is" }}/>
                         <input id="your-name" value={this.state.user} onChange={this.onFieldsChange} type="text"
@@ -65,7 +63,6 @@ export default class Form extends Component {
                         </button>
                     </div>
                 </form>
-            </div>
         );
     }
 }

@@ -7,7 +7,7 @@ export default class Footer extends Component {
             <footer>
                 <div className="footer-container">
                     <div className="left">
-                        <p>© 2017 Shade.Designs  -  UX\UI DESIGN & DEVELOPMENT - CHERNIVTSI - All rights reserved </p>
+                        <p>© 2017 Shade.Design - UX\UI DESIGN & DEVELOPMENT - CHERNIVTSI - All rights reserved </p>
                     </div>
                     <div className="right social">
                         <FindUs/>

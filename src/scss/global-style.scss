@@ -1,3 +1,4 @@
+@import "mixins.scss";
 $FashionSmallCaps: "FashionFetishSmallCaps", sans-serif;
 $FashionFetishRegular: "FashionFetishRegular", sans-serif;
 $FashionFetishBold: "FashionFetishBold", sans-serif;
@@ -52,26 +53,6 @@ input, button, textarea {
   margin: auto;
 }
 
-@mixin transition($type : all, $time : .3s, $nameAnimation : ease-in) {
-  transition: $type $time $nameAnimation;
-}
-
-@mixin width-container($maxWidth : 1230px,$margin : auto,$padding : 0 10px, $width : 100%) {
-  max-width: $maxWidth;
-  margin: $margin;
-  padding: $padding;
-  width: $width;
-}
-
-@mixin flex($flex : flex, $wrap : wrap, $center : flex-start , $between : space-between, $direction : row) {
-  display: $flex;
-  flex-wrap: $wrap;
-  align-items: $center;
-  justify-content: $between;
-  flex-direction: $direction;
-  @include transition(width)
-}
-
 input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none !important;
   margin: 0 !important;
@@ -94,16 +75,53 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 
 .letter {
   width: 45px;
-  &:hover {
-    .letter-1 {
-      fill: #646464;
-    }
-  }
+
   .letter-1 {
     fill: #3c3c3c;
     transition: all .3s ease-in;
   }
   .letter-2 {
     fill: #646464;
+  }
+
+  &:hover {
+    .letter-1 {
+      fill: #646464;
+    }
+  }
+}
+
+.faceBook-icon {
+  width: 40px;
+  height: 40px;
+  .faceBook-icon-1 {
+    fill: #979695;
+  }
+
+  .faceBook-icon-2 {
+    fill: #646464;
+    @include transition()
+  }
+  &:hover {
+    .faceBook-icon-2{
+      fill: #c7c7c7;
+    }
+  }
+}
+
+.linked-icon {
+  width: 40px;
+  height: 40px;
+  .linked-icon-1 {
+    fill: #979695;
+  }
+  .linked-icon-2 {
+    fill: #646464;
+    @include transition()
+  }
+  &:hover {
+    .linked-icon-2{
+      fill: #c7c7c7;
+    }
   }
 }

@@ -4,15 +4,32 @@ import {connect} from "react-redux";
 
 class ChangeLanguage extends Component {
     static propTypes = {
-        changeLanguage: PropTypes.func
+        changeLanguage: PropTypes.func,
+        language : PropTypes.string
     };
 
+    constructor(props){
+        super(props);
+        this.state = {
+            language : this.props.language
+        };
+    };
+
+    componentWillReceiveProps(newProps) {
+        if (newProps.language !== this.props.language) {
+            this.setState({
+                language : newProps.language
+            });
+        }
+    }
+
     render() {
+        console.log("render");
         return (
-            <div className="button-lan-container">
-                <button className="button-lan active" onClick={() => this.props.changeLanguage("en")}>English</button>
+            <div className={"button-lan-container " +this.state.language}>
+                <button className="english button-lan" onClick={() => this.props.changeLanguage("en")}>English</button>
                 <span className="border"/>
-                <button className="button-lan" onClick={() => this.props.changeLanguage("ua")}>Українська</button>
+                <button className="ukraine button-lan" onClick={() => this.props.changeLanguage("ua")}>Українська</button>
             </div>
         );
     }
@@ -30,4 +47,11 @@ const mapDispatchToProps = (dispatch) => {
 
 };
 
-export default connect(undefined, mapDispatchToProps)(ChangeLanguage);
+const mapStateToProps = state => {
+    return {
+        language: state.language
+    };
+};
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(ChangeLanguage);

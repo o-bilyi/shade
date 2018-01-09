@@ -2,15 +2,13 @@
 
 @import "fonts.scss";
 
-@import "font-awesome.scss";
-
-//@import "materialize.scss";
-
-@import "~animate.css";
+@import "animate-scss/animate.scss";
 
 @import "popup.scss";
 
 @import "preload.scss";
+
+@import "mixins.scss";
 
 @import "scss/global-style.scss";
 

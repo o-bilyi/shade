@@ -1,9 +1,9 @@
 import React, {Component} from "react";
-import {NavLink} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import i18n from "i18n-react";
 import ReactSVG from "react-svg";
-// import { showModal } from "../components/Modal";
 import FindUs from "../components/FindUs";
+// import { showModal } from "../components/Modal";
 
 export default class Header extends Component {
 	constructor(props) {
@@ -12,10 +12,6 @@ export default class Header extends Component {
 			menuShowed : false,
 			toggleMenu : false
 		};
-	}
-
-	componentDidMount() {
-		document.addEventListener("togglePopupLan", this.removeClassMenu);
 	}
 
 	removeClassMenu = () => {
@@ -41,17 +37,20 @@ export default class Header extends Component {
 			<header>
 
 				<div className="header-container-width">
-					<div className="header-logo">
+					<Link className="header-logo" to={"portfolio"}>
 						<ReactSVG className="header-logo-icon"
 								  path={require("../svg/Logo_SD_shape.svg")}
 						/>
 						<span className="name-logo">Shade Design</span>
-					</div>
+					</Link>
 					<nav>
 						<button onClick={this.switchToggle} className={toggleMenu}> <span/></button>
 						<div className={menuClass}>
 							<div className="scroll-menu">
-								<ul id="menu" className="menu">
+                                <ReactSVG className="menu-logo-icon"
+                                          path={require("../svg/Logo_SD_shape.svg")}
+                                />
+								<ul className="menu">
 									<li className="item-menu">
 										<NavLink to="/portfolio" activeClassName="active" className="link">
 											<i18n.span text={{key : "portfolio"}}/>
@@ -74,8 +73,11 @@ export default class Header extends Component {
 									</li>
 								</ul>
 								<div className="find-us">
-									<i18n.text tag="i" text={{key : "find-us-here"}}/>
 									<FindUs/>
+									<p className="copyright">
+										© 2017 Shade.Design <br/>
+                                        UX\UI DESIGN & DEVELOPMENT <br/>
+                                        All rights reserved</p>
 								</div>
 							</div>
 						</div>
