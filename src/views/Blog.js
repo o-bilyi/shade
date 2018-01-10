@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import i18n from "i18n-react";
+import BottomMainForm from "../components/bottom-main-form";
 
 const blog = [
     {
@@ -67,12 +68,12 @@ export default class Blog extends Component {
         return (
             <div className="ContactUs">
                 <Header/>
-                <section className="contentMobileAnimate blog-background">
+                <section className="offset-section contentMobileAnimate">
                     <div data-wow-duration="1.5s" className="wow animated fadeInDown title-blog-container">
-                        <div className="title-page">
-                            <i18n.text tag="h2" text={{key: "blog"}}/>
-                            <i18n.span text={{key: "from-designers"}}/>
-                        </div>
+						<h2 className="title-page">
+							<i18n.text className="crossed-out" tag="strong" text={{ key: "blog" }}/>
+							<i18n.span text={{ key: "fromDesigners" }}/>
+						</h2>
                     </div>
                     <main className="blog-container">
                         <div data-wow-offset="100" data-wow-duration="1.5s"
@@ -80,14 +81,12 @@ export default class Blog extends Component {
                             <section className="flex-container">
                                 {blog.map(this.getArticles)}
                             </section>
-                            <div className="big-btn">
-                                <a role="button" className="more-projects_link">
-                                    <i18n.p text={{key: "more-articles"}}/>
-                                    <span> </span>
-                                </a>
-                            </div>
+							<button className="more-project">
+								<i18n.p text={{key: "more-articles"}}/>
+							</button>
                         </div>
                     </main>
+					<BottomMainForm/>
                 </section>
                 <Footer/>
             </div>

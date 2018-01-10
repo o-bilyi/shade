@@ -1,9 +1,8 @@
 import React, {Component} from "react";
-import $ from "jquery";
 import Form from "../components/Form";
 import SVGInline from "react-svg-inline";
 
-export const showModal = () => $("#feedback").modal("show");
+// export const showModal = () => $("#feedback").modal("show");
 
 export default class Modal extends Component {
     // componentDidMount(){

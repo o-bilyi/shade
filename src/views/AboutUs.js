@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import FindUs from "../components/FindUs";
 import Feedback from "../components/Modal";
+import BottomMainForm from "../components/bottom-main-form";
 
 const team = [
     {
@@ -11,11 +12,11 @@ const team = [
         "userName": "Serhii Henyk",
         "userTitlespan": "UI/UX designer",
         "userDescription": "userDescriptionDesigner",
-        "userSocialFacebook": "https://www.facebook.com/sasha.beluy.56",
-        "userSocialLinkedin": "https://www.linkedin.com/in/olexander-bilyi-83156b10a/",
-        // "userIcon": "/img/main/startup.png",
+        "userSocialFacebook": "https://www.facebook.com/serhii.henyk",
+        "userSocialLinkedin": "https://www.linkedin.com/in/serhii.henyk",
         "animateClass":"wow animated fadeInLeft user-box"
-    },
+		// "userIcon": "/img/main/startup.png",
+	},
     {
         "userImg": "/img/main/web-dev.png",
         "userName": "Olexander Bilyi",
@@ -23,9 +24,9 @@ const team = [
         "userDescription": "userDescriptionFrontend",
         "userSocialFacebook": "https://www.facebook.com/sasha.beluy.56",
         "userSocialLinkedin": "https://www.linkedin.com/in/olexander-bilyi-83156b10a/",
-        // "userIcon": "/img/main/coding.png",
         "animateClass":"wow animated fadeInRight user-box"
-    }
+		// "userIcon": "/img/main/coding.png",
+	}
 ];
 
 export default class AboutUs extends Component {
@@ -71,6 +72,7 @@ export default class AboutUs extends Component {
                             {team.map(this.getUsers)}
                         </section>
                     </main>
+					<BottomMainForm/>
                 </div>
                 <Footer/>
                 <Feedback/>

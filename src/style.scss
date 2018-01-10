@@ -28,8 +28,9 @@
   }
 
   .logo-container {
-    max-width: 535px;
+    max-width: 630px;
     margin: auto;
+    width: 100%;
   }
 
   .logo {
@@ -509,12 +510,13 @@ nav {
   }
   .input-field {
     margin: 0;
-    width: 32%;
+    width: 30%;
   }
 }
-
-.title-about-container {
+.title-about-container,.title-blog-container {
   @include width-container(1230px);
+}
+.title-about-container {
   padding-bottom: 150px;
   .title-page {
     padding-bottom: 40px;
@@ -547,7 +549,6 @@ nav {
 .user-box {
   position: relative;
   max-width: 450px;
-  margin-bottom: 130px;
   box-sizing: border-box;
   background-color: #333333;
   box-shadow: 0.347px 1.97px 5px 0px rgba(66, 67, 67, 0.24);
@@ -598,6 +599,7 @@ nav {
     font-family: $RobotoLight;
     padding-bottom: 15px;
     line-height: 18px;
+    min-height: 130px;
   }
 
   .social {
@@ -754,28 +756,24 @@ form {
 
 }
 
-.blog-background {
-  background-color: #f9f9f9;
+.title-blog-container {
+  .title-page {
+    padding-bottom: 50px;
+  }
 }
 
 .blog-container {
-  padding: 60px 0 40px;
-  .container {
-    max-width: 1090px;
-  }
 
   .item {
     overflow: hidden;
     &, .learn-more {
       color: #797979;
     }
-    max-width: 505px;
+    max-width: 580px;
     text-align: center;
-    border-radius: 10px;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0 2px 5px 0 rgba(66, 67, 67, 0.24);
+    box-shadow: 0px 0px 4px 0px rgba(66, 67, 67, 0.21);
     margin-bottom: 50px;
-
   }
   .blog-title {
     margin-top: 50px;
@@ -790,12 +788,21 @@ form {
       font-weight: 300;
       font-style: italic;
       font-size: 1rem;
+      &:before {
+        content: "";
+        max-width: 200px;
+        width: 100%;
+        display: block;
+        margin: 0 auto 5px;
+        height: 1px;
+        background-color: #d7d7d7;
+      }
     }
   }
 
   .blog-description {
     max-width: 355px;
-    margin: auto;
+    margin: 0 auto 30px;
     p {
       font-weight: 300;
       font-size: 1rem;
@@ -804,24 +811,15 @@ form {
   }
 
   .learn-more {
-    font-size: 1rem;
-    font-weight: 300;
+    font-size: 14px;
+    font-family: $RobotoMedium;
     display: block;
     margin-bottom: 25px;
-
-    &:before {
-      content: "";
-      max-width: 200px;
-      width: 100%;
-      display: block;
-      margin: 30px auto 20px;
-      height: 1px;
-      background-color: #d7d7d7;
+    color: rgba(51, 51, 51, 0.6);
+    &:hover {
+      text-decoration: line-through;
+      color: rgba(51, 51, 51, 1);
     }
-  }
-
-  .big-btn {
-    margin: auto;
   }
 
 }
