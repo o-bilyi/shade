@@ -2,10 +2,10 @@
   .bottom-main {
     background-size: cover;
     min-height: 720px; }
-  .form-container {
-    max-width: 760px; }
-    .form-container .title-form {
-      font-size: 40px; } }
+    .bottom-main .form-container {
+      max-width: 760px; }
+      .bottom-main .form-container .title-form {
+        font-size: 40px; } }
 
 @media all and (max-width: 1200px) {
   .bottom-main .form-container {
@@ -30,8 +30,9 @@
       width: 170px; } }
 
 @media all and (max-width: 1080px) {
+  .title-page {
+    text-align: center; }
   .portfolio .title-page {
-    text-align: center;
     padding: 40px 0; }
   .portfolio figcaption {
     align-items: stretch;
@@ -147,8 +148,28 @@
     flex-direction: column;
     transition: width 0.3s ease-in; }
   .portfolio .projects {
-    width: 100%;
-    max-width: 585px; }
+    width: 100%; }
+  .user-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: width 0.3s ease-in; }
+    .user-container .user-box {
+      width: 100%;
+      margin-bottom: 130px; }
+      .user-container .user-box .user-head {
+        background-size: cover; }
+  .blog-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: width 0.3s ease-in; }
+    .blog-container .item {
+      width: 100%; }
   .bottom-main {
     background-position: -145px -25px; }
     .bottom-main .form-container {
@@ -158,10 +179,8 @@
       width: 100%; } }
 
 @media all and (max-width: 680px) {
-  .portfolio .title-page {
-    font-size: 16px; }
-    .portfolio .title-page strong {
-      width: 60px; }
+  .portfolio .title-page strong {
+    width: 60px; }
   .bottom-main {
     background: none; }
     .bottom-main .title-form {
@@ -172,6 +191,8 @@
       max-width: 550px; } }
 
 @media all and (max-width: 480px) {
+  .title-page {
+    font-size: 16px; }
   .index-header .title-logo {
     padding-top: 5px;
     font-size: 14px; }
@@ -181,4 +202,16 @@
   .index-header .continue-text {
     font-size: 12px; }
   .index-header .button-lan-container {
-    font-size: 14px; } }
+    font-size: 14px; }
+  .user-box .user-head {
+    height: 55px; }
+  .user-box .user-img {
+    max-width: 100px; }
+  .user-box .user-title h2 {
+    font-size: 18px; }
+  .user-box .user-title span {
+    font-size: 11px; }
+  .user-box .user-description {
+    font-size: 12px; }
+  .title-about-container .title-page .crossed-out:after {
+    transform: translateY(4px); } }

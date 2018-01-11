@@ -40,9 +40,11 @@
 }
 
 @media all and (max-width: 1080px) {
+  .title-page {
+    text-align: center;
+  }
   .portfolio {
     .title-page {
-      text-align: center;
       padding: 40px 0;
     }
     figcaption {
@@ -68,12 +70,6 @@
     .small-btn {
       color: #fff;
       border: 1px solid #fff;
-    }
-  }
-  .user-container {
-    @include flex(flex,wrap,center,center,column);
-    .user-box {
-      margin-bottom: 130px;
     }
   }
   footer {
@@ -200,7 +196,24 @@
     }
     .projects {
       width: 100%;
-      max-width: 585px;
+    }
+  }
+
+  .user-container {
+      @include flex(flex,wrap,center,center,column);
+      .user-box {
+        .user-head {
+          background-size: cover;
+        }
+        width: 100%;
+        margin-bottom: 130px;
+      }
+    }
+
+  .blog-container {
+    @include flex(flex,wrap,center,center,column);
+    .item {
+      width: 100%;
     }
   }
 
@@ -220,7 +233,6 @@
 @media all and (max-width: 680px) {
   .portfolio {
     .title-page {
-      font-size: 16px;
       strong {
         width: 60px;
       }
@@ -240,6 +252,9 @@
 }
 
 @media all and (max-width: 480px) {
+  .title-page {
+    font-size: 16px;
+  }
   .index-header {
     .title-logo {
       padding-top: 5px;
@@ -273,6 +288,13 @@
     }
     .user-description {
       font-size: 12px;
+    }
+  }
+  .title-about-container {
+    .title-page {
+      .crossed-out:after {
+        transform: translateY(4px);
+      }
     }
   }
 }

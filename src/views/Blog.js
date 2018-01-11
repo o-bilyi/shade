@@ -75,16 +75,14 @@ export default class Blog extends Component {
 							<i18n.span text={{ key: "fromDesigners" }}/>
 						</h2>
                     </div>
-                    <main className="blog-container">
-                        <div data-wow-offset="100" data-wow-duration="1.5s"
-                             className="wow animated fadeInUp width-container">
-                            <section className="flex-container">
-                                {blog.map(this.getArticles)}
-                            </section>
-							<button className="more-project">
-								<i18n.p text={{key: "more-articles"}}/>
-							</button>
-                        </div>
+                    <main className="width-container">
+                        <section data-wow-offset="100" data-wow-duration="1.5s"
+                                 className="wow animated fadeInUp blog-container">
+                            {blog.map(this.getArticles)}
+                            <button className="more-project">
+                                <i18n.p text={{key: "more-articles"}}/>
+                            </button>
+                        </section>
                     </main>
 					<BottomMainForm/>
                 </section>
