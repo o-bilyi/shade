@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 export default class PreviewProject extends Component {
-
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -12,22 +11,22 @@ export default class PreviewProject extends Component {
 	}
 
 	componentDidMount() {
-		document.addEventListener("preview",this.switchModal);
+		document.addEventListener("preview", this.switchModal);
 	}
 
 	switchModal = (preview) => {
-		let title;
-		if(typeof (preview) === "object"){
-			title = preview.detail.newNameProject;
-			preview = preview.detail.newPreview;
+		if(this.state.showModal) {
+			this.setState({
+				showModal : false
+			});
+		} else {
+			this.setState({
+				showModal : true,
+				preview : preview.newPreview,
+				title : preview.newNameProject
+			});
 		}
-
-		this.setState({
-			showModal : !this.state.showModal,
-			preview : preview,
-			title : title
-		});
-		const body = document.querySelector("body");
+		const body = document.body;
 		body.classList.toggle("active");
 	};
 
@@ -44,6 +43,7 @@ export default class PreviewProject extends Component {
 						</button>
 					</div>
 					<div className="modal-body">
+						{/* <img src={preview} alt={title} onLoad={}/>*/}
 						<img src={preview} alt={title}/>
 					</div>
 				</div>
