@@ -4,14 +4,15 @@ import i18n from "i18n-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import BottomMainForm from "../components/bottom-main-form";
+import PreviewsProject from "../components/PreviewProject";
 
 const projects = [
     {
         "animationClass": "wow animated fadeInUp projects",
         // "website": "http://www.rivoli-hotel.com",
         // "preview": "http://www.rivoli-hotel.com",
-        "website": "http://rivoli.shade-designs.com.ua/",
-        "preview": "http://rivoli.shade-designs.com.ua/",
+        "website": "http://rivoli.shade-design.com.ua/",
+        "preview": "/img/preview-projects/rivoli.png",
         "img": "/img/main/rivoli.jpg",
         "altImg": "Rivoli",
         "nameProject": "Rivoli",
@@ -20,7 +21,7 @@ const projects = [
     {
         "animationClass": "wow animated fadeInUp projects",
         "website": "http://www.consult-group.com.ua/",
-        "preview": "http://www.consult-group.com.ua/",
+		"preview": "/img/preview-projects/consult_group.png",
         "img": "/img/main/consult-group.jpg",
         "altImg": "Consult Group",
         "nameProject": "Consult Group",
@@ -29,7 +30,7 @@ const projects = [
     {
         "animationClass": "wow animated fadeInUp projects",
         "website": "http://www.movearoundprice.com/",
-        "preview": "http://www.movearoundprice.com/",
+		"preview": "/img/preview-projects/rideIq.png",
         "img": "/img/main/rideIq.jpg",
         "altImg": "Ride IQ",
         "nameProject": "Ride IQ",
@@ -38,7 +39,7 @@ const projects = [
     {
         "animationClass": "wow animated fadeInUp projects",
         "website": "http://www.gazprom-neft.ru/",
-        "preview": "http://www.gazprom-neft.ru/",
+		"preview": "/img/preview-projects/gaz_prom.png",
         "img": "/img/main/gazz.jpg",
         "altImg": "Gazprom neft",
         "nameProject": "Gazprom neft",
@@ -47,7 +48,7 @@ const projects = [
     {
         "animationClass": "wow animated fadeInUp projects",
         "website": "http://www.smmcoffee.it/",
-        "preview": "http://www.smmcoffee.it/",
+		"preview": "/img/preview-projects/smm_page.jpg",
         "img": "/img/main/coffee.jpg",
         "altImg": "SMM Shop",
         "nameProject": "SMM",
@@ -56,7 +57,7 @@ const projects = [
     {
         "animationClass": "wow animated fadeInUp projects",
         "website": "http://www.advocate-grinchenko.com.ua/",
-        "preview": "http://www.advocate-grinchenko.com.ua/",
+		"preview": "/img/preview-projects/smm_page.jpg",
         "img": "/img/main/advocate.jpg",
         "altImg": "Advocate",
         "nameProject": "Advocate",
@@ -65,7 +66,7 @@ const projects = [
     {
         "animationClass": "wow animated fadeInUp projects",
         "website": "http://www.pg.deks.ua/",
-        "preview": "http://www.pg.deks.ua/",
+		"preview": "/img/preview-projects/deks.png",
         "img": "/img/main/glass.jpg",
         "altImg": "Print Glass Furniture",
         "nameProject": "Print Glass",
@@ -74,22 +75,42 @@ const projects = [
     {
         "animationClass": "wow animated fadeInUp projects",
         "website": "http://www.promofinance.pl/",
-        "preview": "http://www.promofinance.pl/",
+		"preview": "/img/preview-projects/smm_page.jpg",
         "img": "/img/main/PromoFinance.jpg",
         "altImg": "Promo Finance",
         "nameProject": "Promo Finance",
         "descriptionProject": "descriptionProjectPromo_Finance"
+    },
+    {
+        "animationClass": "wow animated fadeInUp projects",
+        "website": "http://eliteauto.shade-design.com.ua/",
+		"preview": "/img/preview-projects/promo.jpg",
+        "img": "/img/main/eliteAuto.jpg",
+        "altImg": "Elite Auto",
+        "nameProject": "Elite Auto",
+        "descriptionProject": "descriptionProjectElite_Auto"
     }
 ];
 
 export default class Portfolio extends Component {
+
+    changePreviewProject = (newPreview, newNameProject) => {
+
+		const newPreviewProject = new CustomEvent("preview",{
+		    detail : {
+		        newPreview,
+                newNameProject
+		    }
+		});
+		document.dispatchEvent(newPreviewProject);
+    };
 
     getProject = (item, key) => {
         let localizationDescription = "descriptionProject" + item.nameProject.replace(" ","_");
        return (
            <div className={item.animationClass} key={key} data-wow-duration="1.5s">
                <figure>
-                   <Link to={item.website} target="_blank" rel="noopener noreferrer">
+                   <Link to={item.website} target="_blank">
                        <img className="item-img" src={item.img} alt={item.altImg}/></Link>
                    <figcaption>
                        <div className="left">
@@ -97,14 +118,13 @@ export default class Portfolio extends Component {
                            <i18n.text className="description-project" tag="p" text={{key: localizationDescription}}/>
                        </div>
                        <div className="right">
-                           <Link to={item.website} target="_blank" rel="noopener noreferrer"
+                           <Link to={item.website} target="_blank"
                                  className="small-btn website">
                                <i18n.text tag="span" text={{key: "website"}}/>
                            </Link>
-                           <Link to={item.preview} target="_blank" rel="noopener noreferrer"
-                                 className="small-btn preview">
-                               <i18n.text tag="span" text={{key: "preview"}}/>
-                           </Link>
+						   <button className="small-btn preview" onClick={() => this.changePreviewProject(item.preview, item.nameProject)}>
+							   <i18n.text tag="span" text={{key: "preview"}}/>
+						   </button>
                        </div>
                    </figcaption>
                </figure>
@@ -116,7 +136,7 @@ export default class Portfolio extends Component {
         return (
             <div>
                 <Header/>
-                <main id="portfolio" className="offset-section portfolio wow animated fadeIn" data-wow-duration="1.5s">
+                <main id="portfolio" className="wow animated fadeIn offset-section portfolio">
                     <div className="contentMobileAnimate">
                         <div className="top-main width-container">
                             <h2 className="title-page">
@@ -125,13 +145,16 @@ export default class Portfolio extends Component {
                             </h2>
                             <div className="flex-container">
                                 {projects.map(this.getProject)}
-                                <button className="more-project"><i18n.text tag="span" text={{key: "more-projects"}}/></button>
                             </div>
+							<button className="more-project">
+                                <i18n.text tag="span" text={{key: "more-projects"}}/>
+                            </button>
                         </div>
                         <BottomMainForm/>
                     </div>
                 </main>
                 <Footer/>
+				<PreviewsProject/>
             </div>
         )
     }

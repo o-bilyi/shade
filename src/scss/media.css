@@ -63,6 +63,29 @@
   .portfolio .small-btn {
     color: #fff;
     border: 1px solid #fff; }
+  .contact-block {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    transition: width 0.3s ease-in; }
+    .contact-block .left-block, .contact-block .right-block {
+      transition: width 0.3s ease-in;
+      width: 100%; }
+    .contact-block .left-block {
+      padding-left: 10px; }
+    .contact-block .right-block {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      transition: width 0.3s ease-in;
+      padding: 25px 0; }
+    .contact-block .findUsHere {
+      margin-right: 20px;
+      margin-bottom: 0; }
   footer {
     display: none; } }
 
@@ -188,7 +211,17 @@
     .bottom-main .form-container {
       padding-top: 60px;
       margin: auto;
-      max-width: 550px; } }
+      max-width: 550px; }
+  .contact-block .title-block {
+    font-size: 12px; }
+  .contact-block .link-block {
+    font-size: 18px;
+    display: block; }
+  .contact-block .letter,
+  .contact-block .phone-icon {
+    width: 60px; }
+  .contact-block .seperator {
+    display: none; } }
 
 @media all and (max-width: 480px) {
   .title-page {

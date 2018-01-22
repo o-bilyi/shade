@@ -2453,6 +2453,10 @@ html {
   font-size: 14px;
   font-family: "Roboto-Regular", sans-serif; }
 
+body.active {
+  height: 100%;
+  overflow: hidden; }
+
 img {
   max-width: 100%; }
 
@@ -2506,6 +2510,18 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
     fill: #646464; }
   .letter:hover .letter-1 {
     fill: #646464; }
+
+.phone-icon .phone-icon-fill-1 {
+  fill: #979695; }
+
+.phone-icon .phone-icon-fill-2 {
+  fill: #3b3c3b; }
+
+.phone-icon .phone-icon-fill-3 {
+  fill: none;
+  stroke: #979695;
+  stroke-miterlimit: 10;
+  stroke-width: 0.25px; }
 
 .faceBook-icon {
   width: 40px;
@@ -2883,6 +2899,12 @@ nav {
     height: 30px;
     padding-left: 10px; }
   .projects .right {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: row;
+    transition: width 0.3s ease-in;
     max-width: 170px;
     width: 100%;
     text-align: right; }
@@ -2938,33 +2960,6 @@ nav {
   .bottom-main .input-field {
     margin: 0;
     width: 30%; }
-
-.title-about-container, .title-blog-container {
-  max-width: 1230px;
-  margin: auto;
-  padding: 0 10px;
-  width: 100%; }
-
-.title-about-container {
-  padding-bottom: 150px; }
-  .title-about-container .title-page {
-    padding-bottom: 40px; }
-    .title-about-container .title-page .crossed-out:after {
-      content: "";
-      display: block;
-      background-color: #838383;
-      height: 1px;
-      transform: translateY(17px); }
-  .title-about-container .description {
-    font-size: 14px;
-    font-family: "Roboto-Light", sans-serif;
-    color: #797979; }
-
-.about-container {
-  max-width: 955px;
-  margin: auto;
-  padding: 0 10px;
-  width: 100%; }
 
 .user-container {
   display: flex;
@@ -3023,119 +3018,34 @@ nav {
   .user-box .social {
     text-align: center; }
 
-.form-contact {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: space-between;
-  flex-direction: row;
-  transition: width 0.3s ease-in;
+.title-about-container,
+.title-blog-container,
+.title-contact-container {
   max-width: 1230px;
   margin: auto;
   padding: 0 10px;
   width: 100%; }
-  .form-contact .left {
-    width: 40%;
-    max-width: 300px; }
-  .form-contact .right {
-    width: 60%; }
-  .form-contact .left {
-    text-align: center; }
-    .form-contact .left span {
-      text-align: left;
-      display: block; }
-  .form-contact .mail-container, .form-contact .phone-container {
-    font-size: 24px; }
-    .form-contact .mail-container a, .form-contact .phone-container a {
-      font-family: "Cuprum", sans-serif;
-      color: #fff;
-      font-weight: 500; }
-    .form-contact .mail-container span, .form-contact .phone-container span {
-      font-size: 1.286rem;
-      font-weight: 100;
-      margin-bottom: 5px; }
-  .form-contact .phone-container p:nth-child(2) {
-    margin-bottom: 5px; }
-  .form-contact .mail-us, .form-contact .phone-us {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-direction: row;
-    transition: width 0.3s ease-in;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: nowrap; }
-  .form-contact .img-container {
-    margin-right: 15px; }
-  .form-contact .mail-us {
-    margin-bottom: 115px; }
-  .form-contact .max-width-input {
-    max-width: 400px; }
 
-form {
-  position: relative;
-  z-index: 1; }
-  form .input-field {
-    margin-bottom: 50px; }
-  form input {
-    border: none;
-    border-bottom: 1px solid #e5e5e5;
-    background-color: transparent;
-    padding-bottom: 10px;
-    width: 100%;
-    outline: none;
-    font-size: 16px;
-    color: #595959;
+.title-about-container {
+  padding-bottom: 150px; }
+  .title-about-container .title-page {
+    padding-bottom: 40px; }
+    .title-about-container .title-page .crossed-out:after {
+      content: "";
+      display: block;
+      background-color: #838383;
+      height: 1px;
+      transform: translateY(17px); }
+  .title-about-container .description {
+    font-size: 14px;
     font-family: "Roboto-Light", sans-serif;
-    text-transform: capitalize; }
-  form label {
-    font-size: 14px;
-    color: #242424;
-    font-family: "Roboto-Medium", sans-serif; }
-  form .big-btn {
-    margin: 40px auto 0; }
-  form button {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    transition: width 0.3s ease-in;
-    transition: all 0.3s ease-in;
-    width: 240px;
-    height: 40px;
-    z-index: 1;
-    margin: auto;
-    cursor: pointer;
-    font-size: 14px;
-    text-transform: uppercase;
-    font-family: "Roboto-Medium", sans-serif;
-    border: 1px solid #333333;
-    background-color: transparent; }
-    form button:hover {
-      background-color: #333333;
-      color: #fff; }
+    color: #797979; }
 
-.have-nice-day {
-  padding: 170px 0 60px; }
-  .have-nice-day h3 {
-    font-size: 53px;
-    color: #fff;
-    text-align: center;
-    font-family: "Fashion", sans-serif;
-    font-weight: 400; }
-
-.contact {
-  background: url("/img/main/contact-bg.jpg") no-repeat center;
-  background-size: cover;
-  margin-top: 50px;
-  color: #fff; }
-  .contact .title-page {
-    text-align: center;
-    padding-bottom: 130px; }
-    .contact .title-page span {
-      font-weight: 100; }
+.about-container {
+  max-width: 955px;
+  margin: auto;
+  padding: 0 10px;
+  width: 100%; }
 
 .title-blog-container .title-page {
   padding-bottom: 50px; }
@@ -3192,16 +3102,137 @@ form {
       text-decoration: line-through;
       color: #333333; }
 
-/*main end ==================================>*/
-/*feedback modal ==========================*/
-.modal-open .modal {
-  overflow-x: hidden;
-  overflow-y: hidden; }
+.contact-block {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  transition: width 0.3s ease-in;
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 10px;
+  width: 100%;
+  padding: 0; }
+  .contact-block .left-block {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    transition: width 0.3s ease-in;
+    padding-left: 50px;
+    background: url("/img/main/contact-us-bg.jpg") no-repeat center;
+    background-size: cover;
+    min-height: 265px;
+    width: 75%; }
+  .contact-block .right-block {
+    width: 25%;
+    background-color: #333333;
+    align-self: stretch;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: width 0.3s ease-in; }
+  .contact-block .findUsHere {
+    font-size: 18px;
+    font-style: italic;
+    font-family: "Roboto-Light", sans-serif;
+    margin-bottom: 20px;
+    color: #b7b2b2; }
+  .contact-block .mail-us,
+  .contact-block .phone-us {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    transition: width 0.3s ease-in; }
+  .contact-block .mail-us {
+    margin-bottom: 25px; }
+  .contact-block .icon-block {
+    margin-right: 20px; }
+  .contact-block .letter,
+  .contact-block .phone-icon {
+    width: 80px; }
+  .contact-block .faceBook-icon,
+  .contact-block .linked-icon {
+    width: 60px;
+    height: 60px; }
+  .contact-block .letter .letter-2 {
+    fill: #fff; }
+  .contact-block .phone-icon .phone-icon-fill-2 {
+    fill: #fff; }
+  .contact-block .title-block {
+    font-size: 18px;
+    color: #b7b2b2;
+    font-family: "Roboto-Light", sans-serif;
+    margin-bottom: 5px; }
+  .contact-block .link-block, .contact-block .seperator {
+    font-family: "Roboto-Medium", sans-serif;
+    font-size: 24px;
+    color: #fff; }
+  .contact-block .seperator {
+    display: inline-block;
+    margin: 0 5px; }
 
+/*main end ==================================>*/
+/*form begin ==================================>*/
+form {
+  position: relative;
+  z-index: 1; }
+  form .input-field {
+    margin-bottom: 50px; }
+  form input {
+    border: none;
+    border-bottom: 1px solid #e5e5e5;
+    background-color: transparent;
+    padding-bottom: 10px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    color: #595959;
+    font-family: "Roboto-Light", sans-serif;
+    text-transform: capitalize; }
+  form label {
+    font-size: 14px;
+    color: #242424;
+    font-family: "Roboto-Medium", sans-serif; }
+  form .big-btn {
+    margin: 40px auto 0; }
+  form button {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    transition: width 0.3s ease-in;
+    transition: all 0.3s ease-in;
+    width: 240px;
+    height: 40px;
+    z-index: 1;
+    margin: auto;
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: "Roboto-Medium", sans-serif;
+    border: 1px solid #333333;
+    background-color: transparent; }
+    form button:hover {
+      background-color: #333333;
+      color: #fff; }
+
+/*form end ==================================>*/
+/*feedback modal ==========================*/
 .feedback-modal .modal-dialog {
   max-width: 525px;
-  margin: 50px auto 0;
-  transition: transform 0.3s ease-out; }
+  margin: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0; }
 
 .feedback-modal .head-modal {
   display: flex;
@@ -3219,8 +3250,7 @@ form {
   background-color: #fff;
   width: 65px;
   padding: 10px 0;
-  text-align: center;
-  border-radius: 0 10px 0 0; }
+  text-align: center; }
   .feedback-modal .close-modal svg {
     width: 25px;
     fill: rgba(46, 46, 46, 0.8); }
@@ -3231,13 +3261,6 @@ form {
   font-size: 18px;
   color: rgba(46, 46, 46, 0.8); }
 
-.feedback-modal .icon-air {
-  width: 65px;
-  text-align: center;
-  border-radius: 0; }
-  .feedback-modal .icon-air svg {
-    fill: rgba(46, 46, 46, 0.8); }
-
 .feedback-modal .modal-body {
   position: static;
   background-color: #fff;
@@ -3247,8 +3270,78 @@ form {
   border: none;
   padding: 30px; }
 
+#feedback {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1080;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none; }
+  #feedback.active {
+    display: block; }
+
 /*feedback modal ==========================*/
-/*footer begin ==================================>*/
+/*preview-modal ==========================*/
+.preview-modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(44, 44, 44, 0.5);
+  display: none;
+  z-index: 1090; }
+  .preview-modal.show {
+    display: block; }
+  .preview-modal .modal-content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: auto; }
+  .preview-modal .head-modal {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    transition: width 0.3s ease-in;
+    height: 50px;
+    background-color: #303030;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding-right: 10px; }
+  .preview-modal .title-modal {
+    font-size: 24px;
+    font-family: "Roboto-Medium", sans-serif;
+    color: #fff;
+    text-align: center;
+    flex-grow: 1; }
+  .preview-modal .close-modal {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    transition: width 0.3s ease-in;
+    border: 1px solid #fff;
+    width: 120px;
+    height: 40px;
+    font-size: 24px;
+    color: #fff;
+    text-transform: uppercase; }
+  .preview-modal .modal-body {
+    padding-top: 50px; }
+    .preview-modal .modal-body img {
+      width: 100%; }
+
+/*preview-modal ==========================*/
+/*footer ==================================>*/
 footer {
   background-color: #2c2c2c;
   font-size: 14px;
@@ -3279,7 +3372,7 @@ footer {
   .social a:first-child {
     margin-right: 5px; }
 
-/*footer end ==================================>*/
+/*footer ==================================>*/
 .button-lan-container {
   font-family: "Roboto-Medium", sans-serif;
   display: flex;
@@ -3304,9 +3397,6 @@ footer {
   .button-lan-container.ua .ukraine {
     color: #7d7d7d;
     font-family: "Roboto-Medium", sans-serif; }
-
-#feedback {
-  display: none; }
 
 @media all and (min-width: 1367px) {
   .bottom-main {
@@ -3373,6 +3463,29 @@ footer {
   .portfolio .small-btn {
     color: #fff;
     border: 1px solid #fff; }
+  .contact-block {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    transition: width 0.3s ease-in; }
+    .contact-block .left-block, .contact-block .right-block {
+      transition: width 0.3s ease-in;
+      width: 100%; }
+    .contact-block .left-block {
+      padding-left: 10px; }
+    .contact-block .right-block {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      transition: width 0.3s ease-in;
+      padding: 25px 0; }
+    .contact-block .findUsHere {
+      margin-right: 20px;
+      margin-bottom: 0; }
   footer {
     display: none; } }
 
@@ -3498,7 +3611,17 @@ footer {
     .bottom-main .form-container {
       padding-top: 60px;
       margin: auto;
-      max-width: 550px; } }
+      max-width: 550px; }
+  .contact-block .title-block {
+    font-size: 12px; }
+  .contact-block .link-block {
+    font-size: 18px;
+    display: block; }
+  .contact-block .letter,
+  .contact-block .phone-icon {
+    width: 60px; }
+  .contact-block .seperator {
+    display: none; } }
 
 @media all and (max-width: 480px) {
   .title-page {

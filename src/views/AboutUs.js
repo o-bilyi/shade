@@ -3,7 +3,6 @@ import i18n from "i18n-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import FindUs from "../components/FindUs";
-import Feedback from "../components/Modal";
 import BottomMainForm from "../components/bottom-main-form";
 
 const team = [
@@ -60,7 +59,7 @@ export default class AboutUs extends Component {
             <div className="AboutUs">
                 <Header/>
                 <div className="offset-section contentMobileAnimate">
-                    <div data-wow-duration="1.5s" className="wow animated fadeIn title-about-container">
+                    <div data-wow-duration="1.5s" className="wow animated fadeInDown title-about-container">
                         <h2 className="title-page">
                             <i18n.text className="crossed-out" tag="strong" text={{ key: "about-us" }}/>
                             <i18n.span text={{ key: "teamInspired" }}/>
@@ -75,7 +74,6 @@ export default class AboutUs extends Component {
 					<BottomMainForm/>
                 </div>
                 <Footer/>
-                <Feedback/>
             </div>
         );
     };

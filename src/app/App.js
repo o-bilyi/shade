@@ -13,7 +13,6 @@ import ContactUs from "../views/ContactUs";
 import Blog from "../views/Blog";
 import Preload from "../components/Preload";
 import ShowPopup from "../components/ShowPopup";
-import Feedback from "../components/Modal";
 
 class App extends Component {
     static propTypes = {
@@ -69,7 +68,6 @@ class App extends Component {
                         <Route path="/Blog" component={Blog}/>
                         <Redirect path="*" to="/"/>
                     </Switch>
-                    <Feedback/>
                     <ShowPopup/>
                     <Preload/>
                 </div>
