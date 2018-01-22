@@ -4,11 +4,11 @@
   .bottom-main {
     background-size: cover;
     min-height: 720px;
-  }
-  .form-container {
-    max-width: 760px;
-    .title-form {
-      font-size: 40px;
+    .form-container {
+      max-width: 760px;
+      .title-form {
+        font-size: 40px;
+      }
     }
   }
 }
@@ -40,9 +40,11 @@
 }
 
 @media all and (max-width: 1080px) {
+  .title-page {
+    text-align: center;
+  }
   .portfolio {
     .title-page {
-      text-align: center;
       padding: 40px 0;
     }
     figcaption {
@@ -70,6 +72,29 @@
       border: 1px solid #fff;
     }
   }
+
+  .contact-block {
+    @include flex(flex,wrap,center,space-between,column);
+
+    .left-block,.right-block {
+      @include transition(width);
+      width: 100%;
+    }
+
+    .left-block {
+      padding-left: 10px;
+    }
+
+    .right-block {
+      @include flex(flex,wrap,center,center,row);
+      padding: 25px 0;
+    }
+    .findUsHere {
+      margin-right: 20px;
+      margin-bottom: 0;
+    }
+  }
+
   footer {
     display: none;
   }
@@ -194,7 +219,24 @@
     }
     .projects {
       width: 100%;
-      max-width: 585px;
+    }
+  }
+
+  .user-container {
+      @include flex(flex,wrap,center,center,column);
+      .user-box {
+        .user-head {
+          background-size: cover;
+        }
+        width: 100%;
+        margin-bottom: 130px;
+      }
+    }
+
+  .blog-container {
+    @include flex(flex,wrap,center,center,column);
+    .item {
+      width: 100%;
     }
   }
 
@@ -204,7 +246,7 @@
       margin-left: 280px;
       margin-bottom: 45px;
     }
-    .input-field,.big-btn {
+    .input-field, .big-btn {
       width: 100%;
     }
   }
@@ -214,7 +256,6 @@
 @media all and (max-width: 680px) {
   .portfolio {
     .title-page {
-      font-size: 16px;
       strong {
         width: 60px;
       }
@@ -231,9 +272,33 @@
       max-width: 550px;
     }
   }
+
+  .contact-block {
+
+    .title-block {
+      font-size: 12px;
+    }
+    .link-block {
+      font-size: 18px;
+      display: block;
+    }
+
+    .letter,
+    .phone-icon{
+      width: 60px;
+    }
+
+    .seperator {
+      display: none;
+    }
+
+  }
 }
 
 @media all and (max-width: 480px) {
+  .title-page {
+    font-size: 16px;
+  }
   .index-header {
     .title-logo {
       padding-top: 5px;
@@ -248,6 +313,32 @@
     }
     .button-lan-container {
       font-size: 14px;
+    }
+  }
+  .user-box {
+    .user-head {
+      height: 55px;
+    }
+    .user-img {
+      max-width: 100px;
+    }
+    .user-title {
+      h2{
+        font-size: 18px;
+      }
+      span {
+        font-size: 11px;
+      }
+    }
+    .user-description {
+      font-size: 12px;
+    }
+  }
+  .title-about-container {
+    .title-page {
+      .crossed-out:after {
+        transform: translateY(4px);
+      }
     }
   }
 }

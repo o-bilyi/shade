@@ -3,7 +3,7 @@ import {Link, NavLink} from "react-router-dom";
 import i18n from "i18n-react";
 import ReactSVG from "react-svg";
 import FindUs from "../components/FindUs";
-// import { showModal } from "../components/Modal";
+import Modal from "../components/Modal";
 
 export default class Header extends Component {
 	constructor(props) {
@@ -35,7 +35,6 @@ export default class Header extends Component {
 		const toggleMenu = this.state.menuShowed ? "toggle-menu active" : "toggle-menu";
 		return (
 			<header>
-
 				<div className="header-container-width">
 					<Link className="header-logo" to={"portfolio"}>
 						<ReactSVG className="header-logo-icon"
@@ -83,12 +82,7 @@ export default class Header extends Component {
 						</div>
 					</nav>
 					<div className="email-header">
-						{/* <button onClick={showModal}>*/}
-						{/* <ReactSVG path={require("../svg/letter.svg")}/>*/}
-						{/* </button>*/}
-						<button>
-							<ReactSVG path={require("../svg/letter.svg")}/>
-						</button>
+						<Modal/>
 					</div>
 				</div>
 			</header>

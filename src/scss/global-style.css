@@ -7,6 +7,10 @@ html {
   font-size: 14px;
   font-family: "Roboto-Regular", sans-serif; }
 
+body.active {
+  height: 100%;
+  overflow: hidden; }
+
 img {
   max-width: 100%; }
 
@@ -60,6 +64,18 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
     fill: #646464; }
   .letter:hover .letter-1 {
     fill: #646464; }
+
+.phone-icon .phone-icon-fill-1 {
+  fill: #979695; }
+
+.phone-icon .phone-icon-fill-2 {
+  fill: #3b3c3b; }
+
+.phone-icon .phone-icon-fill-3 {
+  fill: none;
+  stroke: #979695;
+  stroke-miterlimit: 10;
+  stroke-width: 0.25px; }
 
 .faceBook-icon {
   width: 40px;

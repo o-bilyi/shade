@@ -1,28 +1,29 @@
 import React, {Component} from "react";
+import {Link} from "react-router-dom";
 import ReactSVG from "react-svg";
 import PropTypes from "prop-types";
 
 export default class FindUs extends Component {
     static propTypes = {
-        language: PropTypes.string,
         facebook : PropTypes.string,
         linkedin : PropTypes.string
     };
 
-    defaultProps = {
+	static defaultProps = {
         facebook : "https://www.facebook.com/sasha.beluy.56",
         linkedin : "https://www.linkedin.com/in/olexander-bilyi-83156b10a"
-    }
+    };
+
     render(){
         const {facebook,linkedin} = this.props;
         return(
             <div className="social">
-                <a href={facebook} target="_blank" rel="noopener noreferrer">
+                <Link  to={facebook} target="_blank">
                     <ReactSVG  path={require("../svg/fb.svg")}/>
-                </a>
-                <a href={linkedin} target="_blank" rel="noopener noreferrer">
+                </Link>
+                <Link  to={linkedin} target="_blank">
                     <ReactSVG  path={require("../svg/linkedin.svg")}/>
-                </a>
+                </Link>
             </div>
         );
     };
