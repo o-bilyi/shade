@@ -66,7 +66,7 @@ const projects = [
 	{
 		"animationClass" : "wow animated fadeInUp projects",
 		"website" : "http://www.pg.deks.ua/",
-		"preview" : "/img/preview-projects/deks.jpg,
+		"preview" : "/img/preview-projects/deks.jpg,",
 		"img" : "/img/main/glass.jpg",
 		"altImg" : "Print Glass Furniture",
 		"nameProject" : "Print Glass",
