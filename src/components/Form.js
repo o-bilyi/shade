@@ -2,19 +2,22 @@ import React, {Component} from "react";
 import {showPopup} from "../components/ShowPopup";
 import i18n from "i18n-react";
 
+const initialState = {
+	user: "",
+	site: "",
+	email: ""
+};
+
 export default class Form extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            user: "",
-            site: "",
-            email: ""
-        };
+        this.state = initialState;
     }
 
     onFieldsChange = event => {
         this.setState({[event.target.name]: event.target.value});
     }
+
     handleSubmit = event => {
         event.preventDefault();
         let formData = new FormData(event.target);
@@ -32,7 +35,9 @@ export default class Form extends Component {
         .then(status)
         .then(() => {
             showPopup();
-            event.target.reset();
+            this.setState({
+                ...initialState
+            })
         })
         .catch(function(error) {
             console.warn("Request failed", error);
@@ -40,7 +45,7 @@ export default class Form extends Component {
     };
 
     render() {
-        return (
+		return (
             <form  className="form" method="post" onSubmit={this.handleSubmit}>
                     <div className="input-field max-width-input">
                         <i18n.text tag="label" htmlFor="your-name" text={{ key: "my-name-is" }}/>

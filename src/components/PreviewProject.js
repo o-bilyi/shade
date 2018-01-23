@@ -1,4 +1,5 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
+import Preload from "../components/Preload";
 
 export default class PreviewProject extends Component {
 	constructor(props) {
@@ -6,7 +7,8 @@ export default class PreviewProject extends Component {
 		this.state = {
 			showModal : false,
 			preview : "",
-			title : ""
+			title : "",
+		 	imageStatus: false
 		};
 	}
 
@@ -22,6 +24,7 @@ export default class PreviewProject extends Component {
 		} else {
 			this.setState({
 				showModal : true,
+				imageStatus : true,
 				preview : preview.newPreview,
 				title : preview.newNameProject
 			});
@@ -30,12 +33,18 @@ export default class PreviewProject extends Component {
 		body.classList.toggle("active");
 	};
 
+	imageLoaded = () => {
+		this.setState({
+			imageStatus: false
+		});
+	};
+
 	render() {
 		const toggleModal = this.state.showModal ? "preview-modal show" : "preview-modal";
 		const {preview, title} = this.state;
 		return (
 			<div className={toggleModal} role="dialog">
-				<div data-wow-offset="0" className="wow animated fadeIn modal-content">
+				<div className="modal-content">
 					<div className="head-modal">
 						<h4 className="title-modal">{title}</h4>
 						<button onClick={this.switchModal} className="close-modal">
@@ -43,8 +52,12 @@ export default class PreviewProject extends Component {
 						</button>
 					</div>
 					<div className="modal-body">
-						{/* <img src={preview} alt={title} onLoad={}/>*/}
-						<img src={preview} alt={title}/>
+						 <img
+							 onLoad={this.imageLoaded}
+							 src={preview}
+							 alt={title}
+						 />
+						<Preload preloadShow={this.state.imageStatus}/>
 					</div>
 				</div>
 			</div>

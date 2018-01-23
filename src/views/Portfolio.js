@@ -12,7 +12,7 @@ const projects = [
 		// "website": "http://www.rivoli-hotel.com",
 		// "preview": "http://www.rivoli-hotel.com",
 		"website" : "http://rivoli.shade-design.com.ua/",
-		"preview" : "/img/preview-projects/rivoli.png",
+		"preview" : "/img/preview-projects/rivoli.jpg",
 		"img" : "/img/main/rivoli.jpg",
 		"altImg" : "Rivoli",
 		"nameProject" : "Rivoli",
@@ -21,7 +21,7 @@ const projects = [
 	{
 		"animationClass" : "wow animated fadeInUp projects",
 		"website" : "http://www.consult-group.com.ua/",
-		"preview" : "/img/preview-projects/consult_group.png",
+		"preview" : "/img/preview-projects/consult_group.jpg",
 		"img" : "/img/main/consult-group.jpg",
 		"altImg" : "Consult Group",
 		"nameProject" : "Consult Group",
@@ -30,7 +30,7 @@ const projects = [
 	{
 		"animationClass" : "wow animated fadeInUp projects",
 		"website" : "http://www.movearoundprice.com/",
-		"preview" : "/img/preview-projects/rideIq.png",
+		"preview" : "/img/preview-projects/rideIq.jpg",
 		"img" : "/img/main/rideIq.jpg",
 		"altImg" : "Ride IQ",
 		"nameProject" : "Ride IQ",
@@ -39,7 +39,7 @@ const projects = [
 	{
 		"animationClass" : "wow animated fadeInUp projects",
 		"website" : "http://www.gazprom-neft.ru/",
-		"preview" : "/img/preview-projects/gaz_prom.png",
+		"preview" : "/img/preview-projects/gaz_prom.jpg",
 		"img" : "/img/main/gazz.jpg",
 		"altImg" : "Gazprom neft",
 		"nameProject" : "Gazprom neft",
@@ -66,7 +66,7 @@ const projects = [
 	{
 		"animationClass" : "wow animated fadeInUp projects",
 		"website" : "http://www.pg.deks.ua/",
-		"preview" : "/img/preview-projects/deks.png",
+		"preview" : "/img/preview-projects/deks.jpg,
 		"img" : "/img/main/glass.jpg",
 		"altImg" : "Print Glass Furniture",
 		"nameProject" : "Print Glass",
@@ -93,7 +93,9 @@ const projects = [
 ];
 
 const newPreviewProject = new CustomEvent("preview");
+
 export default class Portfolio extends Component {
+
 	changePreviewProject = (newPreview, newNameProject) => {
 		newPreviewProject.newPreview = newPreview;
 		newPreviewProject.newNameProject = newNameProject;
@@ -129,7 +131,6 @@ export default class Portfolio extends Component {
 	};
 
 	render() {
-		console.warn("render portfolio");
 		return (
 			<div>
 				<Header/>

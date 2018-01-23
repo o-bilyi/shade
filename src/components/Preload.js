@@ -1,24 +1,33 @@
 import React, {Component} from "react";
+import PropTypes from "prop-types";
 
 export default class Preload extends Component {
 
-    constructor(props){
-        super(props);
-        this.state = {
-            preloadShow : true
-        };
+	static propTypes = {
+		preloadShow : PropTypes.bool
+	};
 
-        window.onload = () => {
-            this.setState({
-                preloadShow : false
-            });
-        }
-    }
+	static defaultProps = {
+		preloadShow : false
+	};
 
-    render() {
-        const preloadClass = this.state.preloadShow ? "preload" : "preload delete";
-        return (
-            <div className={preloadClass}>
+	// constructor(props){
+	//     super(props);
+	// this.state = {
+	//     preloadShow : this.props.preloadShow
+	// };
+
+	// window.onload = () => {
+	//     this.setState({
+	//         preloadShow : false
+	//     });
+	// }
+	// }
+
+	render() {
+		const preloadClass = this.props.preloadShow ? "preload" : "preload delete";
+		return (
+			<div className={preloadClass}>
                 <span className="preloadText">
                     <span className="world">L</span>
                     <span className="world">o</span>
@@ -28,7 +37,7 @@ export default class Preload extends Component {
                     <span className="spin"/>
                     <span className="spin"/>
                 </span>
-            </div>
-        );
-    }
+			</div>
+		);
+	}
 }
