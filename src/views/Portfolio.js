@@ -95,12 +95,12 @@ const projects = [
 const newPreviewProject = new CustomEvent("preview");
 
 export default class Portfolio extends Component {
-
-	constructor(props){
+	constructor(props) {
 		super(props);
 		this.state = {
-			project : []
-		}
+			projects : projects.slice(0, 4),
+			haveMore : projects.length > 4
+		};
 	}
 
 	changePreviewProject = (newPreview, newNameProject) => {
@@ -137,18 +137,13 @@ export default class Portfolio extends Component {
 		);
 	};
 
-	countProject = () => {
-		const count = [];
-
-		count.push(projects.map(this.getProject));
-
-		 this.setState({
-			project : count
+	showMore = () => {
+		const currentProjects = this.state.projects;
+		const newProjects = currentProjects.concat(projects.slice(currentProjects.length, currentProjects.length + 4));
+		this.setState({
+			projects : newProjects,
+			haveMore : newProjects.length !== projects.length
 		});
-
-		 console.warn(count);
-
-		return count;
 	};
 
 	render() {
@@ -163,11 +158,11 @@ export default class Portfolio extends Component {
 								<i18n.span text={{key : "solutionsForYourIdeas"}}/>
 							</h2>
 							<div className="flex-container">
-								{projects.map(this.getProject)}
+								{this.state.projects.map(this.getProject)}
 							</div>
-							<button className="more-project">
+							{ this.state.haveMore && <button className="more-project" onClick={this.showMore}>
 								<i18n.text tag="span" text={{key : "more-projects"}}/>
-							</button>
+							</button> }
 						</div>
 						<BottomMainForm/>
 					</div>
