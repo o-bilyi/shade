@@ -1,5 +1,5 @@
 {
-  "name": "hello-world",
+  "name": "shadeDesign",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -21,8 +21,8 @@
     "wowjs": "^1.1.3"
   },
   "scripts": {
-    "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "node-sass-chokidar src/ -o src/ --watch",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm run build-css && react-scripts build",
