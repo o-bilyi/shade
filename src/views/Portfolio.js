@@ -9,8 +9,15 @@ import PreviewsProject from "../components/PreviewProject";
 const projects = [
 	{
 		"animationClass" : "wow animated fadeInUp projects",
-		// "website": "http://www.rivoli-hotel.com",
-		// "preview": "http://www.rivoli-hotel.com",
+		"website" : "http://eliteauto.shade-design.com.ua/",
+		"preview" : "/img/preview-projects/eliteAuto.jpg",
+		"img" : "/img/main/eliteAuto.jpg",
+		"altImg" : "Elite Auto",
+		"nameProject" : "Elite Auto",
+		"descriptionProject" : "descriptionProjectElite_Auto"
+	},
+	{
+		"animationClass" : "wow animated fadeInUp projects",
 		"website" : "http://rivoli.shade-design.com.ua/",
 		"preview" : "/img/preview-projects/rivoli.jpg",
 		"img" : "/img/main/rivoli.jpg",
@@ -65,7 +72,7 @@ const projects = [
 	},
 	{
 		"animationClass" : "wow animated fadeInUp projects",
-		"website" : "http://www.pg.deks.ua/",
+		"website" : "http://pg.deks.ua/",
 		"preview" : "/img/preview-projects/deks.jpg,",
 		"img" : "/img/main/glass.jpg",
 		"altImg" : "Print Glass Furniture",
@@ -80,15 +87,6 @@ const projects = [
 		"altImg" : "Promo Finance",
 		"nameProject" : "Promo Finance",
 		"descriptionProject" : "descriptionProjectPromo_Finance"
-	},
-	{
-		"animationClass" : "wow animated fadeInUp projects",
-		"website" : "http://eliteauto.shade-design.com.ua/",
-		"preview" : "/img/preview-projects/promo.jpg",
-		"img" : "/img/main/eliteAuto.jpg",
-		"altImg" : "Elite Auto",
-		"nameProject" : "Elite Auto",
-		"descriptionProject" : "descriptionProjectElite_Auto"
 	}
 ];
 

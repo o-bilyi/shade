@@ -15,6 +15,7 @@
   }
 }
 
+
 .index-header {
   @include flex(flex, wrap, center, center, column);
   height: 100vh;
@@ -384,7 +385,7 @@ nav {
     @include transition();
     position: relative;
     filter: grayscale(100%);
-    box-shadow: 0px 1px 2px 0px rgba(66, 67, 67, 0.52);
+    box-shadow: 0 1px 2px 0 rgba(66, 67, 67, 0.52);
     max-height: 285px;
     width: 100%;
     &:hover {
@@ -505,7 +506,7 @@ nav {
   width: 49%;
   box-sizing: border-box;
   background-color: #333333;
-  box-shadow: 0.347px 1.97px 5px 0px rgba(66, 67, 67, 0.24);
+  box-shadow: 0.347px 1.97px 5px 0 rgba(66, 67, 67, 0.24);
   min-height: 300px;
 
   .user-head {
@@ -520,7 +521,7 @@ nav {
     transform: translateY(-19px);
     margin-left: 10px;
     margin-right: 10px;
-    box-shadow: 0.347px 1.97px 5px 0px rgba(66, 67, 67, 0.24);
+    box-shadow: 0.347px 1.97px 5px 0 rgba(66, 67, 67, 0.24);
     border-radius: 50%;
     overflow: hidden;
 
@@ -610,7 +611,7 @@ nav {
     width: 49%;
     text-align: center;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0px 0px 4px 0px rgba(66, 67, 67, 0.21);
+    box-shadow: 0 0 4px 0 rgba(66, 67, 67, 0.21);
     margin-bottom: 25px;
   }
   .blog-title {
