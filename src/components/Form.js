@@ -35,9 +35,7 @@ export default class Form extends Component {
         .then(status)
         .then(() => {
             showPopup();
-            this.setState({
-                ...initialState
-            })
+            this.setState(initialState)
         })
         .catch(function(error) {
             console.warn("Request failed", error);

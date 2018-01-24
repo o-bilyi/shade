@@ -96,6 +96,13 @@ const newPreviewProject = new CustomEvent("preview");
 
 export default class Portfolio extends Component {
 
+	constructor(props){
+		super(props);
+		this.state = {
+			project : []
+		}
+	}
+
 	changePreviewProject = (newPreview, newNameProject) => {
 		newPreviewProject.newPreview = newPreview;
 		newPreviewProject.newNameProject = newNameProject;
@@ -128,6 +135,20 @@ export default class Portfolio extends Component {
 				</figure>
 			</div>
 		);
+	};
+
+	countProject = () => {
+		const count = [];
+
+		count.push(projects.map(this.getProject));
+
+		 this.setState({
+			project : count
+		});
+
+		 console.warn(count);
+
+		return count;
 	};
 
 	render() {

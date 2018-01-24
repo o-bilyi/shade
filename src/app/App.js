@@ -11,6 +11,7 @@ import Portfolio from "../views/Portfolio";
 import AboutUs from "../views/AboutUs";
 import ContactUs from "../views/ContactUs";
 import Blog from "../views/Blog";
+import ShowPopup from "../components/ShowPopup";
 
 class App extends Component {
     static propTypes = {
@@ -66,8 +67,7 @@ class App extends Component {
                         <Route path="/Blog" component={Blog}/>
                         <Redirect path="*" to="/"/>
                     </Switch>
-
-                    {/* <Preload/>*/}
+					<ShowPopup/>
                 </div>
             </Router>
         );

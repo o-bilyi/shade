@@ -12,7 +12,8 @@ export default class ShowPopup extends Component {
     render() {
         return (
             <div id="popupMessage" className="wow animated bounceInDown">
-                <span>Message sent</span>
+                <span className="title-popup">Success</span>
+                <span className="sub-title-popup">Feedback successful!</span>
             </div>
         );
     }

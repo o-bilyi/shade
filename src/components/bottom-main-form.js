@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import Form from "./Form";
-import ShowPopup from "../components/ShowPopup";
+
 
 export default class bottomMainForm extends Component {
     render(){
@@ -10,7 +10,6 @@ export default class bottomMainForm extends Component {
                     <h2 className="title-form">U’VE LIKED OUR WORKS. get in touch</h2>
                     <Form/>
                 </div>
-				<ShowPopup/>
             </div>
         );
     }
