@@ -408,7 +408,7 @@ nav {
     color: #383838;
     border: 1px solid #383838;
     height: 30px;
-    width: 80px;
+    width: 100px;
     &:hover {
       color: #afafaf;
       border-color: #afafaf;
@@ -432,7 +432,7 @@ nav {
 
   .left {
     @include flex(flex, wrap, center, flex-start);
-    max-width: 400px;
+    max-width: 360px;
     width: 100%;
     background-color: #333333;
     color: #fff;
@@ -442,7 +442,7 @@ nav {
 
   .right {
     @include flex();
-    max-width: 170px;
+    max-width: 210px;
     width: 100%;
     text-align: right;
   }

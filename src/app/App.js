@@ -31,6 +31,7 @@ class App extends Component {
     componentWillReceiveProps(newProps) {
         if (newProps.language !== this.props.language) {
             this.setLang(newProps.language);
+			localStorage.setItem("language", newProps.language);
         }
     }
 

@@ -4,22 +4,17 @@
   "blog": "Blog",
   "contact-us": "Contacts",
   "realizeYourIdeas": "Realize your ideas with",
-
   "press-to-continue": "Press to continue",
-
   "lear-more": "learn more",
   "more-articles": "more articles",
   "more-projects": "more projects",
-
   "solutionsForYourIdeas": "Solutions for your ideas",
   "teamInspired": "A team inspired by the design",
-
   "alwaysReadyToHelp": "Always ready to help you.",
   "findUsHere": "or find us here:",
-
   "my-name-is": "my name is",
   "i-liked": "I’d like to have website for",
-  "more-details-email": "my E-mail",
+  "more-details-email": "our E-mail",
   "send-message": "send message",
 
   "website": "website",
@@ -27,6 +22,9 @@
 
   "changeTextOne": "passion",
   "changeTextTwo": "support",
+
+  "success" : "Success",
+  "feedback-successful" : "Feedback successful",
 
   "aboutUsDescription" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.",
   "fromDesigners" : "From designers for designers",
@@ -45,7 +43,7 @@
   "blogDescriptionArticle_four": "Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamcolaboris nisi ut aliquip ex ea commodo consequat. 4",
 
   "descriptionProjectRivoli": "City Hotel Club",
-  "descriptionProjectConsult_Group": "registration of Romanian passport",
+  "descriptionProjectConsult": "registration of Romanian passport",
   "descriptionProjectRide_IQ": "The program for building a trip route",
   "descriptionProjectGazprom_neft": "Order of transportation of oil",
   "descriptionProjectSMM": "Import-export wholesale coffee",

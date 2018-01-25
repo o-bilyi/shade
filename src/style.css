@@ -2850,7 +2850,7 @@ nav {
     transition: all 0.3s ease-in;
     position: relative;
     filter: grayscale(100%);
-    box-shadow: 0px 1px 2px 0px rgba(66, 67, 67, 0.52);
+    box-shadow: 0 1px 2px 0 rgba(66, 67, 67, 0.52);
     max-height: 285px;
     width: 100%; }
     .projects .item-img:hover {
@@ -2877,7 +2877,7 @@ nav {
     color: #383838;
     border: 1px solid #383838;
     height: 30px;
-    width: 80px; }
+    width: 100px; }
     .projects .small-btn:hover {
       color: #afafaf;
       border-color: #afafaf; }
@@ -2899,7 +2899,7 @@ nav {
     justify-content: flex-start;
     flex-direction: row;
     transition: width 0.3s ease-in;
-    max-width: 400px;
+    max-width: 360px;
     width: 100%;
     background-color: #333333;
     color: #fff;
@@ -2912,7 +2912,7 @@ nav {
     justify-content: space-between;
     flex-direction: row;
     transition: width 0.3s ease-in;
-    max-width: 170px;
+    max-width: 210px;
     width: 100%;
     text-align: right; }
 
@@ -2982,7 +2982,7 @@ nav {
   width: 49%;
   box-sizing: border-box;
   background-color: #333333;
-  box-shadow: 0.347px 1.97px 5px 0px rgba(66, 67, 67, 0.24);
+  box-shadow: 0.347px 1.97px 5px 0 rgba(66, 67, 67, 0.24);
   min-height: 300px; }
   .user-box .user-head {
     display: flex;
@@ -2999,7 +2999,7 @@ nav {
     transform: translateY(-19px);
     margin-left: 10px;
     margin-right: 10px;
-    box-shadow: 0.347px 1.97px 5px 0px rgba(66, 67, 67, 0.24);
+    box-shadow: 0.347px 1.97px 5px 0 rgba(66, 67, 67, 0.24);
     border-radius: 50%;
     overflow: hidden; }
     .user-box .user-img img {
@@ -3069,7 +3069,7 @@ nav {
     width: 49%;
     text-align: center;
     background-color: white;
-    box-shadow: 0px 0px 4px 0px rgba(66, 67, 67, 0.21);
+    box-shadow: 0 0 4px 0 rgba(66, 67, 67, 0.21);
     margin-bottom: 25px; }
     .blog-container .item, .blog-container .item .learn-more {
       color: #797979; }

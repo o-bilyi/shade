@@ -52,7 +52,7 @@ export default class Header extends Component {
 								<ul className="menu">
 									<li className="item-menu">
 										<NavLink to="/portfolio" activeClassName="active" className="link">
-											<i18n.span text={{key : "portfolio"}}/>
+											<i18n.span text={{key : "works"}}/>
 										</NavLink>
 									</li>
 									<li className="item-menu">

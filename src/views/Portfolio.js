@@ -30,9 +30,9 @@ const projects = [
 		"website" : "http://www.consult-group.com.ua/",
 		"preview" : "/img/preview-projects/consult_group.jpg",
 		"img" : "/img/main/consult-group.jpg",
-		"altImg" : "Consult Group",
-		"nameProject" : "Consult Group",
-		"descriptionProject" : "descriptionProjectConsult_Group",
+		"altImg" : "Consult",
+		"nameProject" : "Consult",
+		"descriptionProject" : "descriptionProjectConsult",
 	},
 	{
 		"animationClass" : "wow animated fadeInUp projects",
@@ -73,7 +73,7 @@ const projects = [
 	{
 		"animationClass" : "wow animated fadeInUp projects",
 		"website" : "http://pg.deks.ua/",
-		"preview" : "/img/preview-projects/deks.jpg,",
+		"preview" : "/img/preview-projects/deks.jpg",
 		"img" : "/img/main/glass.jpg",
 		"altImg" : "Print Glass Furniture",
 		"nameProject" : "Print Glass",
@@ -145,6 +145,7 @@ export default class Portfolio extends Component {
 	};
 
 	render() {
+		const {projects, haveMore} = this.state;
 		return (
 			<div>
 				<Header/>
@@ -156,9 +157,9 @@ export default class Portfolio extends Component {
 								<i18n.span text={{key : "solutionsForYourIdeas"}}/>
 							</h2>
 							<div className="flex-container">
-								{this.state.projects.map(this.getProject)}
+								{projects.map(this.getProject)}
 							</div>
-							{ this.state.haveMore && <button className="more-project" onClick={this.showMore}>
+							{ haveMore && <button className="more-project" onClick={this.showMore}>
 								<i18n.text tag="span" text={{key : "more-projects"}}/>
 							</button> }
 						</div>
