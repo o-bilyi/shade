@@ -7,18 +7,32 @@ const initialState = {
 	site : "",
 	email : "",
 	error : {
-		user : {
-			errorText : "",
-			errorField : true
-		},
-		site : {
-			errorText : "",
-			errorField : true
-		},
-		email : {
-			errorText : "",
-			errorField : true
+		user : null,
+		site : null,
+		email : null
+	}
+};
+
+const validation = {
+	user : (val) => {
+		if (val.length < 2) {
+			return "your name must be greater than 2 characters";
 		}
+		return null;
+	},
+	email : (val) => {
+		let error = null;
+		const emailValidation = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+		if (!emailValidation.test(val)) {
+			error = "description must be greater than 10 characters";
+		}
+		return error;
+	},
+	site : (val) => {
+		if (val.length < 10) {
+			return "description must be greater than 10 characters";
+		}
+		return null;
 	}
 };
 
@@ -28,101 +42,27 @@ export default class Form extends Component {
 		this.state = initialState;
 	}
 
-
-	validateField = (event) => {
-		const emailValidation = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-		let eventName = event.name;
-
-		if (eventName === "user") {
-			if (event.value.length < 2) {
-				this.setState({
-					error : {
-						...this.state.error,
-						[eventName] : {
-							errorText : "your name must be greater than 2 characters",
-							errorField : true
-						}
-					}
-				});
-			}
-			else {
-				this.setState({
-					error : {
-						...this.state.error,
-						[eventName] : {
-							errorText : "",
-							errorField : false
-						}
-					}
-				});
-			}
-
-		} else if (eventName === "site") {
-			if (event.value.length < 10) {
-				this.setState({
-					error : {
-						...this.state.error,
-						[eventName] : {
-							errorText : "description must be greater than 10 characters",
-							errorField : true
-						}
-					}
-				});
-			}
-			else {
-				this.setState({
-					error : {
-						...this.state.error,
-						[eventName] : {
-							errorText : "",
-							errorField : false
-						}
-					}
-				});
-			}
-
-		} else if (eventName === "email") {
-			if (!emailValidation.test(event.value)) {
-				this.setState({
-					error : {
-						...this.state.error,
-						[eventName] : {
-							errorText : "invalid email address",
-							errorField : true
-						}
-					}
-				});
-			}
-			else {
-				this.setState({
-					error : {
-						...this.state.error,
-						[eventName] : {
-							errorText : "",
-							errorField : false
-						}
-					}
-				});
-			}
-		}
-	};
-
 	onFieldsChange = event => {
-		this.validateField(event.target);
+		const errorText = validation[event.target.name](event.target.value);
 
-		this.setState({[event.target.name] : event.target.value});
+		this.setState({
+			[event.target.name] : event.target.value,
+			error : {
+				...this.state.error,
+				[event.target.name] : errorText
+			}
+		});
 	};
 
 	handleSubmit = event => {
 		event.preventDefault();
-		let formData = new FormData(event.target);
+		const formData = new FormData(event.target);
 
 		function status(response) {
 			if (response.status >= 200 && response.status < 300) {
 				return Promise.resolve(response);
-			} else {
-				return Promise.reject(new Error(response.statusText));
 			}
+			return Promise.reject(new Error(response.statusText));
 		}
 
 		fetch("/send.php", {
@@ -134,9 +74,20 @@ export default class Form extends Component {
 				showPopup();
 				this.setState(initialState);
 			})
-			.catch(function(error) {
+			.catch((error) => {
 				console.warn("Request failed", error);
 			});
+	};
+
+	haveError = () => {
+		let haveError = false;
+		const fields = Object.keys(this.state.error);
+		fields.forEach(i => {
+			if(this.state.error[i] !== null || this.state[i] === "") {
+				haveError = true;
+			}
+		});
+		return haveError;
 	};
 
 	render() {
@@ -148,24 +99,24 @@ export default class Form extends Component {
 					<input id="your-name" value={user} onChange={this.onFieldsChange} type="text"
 						   required
 						   name="user" className="form-control"/>
-					{error.user.errorText && <p className="error-text">{error.user.errorText}</p>}
+					{error.user && <p className="error-text">{error.user}</p>}
 				</div>
 				<div className="input-field">
 					<i18n.text tag="label" htmlFor="your-name" text={{key : "i-liked"}}/>
 					<input id="your-website" value={site} onChange={this.onFieldsChange} type="text"
 						   required
 						   name="site" className="form-control"/>
-					{error.site.errorText && <p className="error-text">{error.site.errorText}</p>}
+					{error.site && <p className="error-text">{error.site}</p>}
 				</div>
 				<div className="input-field">
 					<i18n.text tag="label" htmlFor="your-name" text={{key : "more-details-email"}}/>
 					<input id="your-email" value={email} onChange={this.onFieldsChange} type="email"
 						   required
 						   name="email" className="form-control"/>
-					{error.email.errorText && <p className="error-text">{error.email.errorText}</p>}
+					{error.email && <p className="error-text">{error.email}</p>}
 				</div>
 				<div className="big-btn">
-					<button type="submit" disabled={error.user.errorField || error.site.errorField || error.email.errorField} className="more-projects_link" name="submit">
+					<button type="submit" disabled={this.haveError()} className="more-projects_link" name="submit">
 						<i18n.span text={{key : "send-message"}}/>
 					</button>
 				</div>

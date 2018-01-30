@@ -8,7 +8,7 @@ export default class PreviewProject extends Component {
 			showModal : false,
 			preview : "",
 			title : "",
-		 	imageStatus: false
+		 	imageStatus : false
 		};
 	}
 
@@ -29,15 +29,15 @@ export default class PreviewProject extends Component {
 				title : preview.newNameProject
 			});
 		}
-		const body = document.body,
-			  html = document.querySelector("html");
+		const body = document.body;
+		const html = document.querySelector("html");
 		body.classList.toggle("active");
 		html.classList.toggle("active");
 	};
 
 	imageLoaded = () => {
 		this.setState({
-			imageStatus: false
+			imageStatus : false
 		});
 	};
 

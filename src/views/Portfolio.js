@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
 import i18n from "i18n-react";
