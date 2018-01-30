@@ -24,7 +24,6 @@ class ChangeLanguage extends Component {
     }
 
     render() {
-        console.log("render");
         return (
             <div className={"button-lan-container " +this.state.language}>
                 <button className="english button-lan" onClick={() => this.props.changeLanguage("en")}>English</button>
@@ -44,7 +43,6 @@ const mapDispatchToProps = (dispatch) => {
             })
         }
     }
-
 };
 
 const mapStateToProps = state => {

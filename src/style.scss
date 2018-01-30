@@ -494,6 +494,10 @@ nav {
     margin: 0;
     width: 30%;
   }
+  .error-text {
+    color: rgba(202, 28, 25, 0.99);
+    font-size: 12px;
+  }
 }
 
 .user-container {
@@ -772,7 +776,6 @@ form {
     font-size: 16px;
     color: #595959;
     font-family: $RobotoLight;
-    text-transform: capitalize;
   }
 
   label {
@@ -801,6 +804,17 @@ form {
     &:hover {
       background-color: #333333;
       color: #fff;
+    }
+    &:disabled {
+      background-color: #ddd;
+      border-color: #ddd;
+      color: graytext;
+    }
+    &:disabled:hover {
+      background-color: #ddd;
+      border-color: #ddd;
+      color: graytext;
+      cursor: not-allowed;
     }
   }
 

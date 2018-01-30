@@ -29,8 +29,10 @@ export default class PreviewProject extends Component {
 				title : preview.newNameProject
 			});
 		}
-		const body = document.body;
+		const body = document.body,
+			  html = document.querySelector("html");
 		body.classList.toggle("active");
+		html.classList.toggle("active");
 	};
 
 	imageLoaded = () => {

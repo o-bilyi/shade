@@ -2460,7 +2460,7 @@ html {
   font-size: 14px;
   font-family: "Roboto-Regular", sans-serif; }
 
-body.active {
+body.active, html.active {
   height: 100%;
   overflow: hidden; }
 

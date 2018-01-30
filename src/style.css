@@ -2460,7 +2460,7 @@ html {
   font-size: 14px;
   font-family: "Roboto-Regular", sans-serif; }
 
-body.active {
+body.active, html.active {
   height: 100%;
   overflow: hidden; }
 
@@ -2967,6 +2967,9 @@ nav {
   .bottom-main .input-field {
     margin: 0;
     width: 30%; }
+  .bottom-main .error-text {
+    color: rgba(202, 28, 25, 0.99);
+    font-size: 12px; }
 
 .user-container {
   display: flex;
@@ -3201,8 +3204,7 @@ form {
     outline: none;
     font-size: 16px;
     color: #595959;
-    font-family: "Roboto-Light", sans-serif;
-    text-transform: capitalize; }
+    font-family: "Roboto-Light", sans-serif; }
   form label {
     font-size: 14px;
     color: #242424;
@@ -3230,6 +3232,15 @@ form {
     form button:hover {
       background-color: #333333;
       color: #fff; }
+    form button:disabled {
+      background-color: #ddd;
+      border-color: #ddd;
+      color: graytext; }
+    form button:disabled:hover {
+      background-color: #ddd;
+      border-color: #ddd;
+      color: graytext;
+      cursor: not-allowed; }
 
 /*form end ==================================>*/
 /*feedback modal ==========================*/
