@@ -2511,12 +2511,10 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 .letter {
   width: 45px; }
   .letter .letter-1 {
-    fill: #3c3c3c;
+    fill: rgba(243, 243, 243, 0.6);
     transition: all .3s ease-in; }
-  .letter .letter-2 {
-    fill: #646464; }
   .letter:hover .letter-1 {
-    fill: #646464; }
+    fill: #fff; }
 
 .phone-icon .phone-icon-fill-1 {
   fill: #979695; }

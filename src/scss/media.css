@@ -32,13 +32,10 @@
 @media all and (max-width: 1080px) {
   .title-page {
     text-align: center; }
-  .portfolio .title-page {
-    padding: 40px 0; }
-  .portfolio figcaption {
+  .projects figcaption {
     align-items: stretch;
-    min-height: 50px;
-    background-color: #3f3f3f; }
-  .portfolio .left {
+    min-height: 50px; }
+  .projects .left {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -46,23 +43,20 @@
     flex-direction: column;
     transition: width 0.3s ease-in;
     height: auto;
-    background-color: #3f3f3f;
     max-width: 100%; }
-  .portfolio .title-project {
+  .projects .title-project {
     padding-right: 0; }
-  .portfolio .right {
+  .projects .right {
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
     flex-direction: row;
     transition: width 0.3s ease-in;
-    background-color: #333333;
     padding: 0 10px;
     max-width: 100%; }
-  .portfolio .small-btn {
-    color: #fff;
-    border: 1px solid #fff; }
+  .portfolio .title-page {
+    padding: 40px 0; }
   .contact-block {
     display: flex;
     flex-wrap: wrap;
@@ -202,8 +196,6 @@
       width: 100%; } }
 
 @media all and (max-width: 680px) {
-  .portfolio .title-page strong {
-    width: 60px; }
   .bottom-main {
     background: none; }
     .bottom-main .title-form {

@@ -1,13 +1,13 @@
 import React, {Component} from "react";
 import Form from "./Form";
-
+import i18n from "i18n-react";
 
 export default class bottomMainForm extends Component {
     render(){
         return (
             <div className="bottom-main">
                 <div className="form-container">
-                    <h2 className="title-form">U’VE LIKED OUR WORKS. get in touch</h2>
+					<i18n.text className="title-form" tag="h2" text={{key : "get-in-touch"}}/>
                     <Form/>
                 </div>
             </div>

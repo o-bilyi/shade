@@ -43,19 +43,14 @@
   .title-page {
     text-align: center;
   }
-  .portfolio {
-    .title-page {
-      padding: 40px 0;
-    }
+  .projects {
     figcaption {
       align-items: stretch;
       min-height: 50px;
-      background-color: #3f3f3f;
     }
     .left {
       @include flex(flex, wrap, center, center, column);
       height: auto;
-      background-color: #3f3f3f;
       max-width: 100%;
     }
     .title-project {
@@ -63,13 +58,13 @@
     }
     .right {
       @include flex(flex, nowrap, center, center);
-      background-color: #333333;
       padding: 0 10px;
       max-width: 100%;
     }
-    .small-btn {
-      color: #fff;
-      border: 1px solid #fff;
+  }
+  .portfolio {
+    .title-page {
+      padding: 40px 0;
     }
   }
 
@@ -254,13 +249,6 @@
 }
 
 @media all and (max-width: 680px) {
-  .portfolio {
-    .title-page {
-      strong {
-        width: 60px;
-      }
-    }
-  }
   .bottom-main {
     background: none;
     .title-form {

@@ -10,9 +10,17 @@ class ChangeLanguage extends Component {
 
     constructor(props){
         super(props);
-        this.state = {
-            language : this.props.language
-        };
+		const setLanStorage = localStorage.getItem("language");
+		if (setLanStorage) {
+			this.state = {
+				language : setLanStorage
+			};
+			this.props.changeLanguage(setLanStorage)
+		}else {
+			this.state = {
+				language : this.props.language
+			};
+        }
     };
 
     componentWillReceiveProps(newProps) {
@@ -26,9 +34,11 @@ class ChangeLanguage extends Component {
     render() {
         return (
             <div className={"button-lan-container " +this.state.language}>
-                <button className="english button-lan" onClick={() => this.props.changeLanguage("en")}>English</button>
+                <button className="english button-lan" onClick={() =>
+                    this.props.changeLanguage("en")}>English</button>
                 <span className="border"/>
-                <button className="ukraine button-lan" onClick={() => this.props.changeLanguage("ua")}>Українська</button>
+                <button className="ukraine button-lan" onClick={() =>
+                    this.props.changeLanguage("ua")}>Українська</button>
             </div>
         );
     }

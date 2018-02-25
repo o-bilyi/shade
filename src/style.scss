@@ -22,7 +22,6 @@
   background-color: #333333;
   color: #fff;
   text-align: center;
-  padding: 0 10px;
 
   .button-lan-container {
     margin-bottom: 20px;
@@ -36,29 +35,35 @@
 
   .logo {
     text-align: center;
+    padding-bottom: 25px;
   }
 
-  .title-logo {
-    font-family: $FashionFetishHeavy;
-    text-transform: uppercase;
-    font-size: 24px;
-    border-bottom: 1px solid #f3f3f3;
-    padding-bottom: 20px;
-    padding-top: 25px;
-  }
+  //.title-logo {
+  //  font-family: $FashionFetishHeavy;
+  //  text-transform: uppercase;
+  //  font-size: 24px;
+  //  border-bottom: 1px solid #f3f3f3;
+  //  padding-bottom: 20px;
+  //  padding-top: 25px;
+  //}
 
   .description-logo {
-    margin-bottom: 30px;
+    margin-bottom: 10vh;
   }
 
   .animate-text {
     display: flex;
-    overflow: hidden;
-    height: 40px;
-    line-height: 40px;
+    flex-direction: column;
+    align-items: center;
     font-size: 24px;
     text-transform: uppercase;
     padding: 0 10px;
+  }
+
+  .wrapper-change-text {
+    overflow: hidden;
+    height: 40px;
+    line-height: 40px;
   }
 
   .fixed-text {
@@ -68,16 +73,17 @@
   }
 
   .change-text {
-    animation: animateList 7s infinite;
+    animation: animateList 7s forwards;
     font-family: $FashionFetishHeavy;
-    text-align: left;
-    margin-left: 5px;
+    text-align: center;
     font-weight: bold;
     list-style: none;
+    font-size: 22px;
   }
 
+
   .continue-text {
-    font-size: 24px;
+    font-size: 18px;
     font-family: $RobotoLight;
   }
 }
@@ -102,19 +108,8 @@
   55% {
     transform: translateY(-80px);
   }
-  80% {
-    transform: translateY(-80px);
-  }
-
-  85% {
-    transform: translateY(-40px);
-  }
-  95% {
-    transform: translateY(-40px);
-  }
-
   100% {
-    transform: translateY(0);
+    transform: translateY(-80px);
   }
 
 }
@@ -262,7 +257,7 @@ nav {
   .item-menu {
     margin: 0 auto;
     text-align: center;
-    flex-basis: 70px;
+    //flex-basis: 70px;
     line-height: normal;
   }
 
@@ -278,7 +273,7 @@ nav {
     &:hover, &.active {
       color: #f3f3f3;
       &:before {
-        background-color: #5c5c5c;
+        background-color: #fff;
         width: 100%;
         transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
       }
@@ -291,31 +286,30 @@ nav {
     &:before {
       content: "";
       position: absolute;
-      top: 50%;
+      bottom: 0;
       left: 0;
       right: 0;
       width: 0;
-      transform: translateY(-50%);
+      //transform: translateY(-50%);
       display: block;
       height: 1px;
-      background-color: #5c5c5c;
+      background-color: #fff;
     }
     &:after {
       transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
       content: "";
       position: absolute;
-      top: 50%;
+      bottom: 0;;
       left: 0;
       right: 0;
       width: 0;
-      //margin: auto;
-      transform: translateY(-50%);
+      //transform: translateY(-50%);
       display: block;
       height: 1px;
-      background-color: #5c5c5c;
+      background-color: #fff;
     }
     &.active:after {
-      background-color: #5c5c5c;
+      background-color: #fff;
       width: 100%;
     }
 
@@ -357,6 +351,9 @@ nav {
     padding: 0 10px;
     display: inline-block;
     text-align: center;
+    text-transform: capitalize;
+    margin-right: 10px;
+
     &:before {
       content: "";
       position: absolute;
@@ -424,6 +421,7 @@ nav {
     font-size: 14px;
     padding-right: 5px;
   }
+
   .description-project {
     text-transform: capitalize;
     font-family: $RobotoLight;
@@ -434,8 +432,7 @@ nav {
     @include flex(flex, wrap, center, flex-start);
     max-width: 360px;
     width: 100%;
-    background-color: #333333;
-    color: #fff;
+    color: #333333;
     height: 30px;
     padding-left: 10px;
   }
@@ -469,7 +466,7 @@ nav {
 }
 
 .bottom-main {
-  background: url("/img/main/bg-main.jpg") no-repeat 0 -25px;
+  background: url("/img/main/bg-main.jpg") no-repeat 0 -10px;
   background-size: cover;
   min-height: 520px;
 
@@ -1003,17 +1000,16 @@ footer {
   justify-content: space-between;
   align-content: center;
   max-width: 230px;
-  font-size: 24px;
   margin: 0 auto;
   .border {
     display: inline-block;
     margin: 0 10px;
     width: 2px;
-    height: 28px;
+    height: 16px;
     background-color: #737373;
   }
   .button-lan {
-    font-size: 24px;
+    font-size: 14px;
     color: #fff;
     font-family: $RobotoLight;
   }
