@@ -44,7 +44,7 @@ export default class Header extends Component {
 					</Link>
 					<nav>
 						<button onClick={this.switchToggle} className={toggleMenu}> <span/></button>
-						<div className={menuClass}>
+						<div onClick={this.switchToggle} className={menuClass}>
 							<div className="scroll-menu">
                                 <ReactSVG className="menu-logo-icon"
                                           path={require("../svg/Logo_SD_shape.svg")}

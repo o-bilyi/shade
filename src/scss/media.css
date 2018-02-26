@@ -34,7 +34,8 @@
     text-align: center; }
   .projects figcaption {
     align-items: stretch;
-    min-height: 50px; }
+    min-height: 50px;
+    flex-direction: column; }
   .projects .left {
     display: flex;
     flex-wrap: wrap;
@@ -43,7 +44,9 @@
     flex-direction: column;
     transition: width 0.3s ease-in;
     height: auto;
-    max-width: 100%; }
+    max-width: 100%;
+    padding-left: 0;
+    margin-bottom: 10px; }
   .projects .title-project {
     padding-right: 0; }
   .projects .right {
@@ -53,7 +56,6 @@
     justify-content: center;
     flex-direction: row;
     transition: width 0.3s ease-in;
-    padding: 0 10px;
     max-width: 100%; }
   .portfolio .title-page {
     padding: 40px 0; }
@@ -97,10 +99,8 @@
     max-width: 32px; }
     nav .background-menu {
       transition: all 0.3s ease-in;
-      background-color: #303030;
       transform: translateX(-100%);
       position: absolute;
-      max-width: 230px;
       right: 0;
       left: 0;
       top: 50px;
@@ -121,11 +121,13 @@
       transition: width 0.3s ease-in;
       height: 100vh;
       min-height: 580px;
-      padding-bottom: 50px; }
+      padding-bottom: 50px;
+      max-width: 230px;
+      background-color: #303030; }
     nav .menu-logo-icon {
-      margin-top: 50px;
+      margin-top: 30px;
       display: block;
-      max-width: 120px;
+      max-width: 80px;
       fill: rgba(255, 255, 255, 0.8); }
     nav .menu {
       margin-top: 50px;

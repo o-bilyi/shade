@@ -47,18 +47,20 @@
     figcaption {
       align-items: stretch;
       min-height: 50px;
+      flex-direction: column;
     }
     .left {
       @include flex(flex, wrap, center, center, column);
       height: auto;
       max-width: 100%;
+      padding-left: 0;
+      margin-bottom: 10px;
     }
     .title-project {
       padding-right: 0;
     }
     .right {
       @include flex(flex, nowrap, center, center);
-      padding: 0 10px;
       max-width: 100%;
     }
   }
@@ -125,10 +127,8 @@
 
     .background-menu {
       @include transition();
-      background-color: #303030;
       transform: translateX(-100%);
       position: absolute;
-      max-width: 230px;
       right: 0;
       left: 0;
       top: 50px;
@@ -151,12 +151,14 @@
       height: 100vh;
       min-height: 580px;
       padding-bottom: 50px;
+      max-width: 230px;
+      background-color: #303030;
     }
 
     .menu-logo-icon {
-      margin-top: 50px;
+      margin-top: 30px;
       display: block;
-      max-width: 120px;
+      max-width: 80px;
       fill: rgba(255, 255, 255, 0.8);
     }
 

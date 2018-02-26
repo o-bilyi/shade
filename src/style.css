@@ -2696,9 +2696,9 @@ nav {
     nav .toggle-menu.active span {
       background-color: transparent; }
       nav .toggle-menu.active span:before {
-        transform: translateY(11px) rotate(45deg); }
+        transform: translateY(8px) rotate(45deg); }
       nav .toggle-menu.active span:after {
-        transform: translateY(-9px) rotate(-48deg); }
+        transform: translateY(-12px) rotate(-47deg); }
       nav .toggle-menu.active span:before, nav .toggle-menu.active span:after {
         background-color: white; }
     nav .toggle-menu span {
@@ -2743,7 +2743,8 @@ nav {
     font-size: 16px;
     font-weight: 300;
     text-transform: capitalize;
-    width: 100%; }
+    width: 100%;
+    z-index: 20; }
     nav .link:hover, nav .link.active {
       color: #f3f3f3; }
       nav .link:hover:before, nav .link.active:before {
@@ -3437,7 +3438,8 @@ footer {
     text-align: center; }
   .projects figcaption {
     align-items: stretch;
-    min-height: 50px; }
+    min-height: 50px;
+    flex-direction: column; }
   .projects .left {
     display: flex;
     flex-wrap: wrap;
@@ -3446,7 +3448,9 @@ footer {
     flex-direction: column;
     transition: width 0.3s ease-in;
     height: auto;
-    max-width: 100%; }
+    max-width: 100%;
+    padding-left: 0;
+    margin-bottom: 10px; }
   .projects .title-project {
     padding-right: 0; }
   .projects .right {
@@ -3456,7 +3460,6 @@ footer {
     justify-content: center;
     flex-direction: row;
     transition: width 0.3s ease-in;
-    padding: 0 10px;
     max-width: 100%; }
   .portfolio .title-page {
     padding: 40px 0; }
@@ -3500,10 +3503,8 @@ footer {
     max-width: 32px; }
     nav .background-menu {
       transition: all 0.3s ease-in;
-      background-color: #303030;
       transform: translateX(-100%);
       position: absolute;
-      max-width: 230px;
       right: 0;
       left: 0;
       top: 50px;
@@ -3524,11 +3525,13 @@ footer {
       transition: width 0.3s ease-in;
       height: 100vh;
       min-height: 580px;
-      padding-bottom: 50px; }
+      padding-bottom: 50px;
+      max-width: 230px;
+      background-color: #303030; }
     nav .menu-logo-icon {
-      margin-top: 50px;
+      margin-top: 30px;
       display: block;
-      max-width: 120px;
+      max-width: 80px;
       fill: rgba(255, 255, 255, 0.8); }
     nav .menu {
       margin-top: 50px;

@@ -38,15 +38,6 @@
     padding-bottom: 25px;
   }
 
-  //.title-logo {
-  //  font-family: $FashionFetishHeavy;
-  //  text-transform: uppercase;
-  //  font-size: 24px;
-  //  border-bottom: 1px solid #f3f3f3;
-  //  padding-bottom: 20px;
-  //  padding-top: 25px;
-  //}
-
   .description-logo {
     margin-bottom: 10vh;
   }
@@ -209,10 +200,10 @@ nav {
       span {
         background-color: transparent;
         &:before {
-          transform: translateY(11px) rotate(45deg);
+          transform: translateY(8px) rotate(45deg);
         }
         &:after {
-          transform: translateY(-9px) rotate(-48deg);
+          transform: translateY(-12px) rotate(-47deg);
         }
         &:before, &:after {
           background-color: rgb(255, 255, 255);
@@ -270,6 +261,7 @@ nav {
     font-weight: 300;
     text-transform: capitalize;
     width: 100%;
+    z-index: 20;
     &:hover, &.active {
       color: #f3f3f3;
       &:before {
