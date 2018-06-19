@@ -1,7 +1,8 @@
 @import "scss/import-css.scss";
 
 .logo-sd {
-  width: 214px;
+  width: 100%;
+  max-width: 214px;
   fill: #f3f3f3;
   .logo-sd-1 {
     fill: #808080;
@@ -17,7 +18,7 @@
 
 
 .index-header {
-  @include flex(flex, wrap, center, center, column);
+  @include flex(flex, nowrap, center, center, column);
   height: 100vh;
   background-color: #333333;
   color: #fff;
@@ -28,9 +29,7 @@
   }
 
   .logo-container {
-    max-width: 630px;
     margin: auto;
-    width: 100%;
   }
 
   .logo {
@@ -38,8 +37,8 @@
     padding-bottom: 25px;
   }
 
-  .description-logo {
-    margin-bottom: 10vh;
+  .continue {
+    margin-bottom: 25px;
   }
 
   .animate-text {
@@ -120,7 +119,7 @@ header {
   }
 
   .header-logo-icon {
-    width: 35px;
+    width: 32px;
   }
 
   .name-logo {
@@ -200,7 +199,7 @@ nav {
       span {
         background-color: transparent;
         &:before {
-          transform: translateY(8px) rotate(45deg);
+          transform: translateY(9px) rotate(45deg);
         }
         &:after {
           transform: translateY(-12px) rotate(-47deg);
@@ -248,7 +247,6 @@ nav {
   .item-menu {
     margin: 0 auto;
     text-align: center;
-    //flex-basis: 70px;
     line-height: normal;
   }
 
@@ -262,7 +260,7 @@ nav {
     text-transform: capitalize;
     width: 100%;
     z-index: 20;
-    &:hover, &.active {
+    &.active {
       color: #f3f3f3;
       &:before {
         background-color: #fff;
@@ -282,7 +280,6 @@ nav {
       left: 0;
       right: 0;
       width: 0;
-      //transform: translateY(-50%);
       display: block;
       height: 1px;
       background-color: #fff;
@@ -295,16 +292,10 @@ nav {
       left: 0;
       right: 0;
       width: 0;
-      //transform: translateY(-50%);
       display: block;
       height: 1px;
       background-color: #fff;
     }
-    &.active:after {
-      background-color: #fff;
-      width: 100%;
-    }
-
   }
 
 }
@@ -340,24 +331,26 @@ nav {
   .crossed-out {
     font-family: $RobotoBold;
     position: relative;
-    padding: 0 10px;
     display: inline-block;
     text-align: center;
     text-transform: capitalize;
     margin-right: 10px;
 
-    &:before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 0;
-      right: 0;
-      margin: auto;
-      transform: translateY(-50%);
-      display: block;
-      height: 1px;
-      background-color: #838383;
-    }
+    &:after {
+      content: ".";
+     }
+    //&:before {
+    //  content: "";
+    //  position: absolute;
+    //  top: 50%;
+    //  left: 0;
+    //  right: 0;
+    //  margin: auto;
+    //  transform: translateY(-50%);
+    //  display: block;
+    //  height: 1px;
+    //  background-color: #838383;
+    //}
   }
 }
 
@@ -383,57 +376,47 @@ nav {
   }
 
   figcaption {
-    @include flex(flex, nowrap);
-    margin: 10px auto 0;
+    @include flex(flex, nowrap, center);
+    margin: 0 auto 10px;
 
   }
 
   .small-btn {
+    @include transition(all);
     @include flex(inline-flex, wrap, center, center);
-    @include transition();
-    text-transform: uppercase;
-    font-family: $RobotoMedium;
+    text-transform: lowercase;
+    font-family: $RobotoLight;
     font-size: 12px;
     color: #383838;
-    border: 1px solid #383838;
-    height: 30px;
-    width: 100px;
     &:hover {
       color: #afafaf;
-      border-color: #afafaf;
+    }
+    &:last-child {
+      &:after{
+        content: "";
+        margin-left: 10px;
+        height: 10px;
+        width: 1px;
+        background-color: #383838;
+      }
     }
     &:first-child {
       margin-right: 10px;
+      &:after{
+        content: "";
+        margin-left: 10px;
+        height: 10px;
+        width: 1px;
+        background-color: #383838;
+      }
     }
   }
 
   .title-project {
     text-transform: uppercase;
     font-family: $RobotoBold;
-    font-size: 14px;
-    padding-right: 5px;
-  }
-
-  .description-project {
-    text-transform: capitalize;
-    font-family: $RobotoLight;
-    font-size: 14px;
-  }
-
-  .left {
-    @include flex(flex, wrap, center, flex-start);
-    max-width: 360px;
-    width: 100%;
+    font-size: 18px;
     color: #333333;
-    height: 30px;
-    padding-left: 10px;
-  }
-
-  .right {
-    @include flex();
-    max-width: 210px;
-    width: 100%;
-    text-align: right;
   }
 
 }
@@ -442,18 +425,18 @@ nav {
   @include flex(flex, wrap, center, center);
   @include transition();
   display: block;
-  width: 200px;
-  height: 50px;
+  width: 180px;
+  height: 40px;
   margin: auto;
-  border: 1px solid #9b9b9b;
-  color: #9b9b9b;
   text-transform: uppercase;
   font-size: 15px;
   font-family: $RobotoMedium;
+  color: #fff;
+  border: 1px solid #9b9b9b;
+  background-color: #9b9b9b;
   &:hover {
-    background-color: #24272c;
     border-color: #24272c;
-    color: #fff;
+    background-color: #24272c;
   }
 }
 
@@ -566,15 +549,6 @@ nav {
   padding-bottom: 150px;
   .title-page {
     padding-bottom: 40px;
-    .crossed-out {
-      &:after {
-        content: "";
-        display: block;
-        background-color: #838383;
-        height: 1px;
-        transform: translateY(17px);
-      }
-    }
   }
   .description {
     font-size: 14px;
@@ -598,9 +572,6 @@ nav {
 
   .item {
     overflow: hidden;
-    &, .learn-more {
-      color: #797979;
-    }
     width: 49%;
     text-align: center;
     background-color: rgb(255, 255, 255);
@@ -641,19 +612,23 @@ nav {
   }
 
   .learn-more {
-    font-size: 14px;
-    font-family: $RobotoMedium;
-    display: inline-block;
-    margin-bottom: 25px;
-    span {
-      color: rgba(51, 51, 51, 0.6);
-    }
+    @include transition(all);
+    @include flex(flex,wrap,center,center);
+    text-transform: lowercase;
+    font-family: $RobotoLight;
+    font-size: 12px;
+    color: #383838;
     &:hover {
-      span {
-        text-decoration: line-through;
-        color: rgba(51, 51, 51, 1);
-      }
+      color: #afafaf;
     }
+    &:after{
+      content: "";
+      margin-left: 10px;
+      height: 10px;
+      width: 1px;
+      background-color: #383838;
+    }
+    margin-bottom: 10px;
   }
 
 }

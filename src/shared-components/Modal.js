@@ -1,15 +1,12 @@
 import React, { Component } from "react";
-import Form from "../components/Form";
+import Form from ".//Form";
 
 
 export default class Modal extends Component {
 
-	constructor(props) {
-		super(props);
-		this.state = {
-			showModal : false
-		};
-	}
+	state = {
+		showModal : false
+	};
 
 	switchModal = () => {
 		this.setState({

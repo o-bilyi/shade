@@ -283,7 +283,7 @@ In the WebStorm menu `Run` select `Edit Configurations...`. Then click `+` and s
 
 Start your app by running `npm start`, then press `^D` on macOS or `F9` on Windows and Linux or click the green debug icon to start debugging in WebStorm.
 
-The same way you can debug your application in IntelliJ IDEA Ultimate, PhpStorm, PyCharm Pro, and RubyMine. 
+The same way you can debug your application in IntelliJ IDEA Ultimate, PhpStorm, PyCharm Pro, and RubyMine.
 
 ## Formatting Code Automatically
 
@@ -302,7 +302,7 @@ yarn add husky lint-staged prettier
 ```
 
 * `husky` makes it easy to use githooks as if they are npm scripts.
-* `lint-staged` allows us to run scripts on staged files in git. See this [blog post about lint-staged to learn more about it](https://medium.com/@okonetchnikov/make-linting-great-again-f3890e1ad6b8).
+* `lint-staged` allows us to run scripts on staged files in git. See this [blogModule post about lint-staged to learn more about it](https://medium.com/@okonetchnikov/make-linting-great-again-f3890e1ad6b8).
 * `prettier` is the JavaScript formatter we will run before commits.
 
 Now we can make sure every file is formatted correctly by adding a few lines to the `package.json` in the project root.
@@ -1184,7 +1184,7 @@ Then, on the server, you can replace `__SERVER_DATA__` with a JSON of real data 
 >Note: this feature is available with `react-scripts@0.3.0` and higher.<br>
 >[Read the migration guide to learn how to enable it in older projects!](https://github.com/facebookincubator/create-react-app/blob/master/CHANGELOG.md#migrating-from-023-to-030)
 
-Create React App uses [Jest](https://facebook.github.io/jest/) as its test runner. To prepare for this integration, we did a [major revamp](https://facebook.github.io/jest/blog/2016/09/01/jest-15.html) of Jest so if you heard bad things about it years ago, give it another try.
+Create React App uses [Jest](https://facebook.github.io/jest/) as its test runner. To prepare for this integration, we did a [major revamp](https://facebook.github.io/jest/blogModule/2016/09/01/jest-15.html) of Jest so if you heard bad things about it years ago, give it another try.
 
 Jest is a Node-based runner. This means that the tests always run in a Node environment and not in a real browser. This lets us enable fast iteration speed and prevent flakiness.
 
@@ -1210,7 +1210,7 @@ When you run `npm test`, Jest will launch in the watch mode. Every time you save
 
 The watcher includes an interactive command-line interface with the ability to run all tests, or focus on a search pattern. It is designed this way so that you can keep it open and enjoy fast re-runs. You can learn the commands from the “Watch Usage” note that the watcher prints after every run:
 
-![Jest watch mode](http://facebook.github.io/jest/img/blog/15-watch.gif)
+![Jest watch mode](http://facebook.github.io/jest/img/blogModule/15-watch.gif)
 
 ### Version Control Integration
 
@@ -1467,11 +1467,11 @@ In contrast, **jsdom is not needed** for the following APIs:
 * [`TestUtils.createRenderer()`](https://facebook.github.io/react/docs/test-utils.html#shallow-rendering) (shallow rendering)
 * [`shallow()`](http://airbnb.io/enzyme/docs/api/shallow.html) in [Enzyme](http://airbnb.io/enzyme/index.html)
 
-Finally, jsdom is also not needed for [snapshot testing](http://facebook.github.io/jest/blog/2016/07/27/jest-14.html).
+Finally, jsdom is also not needed for [snapshot testing](http://facebook.github.io/jest/blogModule/2016/07/27/jest-14.html).
 
 ### Snapshot Testing
 
-Snapshot testing is a feature of Jest that automatically generates text snapshots of your components and saves them on the disk so if the UI output changes, you get notified without manually writing any assertions on the component output. [Read more about snapshot testing.](http://facebook.github.io/jest/blog/2016/07/27/jest-14.html)
+Snapshot testing is a feature of Jest that automatically generates text snapshots of your components and saves them on the disk so if the UI output changes, you get notified without manually writing any assertions on the component output. [Read more about snapshot testing.](http://facebook.github.io/jest/blogModule/2016/07/27/jest-14.html)
 
 ### Editor Integration
 
@@ -1769,7 +1769,7 @@ If you’re using [Apache HTTP Server](https://httpd.apache.org/), you need to c
     RewriteRule ^ index.html [QSA,L]
 ```
 
-It will get copied to the `build` folder when you run `npm run build`. 
+It will get copied to the `build` folder when you run `npm run build`.
 
 If you’re using [Apache Tomcat](http://tomcat.apache.org/), you need to follow [this Stack Overflow answer](https://stackoverflow.com/a/41249464/4878474).
 
@@ -1818,7 +1818,7 @@ This will make sure that all the asset paths are relative to `index.html`. You w
 
 ### Azure
 
-See [this](https://medium.com/@to_pe/deploying-create-react-app-on-microsoft-azure-c0f6686a4321) blog post on how to deploy your React app to [Microsoft Azure](https://azure.microsoft.com/).
+See [this](https://medium.com/@to_pe/deploying-create-react-app-on-microsoft-azure-c0f6686a4321) blogModule post on how to deploy your React app to [Microsoft Azure](https://azure.microsoft.com/).
 
 ### Firebase
 
@@ -1954,7 +1954,7 @@ GitHub Pages doesn’t support routers that use the HTML5 `pushState` history AP
 ### Heroku
 
 Use the [Heroku Buildpack for Create React App](https://github.com/mars/create-react-app-buildpack).<br>
-You can find instructions in [Deploying React with Zero Configuration](https://blog.heroku.com/deploying-react-with-zero-configuration).
+You can find instructions in [Deploying React with Zero Configuration](https://blogModule.heroku.com/deploying-react-with-zero-configuration).
 
 #### Resolving Heroku Deployment Errors
 
@@ -2036,11 +2036,11 @@ When you build the project, Create React App will place the `public` folder cont
 
     Paste that URL into your browser when the build is complete, and you will see your deployed app.
 
-Details are available in [this article.](https://zeit.co/blog/unlimited-static)
+Details are available in [this article.](https://zeit.co/blogModule/unlimited-static)
 
 ### S3 and CloudFront
 
-See this [blog post](https://medium.com/@omgwtfmarc/deploying-create-react-app-to-s3-or-cloudfront-48dae4ce0af) on how to deploy your React app to Amazon Web Services [S3](https://aws.amazon.com/s3) and [CloudFront](https://aws.amazon.com/cloudfront/).
+See this [blogModule post](https://medium.com/@omgwtfmarc/deploying-create-react-app-to-s3-or-cloudfront-48dae4ce0af) on how to deploy your React app to Amazon Web Services [S3](https://aws.amazon.com/s3) and [CloudFront](https://aws.amazon.com/cloudfront/).
 
 ### Surge
 

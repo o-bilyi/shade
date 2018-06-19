@@ -2454,7 +2454,8 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  outline: none; }
 
 html {
   font-size: 14px;
@@ -2507,6 +2508,9 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
   width: 7px;
   border: 1px solid #bbbbbb;
   background: transparent; }
+
+.animated {
+  animation-duration: .5s; }
 
 .letter {
   width: 45px; }

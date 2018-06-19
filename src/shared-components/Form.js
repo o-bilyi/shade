@@ -1,6 +1,5 @@
-import React, {Component} from "react";
-import {showPopup} from "../components/ShowPopup";
-import i18n from "i18n-react";
+import React from "react";
+import Notifications, {notify} from 'react-notify-toast';
 
 const initialState = {
 	user : "",
@@ -36,7 +35,7 @@ const validation = {
 	}
 };
 
-export default class Form extends Component {
+export default class Form extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = initialState;
@@ -71,10 +70,11 @@ export default class Form extends Component {
 		})
 			.then(status)
 			.then(() => {
-				showPopup();
 				this.setState(initialState);
-			})
+				notify.show("Форма відправлена!","success");
+		})
 			.catch((error) => {
+				notify.show("посилка, повідомлення не відправлено!","error");
 				console.warn("Request failed", error);
 			});
 	};
@@ -95,31 +95,34 @@ export default class Form extends Component {
 		return (
 			<form className="form" method="post" onSubmit={this.handleSubmit}>
 				<div className="input-field max-width-input">
-					<i18n.text tag="label" htmlFor="your-name" text={{key : "my-name-is"}}/>
+					<label htmlFor="your-name">Моє ім'я</label>
 					<input id="your-name" value={user} onChange={this.onFieldsChange} type="text"
 						   required
 						   name="user" className="form-control"/>
 					{error.user && <p className="error-text">{error.user}</p>}
 				</div>
 				<div className="input-field">
-					<i18n.text tag="label" htmlFor="your-name" text={{key : "i-liked"}}/>
+					<label htmlFor="your-name">Замовити сайт</label>
 					<input id="your-website" value={site} onChange={this.onFieldsChange} type="text"
 						   required
 						   name="site" className="form-control"/>
 					{error.site && <p className="error-text">{error.site}</p>}
 				</div>
 				<div className="input-field">
-					<i18n.text tag="label" htmlFor="your-name" text={{key : "more-details-email"}}/>
+					<label htmlFor="your-name">наш E-mail</label>
 					<input id="your-email" value={email} onChange={this.onFieldsChange} type="email"
 						   required
 						   name="email" className="form-control"/>
 					{error.email && <p className="error-text">{error.email}</p>}
 				</div>
 				<div className="big-btn">
-					<button type="submit" disabled={this.haveError()} className="more-projects_link" name="submit">
-						<i18n.span text={{key : "send-message"}}/>
-					</button>
+					<button type="submit"
+							disabled={this.haveError()}
+							className="more-projects_link"
+							name="submit"
+							children="відправити"/>
 				</div>
+				<Notifications />
 			</form>
 		);
 	}

@@ -1,16 +1,13 @@
 import React, {Component} from "react";
-import Preload from "../components/Preload";
+import Preload from ".//Preload";
 
 export default class PreviewProject extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			showModal : false,
-			preview : "",
-			title : "",
-		 	imageStatus : false
-		};
-	}
+	state = {
+		showModal : false,
+		preview : "",
+		title : "",
+		imageStatus : false
+	};
 
 	componentDidMount() {
 		document.addEventListener("preview", this.switchModal);
