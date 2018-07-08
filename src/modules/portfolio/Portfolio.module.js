@@ -1,5 +1,5 @@
 import React from 'react';
-import Items from './components/Items.component';
+import Item from './components/Item.component';
 import Header from '../../shared-components/Header';
 import Footer from '../../shared-components/Footer';
 import {Fetch, scrollTo} from '../../utilits/index';
@@ -10,7 +10,6 @@ import PreviewsProject from '../../shared-components/PreviewProject';
 export default class Portfolio extends React.Component {
 	state = {
 		projects: [],
-		isLoading: false,
 		haveMore: true,
 		nextCountItem: 4,
 	};
@@ -18,12 +17,14 @@ export default class Portfolio extends React.Component {
 	componentDidMount() {
 		scrollTo();
 
-		Fetch('http://shade-design.bender.org.ua/api/projects')
+    // fetch('https://jsonplaceholder.typicode.com/posts/1')
+		Fetch('/api/projects')
 		.then(res => {
-			this.setState({
-				projects: res,
-				isLoading: true,
-			});
+			if(res) {
+        this.setState({
+          projects: res
+        });
+			}
 		})
 	}
 
@@ -35,14 +36,11 @@ export default class Portfolio extends React.Component {
 	};
 
 	_getItems = () => {
-		const {projects, nextCountItem, isLoading} = this.state;
-		if(projects && isLoading){
-			return (
-				<div className='flex-container'>
-					{projects.slice(0, nextCountItem).map((item, key) => <Items {...item} key={key}/>)}
-				</div>);
-		}
-		 return <Preload/>;
+		const {projects, nextCountItem} = this.state;
+    return (
+      <div className='flex-container'>
+        {projects.slice(0, nextCountItem).map((item, key) => <Item {...item} key={key}/>)}
+      </div>);
 	};
 
 	render() {
@@ -50,19 +48,23 @@ export default class Portfolio extends React.Component {
 		return (
 			<div>
 				<Header/>
-				<main id='portfolio' className='wow animated fadeIn offset-section portfolio'>
-					<div className='contentMobileAnimate'>
-						<div className='top-main width-container'>
-							<h2 className='title-page'>
-								<strong className='crossed-out' children='роботи'/>
-								<span children='Рішення для ваших ідей'/>
-							</h2>
-							{this._getItems()}
-							{haveMore && <button className='more-project' onClick={this.showMore} children='Більше проектів'/>}
-						</div>
-						<BottomMainForm/>
-					</div>
-				</main>
+				{
+					this.state.projects.length
+					? <main id='portfolio' className='wow animated fadeIn offset-section portfolio'>
+              <div className='contentMobileAnimate'>
+                <div className='top-main width-container'>
+                  <h2 className='title-page'>
+                    <strong className='crossed-out' children='роботи'/>
+                    <span children='Рішення для ваших ідей'/>
+                  </h2>
+                  {this._getItems()}
+                  {haveMore && <button className='more-project' onClick={this.showMore} children='Більше проектів'/>}
+                </div>
+                <BottomMainForm/>
+              </div>
+            </main>
+					: <Preload/>
+        }
 				<Footer/>
 				<PreviewsProject/>
 			</div>);

@@ -1,7 +1,7 @@
 import React from "react";
+import Modal from "./Modal";
+import FindUs from "./FindUs";
 import {MAIN_ROUTES} from '../core';
-import Modal from ".//Modal";
-import FindUs from ".//FindUs";
 import {Link, NavLink} from "react-router-dom";
 
 const nameRoute = {
@@ -9,7 +9,9 @@ const nameRoute = {
 	"/aboutUs": 'Про нас',
 	"/contactUs": 'Контакти',
 	"/blog": 'Блог',
-}
+};
+
+const contentMobileAnimate = document.querySelector(".contentMobileAnimate");
 
 export default class Header extends React.PureComponent {
 	state = {
@@ -17,20 +19,14 @@ export default class Header extends React.PureComponent {
 		toggleMenu : false
 	};
 
-	removeClassMenu = () => {
-		this.setState({
-			menuShowed : false,
-			toggleMenu : false
-		});
-		document.querySelector(".contentMobileAnimate").classList.remove("active");
-	};
-
 	switchToggle = () => {
 		this.setState({
 			menuShowed : !this.state.menuShowed,
 			toggleMenu : !this.state.toggleMenu
 		});
-		document.querySelector(".contentMobileAnimate").classList.toggle("active");
+    if(contentMobileAnimate){
+    	contentMobileAnimate.classList.toggle("active");
+		}
 	};
 
 	render() {

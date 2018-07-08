@@ -39,6 +39,7 @@
 
   .continue {
     margin-bottom: 25px;
+    font-size: 26px;
   }
 
   .animate-text {
@@ -60,6 +61,7 @@
     font-family: $FashionFetishRegular;
     font-weight: 100;
     color: #c2c2c2;
+    font-size: 24px;
   }
 
   .change-text {
@@ -105,7 +107,7 @@
 }
 
 header {
-  z-index: 12;
+  z-index: 100;
   position: fixed;
   top: 0;
   left: 0;

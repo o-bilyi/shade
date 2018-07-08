@@ -10,7 +10,7 @@ const previewProject = (newPreview, newNameProject) => {
 	document.dispatchEvent(newPreviewProject);
 };
 
-export default function Items(props) {
+export default function Item(props) {
 
 	return (
 		<div className="animated fadeInUp projects" data-wow-duration="1.5s">
@@ -23,19 +23,19 @@ export default function Items(props) {
 						      className="small-btn website">веб сайт</Link>
 						<button
 							className="small-btn preview"
-							onClick={() => previewProject(`http://shade-design.bender.org.ua/uploads-image/${props.previewImg}`, props.name)}
+							onClick={() => previewProject(`/uploads-image/${props.previewImg}`, props.name)}
 							children="перед показ"/>
 					</div>
 				</figcaption>
 				<Link to={props.link} target="_blank">
-					<img className="item-img" src={`http://shade-design.bender.org.ua/uploads-image/${props.img}`} alt={props.name}/>
+					<img className="item-img" src={`/uploads-image/${props.img}`} alt={props.name}/>
 				</Link>
 			</figure>
 		</div>
 	)
 }
 
-Items.propTypes = {
+Item.propTypes = {
 	link : PropTypes.string,
 	name : PropTypes.string,
 	previewImg : PropTypes.string,

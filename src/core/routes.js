@@ -28,7 +28,7 @@ export const MAIN_ROUTES = [
     path: navigationScheme.aboutUs,
     exact: true,
     show : true,
-    component: () => import('../modules/about-us/AboutUs')
+    component: () => import('../modules/about-us/AboutUs.module')
   },
   {
     path: navigationScheme.contactUs,

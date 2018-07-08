@@ -1,5 +1,5 @@
 import React from "react";
-import Notifications, {notify} from 'react-notify-toast';
+import {notify} from 'react-notify-toast';
 
 const initialState = {
 	user : "",
@@ -55,18 +55,28 @@ export default class Form extends React.Component {
 
 	handleSubmit = event => {
 		event.preventDefault();
-		const formData = new FormData(event.target);
+
+		const inputs = {
+      user : this.state.user,
+      site : this.state.site,
+      email : this.state.email,
+		};
 
 		function status(response) {
-			if (response.status >= 200 && response.status < 300) {
+			console.warn(response);
+			if (response.ok) {
 				return Promise.resolve(response);
 			}
-			return Promise.reject(new Error(response.statusText));
+			return Promise.reject(response.statusText);
 		}
 
-		fetch("/send.php", {
+		fetch("/api/sendMessage", {
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
 			method : "post",
-			body : formData
+			body : JSON.stringify(inputs)
 		})
 			.then(status)
 			.then(() => {
@@ -74,8 +84,8 @@ export default class Form extends React.Component {
 				notify.show("Форма відправлена!","success");
 		})
 			.catch((error) => {
-				notify.show("посилка, повідомлення не відправлено!","error");
-				console.warn("Request failed", error);
+				notify.show("Помилка, повідомлення не відправлено!","error");
+				console.error("Request failed", error);
 			});
 	};
 
@@ -109,7 +119,7 @@ export default class Form extends React.Component {
 					{error.site && <p className="error-text">{error.site}</p>}
 				</div>
 				<div className="input-field">
-					<label htmlFor="your-name">наш E-mail</label>
+					<label htmlFor="your-name">ваш E-mail</label>
 					<input id="your-email" value={email} onChange={this.onFieldsChange} type="email"
 						   required
 						   name="email" className="form-control"/>
@@ -122,7 +132,6 @@ export default class Form extends React.Component {
 							name="submit"
 							children="відправити"/>
 				</div>
-				<Notifications />
 			</form>
 		);
 	}

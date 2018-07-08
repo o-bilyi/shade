@@ -2584,7 +2584,8 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
     text-align: center;
     padding-bottom: 25px; }
   .index-header .continue {
-    margin-bottom: 25px; }
+    margin-bottom: 25px;
+    font-size: 26px; }
   .index-header .animate-text {
     display: flex;
     flex-direction: column;
@@ -2599,7 +2600,8 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
   .index-header .fixed-text {
     font-family: "FashionFetishRegular", sans-serif;
     font-weight: 100;
-    color: #c2c2c2; }
+    color: #c2c2c2;
+    font-size: 24px; }
   .index-header .change-text {
     animation: animateList 7s forwards;
     font-family: "FashionFetishHeavy", sans-serif;
@@ -2626,7 +2628,7 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
     transform: translateY(-80px); } }
 
 header {
-  z-index: 12;
+  z-index: 100;
   position: fixed;
   top: 0;
   left: 0;
