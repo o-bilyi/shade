@@ -1,9 +1,9 @@
-import "./style.css";
 import React from "react";
 import App from "./app/App";
+import "./styles/index.css";
 import { render } from "react-dom";
 import {Provider} from "react-redux";
-import configStore from "./store/configStore";
+import configStore from "./config/store/configStore";
 
 const store = configStore();
 

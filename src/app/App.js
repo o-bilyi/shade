@@ -13,46 +13,23 @@ class App extends React.Component {
     changeDeviceType: PropTypes.func,
   };
 
-  state = {
-    deviceType: 'desktop',
-  };
-
   componentDidMount() {
     this.initWow();
-    window.addEventListener('resize', this._resize, false);
+    this._deviceWidth(document.body.clientWidth)
   }
-
-  componentWillMount() {
-    window.removeEventListener('resize', this._resize, false);
-  }
-
-  componentWillReceiveProps(newProps) {
-    if (newProps.language !== this.props.deviceType) {
-      this.setState({
-        deviceType: newProps.deviceType,
-      });
-    }
-  }
-
-  _resize = () => {
-    this._deviceWidth(document.body.clientWidth);
-  };
 
   _deviceWidth = (width) => {
     let type;
+    if (width > 1024) {
+      type = "desktop";
+    }
     if (width <= 1024 && !width < 680) {
       type = "tablet";
     }
     if (width <= 680) {
       type = "mobile";
     }
-    if (width > 1024) {
-      type = "desktop";
-    }
-    this.setState({
-      deviceType : type
-    });
-    this.props.changeDeviceType(this.state.deviceType);
+    this.props.changeDeviceType(type);
   };
 
   initWow = () => {
@@ -68,7 +45,6 @@ class App extends React.Component {
   };
 
   render() {
-    console.warn(this.state.deviceType);
     return (
       <Router>
         <div className="App">

@@ -24,3 +24,9 @@ export function Fetch(url, method = "GET", mode = "cors") {
 		console.error("Request failure: ", error);
 	});
 }
+
+export const deviceType = {
+	desktop : "desktop",
+	tablet : "tablet",
+	mobile : "mobile",
+};

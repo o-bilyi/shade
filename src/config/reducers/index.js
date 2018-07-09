@@ -2,7 +2,7 @@ const initialState = {
   deviceType: "desktop"
 };
 
-export default function lanState(state = initialState, action) {
+export default function globalState(state = initialState, action) {
   switch (action.type) {
     case "CHANGE_DEVICE_TYPE" : {
       return {
