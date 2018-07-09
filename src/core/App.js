@@ -4,12 +4,11 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {Switch} from 'react-router';
 import Notifications from 'react-notify-toast';
-import {generateRoutes, MAIN_ROUTES} from '../core';
+import {generateRoutes, MAIN_ROUTES} from './index';
 import {BrowserRouter as Router} from 'react-router-dom';
 
-class App extends React.Component {
+class App extends React.PureComponent {
   static propTypes = {
-    deviceType: PropTypes.string,
     changeDeviceType: PropTypes.func,
   };
 
@@ -58,12 +57,6 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    deviceType: state.deviceType,
-  };
-};
-
 const mapDispatchToProps = (dispatch) => {
   return {
     changeDeviceType(newProp) {
@@ -75,4 +68,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps,mapDispatchToProps)(App);
+export default connect(undefined,mapDispatchToProps)(App);
