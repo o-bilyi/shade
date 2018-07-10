@@ -25,6 +25,21 @@ export function Fetch(url, method = "GET", mode = "cors") {
 	});
 }
 
+export const getDeviceType = () => {
+	const bodyWidth = document.body.clientWidth;
+  let type;
+  if (bodyWidth > 1024) {
+    type = "desktop";
+  }
+  if (bodyWidth <= 1024 && !bodyWidth < 680) {
+    type = "tablet";
+  }
+  if (bodyWidth <= 680) {
+    type = "mobile";
+  }
+  return type;
+};
+
 export const deviceType = {
 	desktop : "desktop",
 	tablet : "tablet",

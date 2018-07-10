@@ -1,8 +1,7 @@
-import React, { Component } from "react";
-import Form from ".//Form";
+import React from "react";
+import Form from "./Form";
 
-
-export default class Modal extends Component {
+export default class Modal extends React.Component {
 
 	state = {
 		showModal : false
@@ -12,6 +11,7 @@ export default class Modal extends Component {
 		this.setState({
 			showModal : !this.state.showModal
 		});
+		document.body.classList.toggle("active");
 	};
 
 	render() {

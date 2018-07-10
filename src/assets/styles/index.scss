@@ -243,7 +243,7 @@ nav {
   .menu {
     margin: 0 auto;
     list-style: none;
-    @include flex(flex, wrap, center, center)
+    @include flex(flex, nowrap, center, center)
   }
 
   .item-menu {
@@ -467,10 +467,6 @@ nav {
   .input-field {
     margin: 0;
     width: 30%;
-  }
-  .error-text {
-    color: rgba(202, 28, 25, 0.99);
-    font-size: 12px;
   }
 }
 
@@ -784,6 +780,11 @@ form {
     }
   }
 
+  .error-text {
+    color: rgba(202, 28, 25, 0.99);
+    font-size: 12px;
+  }
+
 }
 
 /*form end ==================================>*/
@@ -791,14 +792,13 @@ form {
 /*feedback modal ==========================*/
 
 .feedback-modal {
+  overflow: auto;
+  flex-direction: column;
 
   .modal-dialog {
     max-width: 525px;
-    margin: auto;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    margin: auto auto 0;
+    width: 100%;
   }
 
   .head-modal {
@@ -854,7 +854,7 @@ form {
   background-color: rgba(0, 0, 0, 0.5);
   display: none;
   &.active {
-    display: block;
+    display: flex;
   }
 
 }
@@ -963,37 +963,37 @@ footer {
 
 /*footer ==================================>*/
 
-.button-lan-container {
-  font-family: $RobotoMedium;
-  display: flex;
-  justify-content: space-between;
-  align-content: center;
-  max-width: 230px;
-  margin: 0 auto;
-  .border {
-    display: inline-block;
-    margin: 0 10px;
-    width: 2px;
-    height: 16px;
-    background-color: #737373;
-  }
-  .button-lan {
-    font-size: 14px;
-    color: #fff;
-    font-family: $RobotoLight;
-  }
-  &.en {
-    .english {
-      color: #7d7d7d;
-      font-family: $RobotoMedium;
-    }
-  }
-  &.ua {
-    .ukraine {
-      color: #7d7d7d;
-      font-family: $RobotoMedium;
-    }
-  }
-}
+//.button-lan-container {
+//  font-family: $RobotoMedium;
+//  display: flex;
+//  justify-content: space-between;
+//  align-content: center;
+//  max-width: 230px;
+//  margin: 0 auto;
+//  .border {
+//    display: inline-block;
+//    margin: 0 10px;
+//    width: 2px;
+//    height: 16px;
+//    background-color: #737373;
+//  }
+//  .button-lan {
+//    font-size: 14px;
+//    color: #fff;
+//    font-family: $RobotoLight;
+//  }
+//  &.en {
+//    .english {
+//      color: #7d7d7d;
+//      font-family: $RobotoMedium;
+//    }
+//  }
+//  &.ua {
+//    .ukraine {
+//      color: #7d7d7d;
+//      font-family: $RobotoMedium;
+//    }
+//  }
+//}
 
 @import "components/media.scss";

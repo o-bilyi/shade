@@ -15,7 +15,7 @@ const initialState = {
 const validation = {
 	user : (val) => {
 		if (val.length < 2) {
-			return "your name must be greater than 2 characters";
+			return "Не менше 2 символів!";
 		}
 		return null;
 	},
@@ -23,13 +23,13 @@ const validation = {
 		let error = null;
 		const emailValidation = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
 		if (!emailValidation.test(val)) {
-			error = "description must be greater than 10 characters";
+			error = "E-mail введений не вірно!";
 		}
 		return error;
 	},
 	site : (val) => {
 		if (val.length < 10) {
-			return "description must be greater than 10 characters";
+			return "не менше 10 символів!";
 		}
 		return null;
 	}
@@ -63,7 +63,6 @@ export default class Form extends React.Component {
 		};
 
 		function status(response) {
-			console.warn(response);
 			if (response.ok) {
 				return Promise.resolve(response);
 			}
@@ -81,10 +80,10 @@ export default class Form extends React.Component {
 			.then(status)
 			.then(() => {
 				this.setState(initialState);
-				notify.show("Форма відправлена!","success");
+				notify.show("Форма відправлена!");
 		})
 			.catch((error) => {
-				notify.show("Помилка, повідомлення не відправлено!","error");
+				notify.show("Помилка, повідомлення не відправлено!");
 				console.error("Request failed", error);
 			});
 	};
@@ -119,7 +118,7 @@ export default class Form extends React.Component {
 					{error.site && <p className="error-text">{error.site}</p>}
 				</div>
 				<div className="input-field">
-					<label htmlFor="your-name">ваш E-mail</label>
+					<label htmlFor="your-name">E-mail</label>
 					<input id="your-email" value={email} onChange={this.onFieldsChange} type="email"
 						   required
 						   name="email" className="form-control"/>

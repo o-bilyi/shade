@@ -57,6 +57,24 @@
       }
     }
   }
+
+  .feedback-modal {
+    .input-field {
+      margin-bottom: 20px;
+    }
+    label {
+      font-size: 12px;
+    }
+    .form-control {
+      padding-bottom: 5px;
+    }
+    .big-btn {
+      margin: 20px auto 0;
+    }
+    form {
+      padding: 20px;
+    }
+  }
 }
 
 @media all and (max-width: 1080px) {
@@ -181,7 +199,7 @@
     }
 
     .max-height {
-      @include flex(flex, wrap, center, flex-start, column);
+      @include flex(flex, nowrap, center, flex-start, column);
       max-height: 100%;
       height: 100vh;
       padding-top: 30px;
