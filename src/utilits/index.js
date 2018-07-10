@@ -40,6 +40,31 @@ export const getDeviceType = () => {
   return type;
 };
 
+export class onResize {
+  constructor(dispatch){
+    window.addEventListener("resize",this.onResize,false);
+    dispatch({
+      type: 'CHANGE_DEVICE_TYPE',
+      payload: getDeviceType()
+    });
+    this._dispatch = dispatch;
+  }
+
+  _interval = null;
+
+  onResize = () => {
+    if(this._interval) {
+      clearTimeout(this._interval);
+    }
+    this._interval = setTimeout(() => {
+      this._dispatch({
+        type: 'CHANGE_DEVICE_TYPE',
+        payload: getDeviceType()
+      });
+    }, 300);
+  }
+}
+
 export const deviceType = {
 	desktop : "desktop",
 	tablet : "tablet",
