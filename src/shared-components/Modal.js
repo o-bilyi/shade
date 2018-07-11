@@ -2,7 +2,6 @@ import React from "react";
 import Form from "./Form";
 
 export default class Modal extends React.Component {
-
 	state = {
 		showModal : false
 	};
@@ -33,7 +32,7 @@ export default class Modal extends React.Component {
 								</button>
 							</div>
 							<div className="modal-body">
-								<Form/>
+								<Form hiddenModal={this.switchModal}/>
 							</div>
 						</div>
 					</div>

@@ -37,18 +37,16 @@ export default function Home (props) {
             </svg>
 					</Link>
 				</div>
-				<div className="description-logo">
-					<div className="animate-text">
-						<h1 className="fixed-text">Реалізуй свої ідеї з</h1>
-						<div className="wrapper-change-text">
-							<ul className="change-text">
-								<li>натхненням</li>
-								<li>підтримкою</li>
-								<li>shade design</li>
-							</ul>
-						</div>
-					</div>
-				</div>
+        <div className="animate-text">
+          <h1 className="fixed-text">Реалізуй свої ідеї з</h1>
+          <div className="wrapper-change-text">
+            <ul className="change-text">
+              <li>натхненням</li>
+              <li>підтримкою</li>
+              <li>shade design</li>
+            </ul>
+          </div>
+        </div>
 			</div>
 			<Link to="/portfolio" className="continue">Продовжити</Link>
 			{props.children}

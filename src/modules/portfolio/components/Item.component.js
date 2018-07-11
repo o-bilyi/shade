@@ -24,7 +24,7 @@ export default function Item(props) {
 						<button
 							className="small-btn preview"
 							onClick={() => previewProject(`/uploads-image/${props.previewImg}`, props.name)}
-							children="перед показ"/>
+							children="зображення"/>
 					</div>
 				</figcaption>
 				<Link to={props.link} target="_blank">

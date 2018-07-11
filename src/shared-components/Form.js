@@ -1,5 +1,6 @@
 import React from "react";
-import {notify} from 'react-notify-toast';
+import PropTypes from "prop-types";
+import { notify } from 'react-notify-toast';
 
 const initialState = {
 	user : "",
@@ -36,6 +37,9 @@ const validation = {
 };
 
 export default class Form extends React.Component {
+	static propTypes = {
+    hiddenModal : PropTypes.func
+	};
 	constructor(props) {
 		super(props);
 		this.state = initialState;
@@ -81,6 +85,7 @@ export default class Form extends React.Component {
 			.then(() => {
 				this.setState(initialState);
 				notify.show("Форма відправлена!");
+				this.props.hiddenModal();
 		})
 			.catch((error) => {
 				notify.show("Помилка, повідомлення не відправлено!");
