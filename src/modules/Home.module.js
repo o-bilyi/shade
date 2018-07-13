@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-// import {navigationScheme} from "../core";
+import {navigationScheme} from "../core";
 import {Link, withRouter} from "react-router-dom";
 import LogoSVG from "../assets/svg/Logo_SD_shape.svg";
 
@@ -33,7 +33,7 @@ export default withRouter(class Home extends React.Component {
 	transitionEnd = () => {
 		const nextStep = this.state.step + 1;
 		if(nextStep === 3) {
-			// this.props.history.push(navigationScheme.about);
+			this.props.history.push(navigationScheme.about);
 		} else {
 			this._setState();
 		}

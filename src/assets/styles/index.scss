@@ -14,16 +14,15 @@
     stroke-miterlimit: 10;
     stroke-width: 0.25px;
   }
-
 }
 
 .index-header {
-  @include flex(flex, nowrap, center, center, column);
-  height: 100vh;
   color: #fff;
+  height: 100vh;
   text-align: center;
-  transition: background-color .9s;
   background-color: #333333;
+  transition: background-color .9s;
+  @include flex(flex, nowrap, center, center, column);
 
   &.step-1 {
     background-color: #373461;
@@ -71,6 +70,7 @@
     font-weight: bold;
     list-style: none;
     font-size: 32px;
+    text-transform: uppercase;
     transition: transform .9s;
   }
 
