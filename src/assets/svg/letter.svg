@@ -17,6 +17,6 @@
           transform="translate(58.4 22.15) rotate(131.21)"/>
     <rect class="letter-1" x="17.87" y="23.46" width="0.17" height="29.48"
           transform="translate(1.05 76.87) rotate(-131.21)"/>
-    <path class="letter-2"
+    <path class="letter-1"
           d="M41.37,2.87V6.67H73L41.37,34.45h0v5L51.1,31,73,50.21H41.37V54H79.94V2.87Zm34.77,45L54,28.43,76.15,9Z"/>
 </svg>

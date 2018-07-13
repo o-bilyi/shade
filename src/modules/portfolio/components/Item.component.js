@@ -11,7 +11,6 @@ const previewProject = (newPreview, newNameProject) => {
 };
 
 export default function Item(props) {
-
 	return (
 		<div className="animated fadeInUp projects" data-wow-duration="1.5s">
 			<figure>
@@ -19,8 +18,8 @@ export default function Item(props) {
 					<h2 className="title-project">{props.name}</h2>
 					<div className="buttons">
 						<Link to={props.link}
-						      target="_blank"
-						      className="small-btn website">веб сайт</Link>
+							target="_blank"
+							className="small-btn website">веб сайт</Link>
 						<button
 							className="small-btn preview"
 							onClick={() => previewProject(`/uploads-image/${props.previewImg}`, props.name)}
@@ -32,12 +31,12 @@ export default function Item(props) {
 				</Link>
 			</figure>
 		</div>
-	)
+	);
 }
 
 Item.propTypes = {
 	link : PropTypes.string,
 	name : PropTypes.string,
 	previewImg : PropTypes.string,
-	img : PropTypes.string
+	img : PropTypes.string,
 };

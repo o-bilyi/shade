@@ -1,12 +1,12 @@
+import Preload from "./Preload";
 import React, {Component} from "react";
-import Preload from ".//Preload";
 
 export default class PreviewProject extends Component {
 	state = {
 		showModal : false,
 		preview : "",
 		title : "",
-		imageStatus : false
+		imageStatus : false,
 	};
 
 	componentDidMount() {
@@ -14,16 +14,16 @@ export default class PreviewProject extends Component {
 	}
 
 	switchModal = (preview) => {
-		if(this.state.showModal) {
+		if (this.state.showModal) {
 			this.setState({
-				showModal : false
+				showModal : false,
 			});
 		} else {
 			this.setState({
 				showModal : true,
 				imageStatus : true,
 				preview : preview.newPreview,
-				title : preview.newNameProject
+				title : preview.newNameProject,
 			});
 		}
 		const body = document.body;
@@ -34,7 +34,7 @@ export default class PreviewProject extends Component {
 
 	imageLoaded = () => {
 		this.setState({
-			imageStatus : false
+			imageStatus : false,
 		});
 	};
 
@@ -51,11 +51,11 @@ export default class PreviewProject extends Component {
 						</button>
 					</div>
 					<div className="modal-body">
-						 <img
-							 onLoad={this.imageLoaded}
-							 src={preview}
-							 alt={title}
-						 />
+						<img
+							onLoad={this.imageLoaded}
+							src={preview}
+							alt={title}
+						/>
 						<Preload preloadShow={this.state.imageStatus}/>
 					</div>
 				</div>

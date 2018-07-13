@@ -33,6 +33,23 @@
   }
 }
 
+@media all and (max-width: 1400px) {
+  .header-container-width,
+  .title-about-container,
+  .title-blog-container,
+  .title-contact-container{
+    @include width-container();
+  }
+
+  .logo-sd {
+    max-width: 214px;
+  }
+
+  .fixed-text {
+    font-size: 32px;
+  }
+}
+
 @media all and (max-width: 1200px) {
   .bottom-main {
     .form-container {

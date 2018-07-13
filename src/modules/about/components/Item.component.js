@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 import PropTypes from "prop-types";
-import FindUs from '../../../shared-components/FindUs';
+import FindUs from "../../../shared/component/FindUs";
 
 export default function Item(props) {
 	return (
@@ -37,5 +37,5 @@ Item.propTypes = {
 	linkedin : PropTypes.string,
 };
 Item.defaultProps = {
-	animateClass : 'fadein'
+	animateClass : "fadein",
 };

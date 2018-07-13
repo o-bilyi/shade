@@ -2,8 +2,8 @@
 
 .logo-sd {
   width: 100%;
-  max-width: 214px;
   fill: #f3f3f3;
+
   .logo-sd-1 {
     fill: #808080;
   }
@@ -14,15 +14,24 @@
     stroke-miterlimit: 10;
     stroke-width: 0.25px;
   }
-}
 
+}
 
 .index-header {
   @include flex(flex, nowrap, center, center, column);
   height: 100vh;
-  background-color: #333333;
   color: #fff;
   text-align: center;
+  transition: background-color .9s;
+  background-color: #333333;
+
+  &.step-1 {
+    background-color: #373461;
+  }
+
+  &.step-2 {
+    background-color: #296335;
+  }
 
   .button-lan-container {
     margin-bottom: 20px;
@@ -30,6 +39,7 @@
 
   .logo-container {
     margin: auto;
+    animation-duration: 1.5s;
   }
 
   .logo {
@@ -37,18 +47,16 @@
     padding-bottom: 25px;
   }
 
-  .continue {
-    margin-bottom: 25px;
-    font-size: 26px;
+  &.step-1 {
+    .change-text {
+      transform: translateY(-40px);
+    }
   }
 
-  .animate-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 24px;
-    text-transform: uppercase;
-    padding: 0 10px;
+  &.step-2 {
+    .change-text {
+      transform: translateY(-80px);
+    }
   }
 
   .wrapper-change-text {
@@ -57,53 +65,22 @@
     line-height: 40px;
   }
 
-  .fixed-text {
-    font-family: $FashionFetishRegular;
-    font-weight: 100;
-    color: #c2c2c2;
-    font-size: 24px;
-  }
-
   .change-text {
-    animation: animateList 7s forwards;
     font-family: $FashionFetishHeavy;
     text-align: center;
     font-weight: bold;
     list-style: none;
-    font-size: 22px;
+    font-size: 32px;
+    transition: transform .9s;
   }
 
-
-  .continue-text {
-    font-size: 18px;
-    font-family: $RobotoLight;
+  .fixed-text {
+    font-family: $FashionFetishRegular;
+    font-weight: 100;
+    color: #c2c2c2;
+    font-size: 42px;
+    margin-bottom: 20px;
   }
-}
-
-@keyframes animateList {
-
-  0% {
-    transform: translateY(0);
-  }
-  20% {
-    transform: translateY(0);
-  }
-
-  25% {
-    transform: translateY(-40px);
-  }
-
-  50% {
-    transform: translateY(-40px);
-  }
-
-  55% {
-    transform: translateY(-80px);
-  }
-  100% {
-    transform: translateY(-80px);
-  }
-
 }
 
 header {
@@ -114,7 +91,7 @@ header {
   right: 0;
   background-color: #333333;
   box-shadow: 0 1px 2px 0 rgba(66, 67, 67, 0.26);
-  transition: all .3s ease-out;
+  transition: background-color .3s ease-out;
 
   .header-logo {
     @include flex(flex, wrap, center);
@@ -134,9 +111,15 @@ header {
   }
 }
 
+.header-container-width,
+.title-about-container,
+.title-blog-container,
+.title-contact-container{
+  @include width-container(1920px,auto, 35px);
+}
+
 .header-container-width {
   @include flex(flex, wrap, center);
-  @include width-container(1290px);
   height: 50px;
 
   .logo {
@@ -341,18 +324,6 @@ nav {
     &:after {
       content: ".";
      }
-    //&:before {
-    //  content: "";
-    //  position: absolute;
-    //  top: 50%;
-    //  left: 0;
-    //  right: 0;
-    //  margin: auto;
-    //  transform: translateY(-50%);
-    //  display: block;
-    //  height: 1px;
-    //  background-color: #838383;
-    //}
   }
 }
 
@@ -370,7 +341,7 @@ nav {
     position: relative;
     filter: grayscale(100%);
     box-shadow: 0 1px 2px 0 rgba(66, 67, 67, 0.52);
-    max-height: 285px;
+    //max-height: 285px;
     width: 100%;
     &:hover {
       filter: grayscale(0);
@@ -535,12 +506,6 @@ nav {
     text-align: center;
   }
 
-}
-
-.title-about-container,
-.title-blog-container,
-.title-contact-container{
-  @include width-container(1230px);
 }
 
 .title-about-container {
@@ -955,13 +920,14 @@ footer {
   a {
     @include flex(inline-flex, wrap, center, center);
 
+
     &:first-child {
       margin-right: 5px;
     }
   }
 }
-
 /*footer ==================================>*/
+/*
 
 //.button-lan-container {
 //  font-family: $RobotoMedium;
@@ -994,6 +960,6 @@ footer {
 //      font-family: $RobotoMedium;
 //    }
 //  }
-//}
+//}*/
 
 @import "components/media.scss";

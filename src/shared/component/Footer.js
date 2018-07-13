@@ -1,5 +1,5 @@
 import React from "react";
-import FindUs from ".//FindUs";
+import FindUs from "./FindUs";
 
 export default function Footer() {
 	return (

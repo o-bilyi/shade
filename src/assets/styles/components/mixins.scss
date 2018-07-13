@@ -2,7 +2,7 @@
   transition: $type $time $nameAnimation;
 }
 
-@mixin width-container($maxWidth : 1230px,$margin : auto,$padding : 0 10px, $width : 100%) {
+@mixin width-container($maxWidth : 1920px,$margin : auto,$padding : 0 10px, $width : 100%) {
   max-width: $maxWidth;
   margin: $margin;
   padding: $padding;

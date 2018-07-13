@@ -1,80 +1,80 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
-import Header from '../../shared-components/Header';
-import Footer from '../../shared-components/Footer';
-import BottomMainForm from '../../shared-components/bottom-main-form';
+import React from "react";
+import {Link} from "react-router-dom";
+import Header from "../../shared/component/Header";
+import Footer from "../../shared/component/Footer";
+import BottomMainForm from "../../shared/component/bottom-main-form";
 
 const blogModule = [
 	{
-		'blogImg': '/img/main/blogModule-img.jpg',
-		'blogTitleH2': 'Article first',
-		'blogTitleSpan': 'identity, inspiration',
-		'blogDescription': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamcolaboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in',
-		'animateClass': 'wow animated fadeIn item',
-		'learnMore': 'https://reactjs.org/',
+		"blogImg" : "/img/main/blogModule-img.jpg",
+		"blogTitleH2" : "Article first",
+		"blogTitleSpan" : "identity, inspiration",
+		"blogDescription" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamcolaboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in",
+		"animateClass" : "wow animated fadeIn item",
+		"learnMore" : "https://reactjs.org/",
 	},
 	{
-		'blogImg': '/img/main/blogModule-img.jpg',
-		'blogTitleH2': 'Article Second',
-		'blogTitleSpan': 'identity, inspiration',
-		'blogDescription': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamcolaboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in',
-		'animateClass': 'wow animated fadeIn item',
-		'learnMore': 'https://reactjs.org/',
+		"blogImg" : "/img/main/blogModule-img.jpg",
+		"blogTitleH2" : "Article Second",
+		"blogTitleSpan" : "identity, inspiration",
+		"blogDescription" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamcolaboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in",
+		"animateClass" : "wow animated fadeIn item",
+		"learnMore" : "https://reactjs.org/",
 	},
 	{
-		'blogImg': '/img/main/blogModule-img.jpg',
-		'blogTitleH2': 'Article three',
-		'blogTitleSpan': 'identity, inspiration',
-		'blogDescription': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamcolaboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in',
-		'animateClass': 'wow animated fadeIn item',
-		'learnMore': 'https://reactjs.org/',
+		"blogImg" : "/img/main/blogModule-img.jpg",
+		"blogTitleH2" : "Article three",
+		"blogTitleSpan" : "identity, inspiration",
+		"blogDescription" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamcolaboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in",
+		"animateClass" : "wow animated fadeIn item",
+		"learnMore" : "https://reactjs.org/",
 	},
 	{
-		'blogImg': '/img/main/blogModule-img.jpg',
-		'blogTitleH2': 'Article four',
-		'blogTitleSpan': 'identity, inspiration',
-		'blogDescription': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamcolaboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in',
-		'animateClass': 'wow animated fadeIn item',
-		'learnMore': 'https://reactjs.org/',
+		"blogImg" : "/img/main/blogModule-img.jpg",
+		"blogTitleH2" : "Article four",
+		"blogTitleSpan" : "identity, inspiration",
+		"blogDescription" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamcolaboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in",
+		"animateClass" : "wow animated fadeIn item",
+		"learnMore" : "https://reactjs.org/",
 	},
 	{
-		'blogImg': '/img/main/blogModule-img.jpg',
-		'blogTitleH2': 'Article first',
-		'blogTitleSpan': 'identity, inspiration',
-		'blogDescription': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamcolaboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in',
-		'animateClass': 'wow animated fadeIn item',
-		'learnMore': 'https://reactjs.org/',
+		"blogImg" : "/img/main/blogModule-img.jpg",
+		"blogTitleH2" : "Article first",
+		"blogTitleSpan" : "identity, inspiration",
+		"blogDescription" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamcolaboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in",
+		"animateClass" : "wow animated fadeIn item",
+		"learnMore" : "https://reactjs.org/",
 	},
 	{
-		'blogImg': '/img/main/blogModule-img.jpg',
-		'blogTitleH2': 'Article Second',
-		'blogTitleSpan': 'identity, inspiration',
-		'blogDescription': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamcolaboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in',
-		'animateClass': 'wow animated fadeIn item',
-		'learnMore': 'https://reactjs.org/',
+		"blogImg" : "/img/main/blogModule-img.jpg",
+		"blogTitleH2" : "Article Second",
+		"blogTitleSpan" : "identity, inspiration",
+		"blogDescription" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamcolaboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in",
+		"animateClass" : "wow animated fadeIn item",
+		"learnMore" : "https://reactjs.org/",
 	},
 	{
-		'blogImg': '/img/main/blogModule-img.jpg',
-		'blogTitleH2': 'Article three',
-		'blogTitleSpan': 'identity, inspiration',
-		'blogDescription': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamcolaboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in',
-		'animateClass': 'wow animated fadeIn item',
-		'learnMore': 'https://reactjs.org/',
+		"blogImg" : "/img/main/blogModule-img.jpg",
+		"blogTitleH2" : "Article three",
+		"blogTitleSpan" : "identity, inspiration",
+		"blogDescription" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamcolaboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in",
+		"animateClass" : "wow animated fadeIn item",
+		"learnMore" : "https://reactjs.org/",
 	},
 	{
-		'blogImg': '/img/main/blogModule-img.jpg',
-		'blogTitleH2': 'Article four',
-		'blogTitleSpan': 'identity, inspiration',
-		'blogDescription': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamcolaboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in',
-		'animateClass': 'wow animated fadeIn item',
-		'learnMore': 'https://reactjs.org/',
+		"blogImg" : "/img/main/blogModule-img.jpg",
+		"blogTitleH2" : "Article four",
+		"blogTitleSpan" : "identity, inspiration",
+		"blogDescription" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamcolaboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in",
+		"animateClass" : "wow animated fadeIn item",
+		"learnMore" : "https://reactjs.org/",
 	},
 ];
 
 export default class Blog extends React.PureComponent {
 	state = {
-		blogItems: blogModule.slice(0, 4),
-		haveMore: blogModule.length > 4,
+		blogItems : blogModule.slice(0, 4),
+		haveMore : blogModule.length > 4,
 	};
 
 	getArticles = (item, key) => {
@@ -90,9 +90,10 @@ export default class Blog extends React.PureComponent {
 				<div className="blog-description">
 					<span children={item.blogDescription}/>
 				</div>
-				<Link to={item.learnMore} target="_blank"
-				      rel="noopener noreferrer"
-				      className="learn-more">Детальніше</Link>
+				<Link
+					to={item.learnMore} target="_blank"
+					rel="noopener noreferrer"
+					className="learn-more">Детальніше</Link>
 			</div>
 		);
 	};
@@ -101,8 +102,8 @@ export default class Blog extends React.PureComponent {
 		const currentItem = this.state.blogItems;
 		const newItem = currentItem.concat(blogModule.slice(currentItem.length, currentItem.length + 4));
 		this.setState({
-			blogItems: newItem,
-			haveMore: newItem.length !== blogModule.length,
+			blogItems : newItem,
+			haveMore : newItem.length !== blogModule.length,
 		});
 	};
 
@@ -120,7 +121,7 @@ export default class Blog extends React.PureComponent {
 					</div>
 					<main className="width-container">
 						<section data-wow-offset="100" data-wow-duration="1.5s"
-						         className="wow animated fadeInUp blog-container">
+										 className="wow animated fadeInUp blog-container">
 							{blogItems.map(this.getArticles)}
 
 							{haveMore && <button
