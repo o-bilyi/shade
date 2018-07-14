@@ -16,7 +16,7 @@
   }
 }
 
-.index-header {
+.index-page {
   color: #fff;
   height: 100vh;
   text-align: center;
@@ -26,17 +26,21 @@
 
   &.step-1 {
     background-color: #373461;
+
+    .change-text {
+      transform: translateY(-40px);
+    }
   }
 
   &.step-2 {
-    background-color: #296335;
+    background-color: #06422f;
+
+    .change-text {
+      transform: translateY(-80px);
+    }
   }
 
-  .button-lan-container {
-    margin-bottom: 20px;
-  }
-
-  .logo-container {
+  .logo-and-text {
     margin: auto;
     animation-duration: 1.5s;
   }
@@ -46,16 +50,9 @@
     padding-bottom: 25px;
   }
 
-  &.step-1 {
-    .change-text {
-      transform: translateY(-40px);
-    }
-  }
-
-  &.step-2 {
-    .change-text {
-      transform: translateY(-80px);
-    }
+  .animate-text {
+    text-transform: uppercase;
+    font-family: $FashionFetishHeavy;
   }
 
   .wrapper-change-text {
@@ -65,12 +62,10 @@
   }
 
   .change-text {
-    font-family: $FashionFetishHeavy;
     text-align: center;
     font-weight: bold;
     list-style: none;
     font-size: 32px;
-    text-transform: uppercase;
     transition: transform .9s;
   }
 
@@ -115,8 +110,9 @@ header {
 .title-about-container,
 .title-blog-container,
 .title-contact-container{
-  @include width-container(1920px,auto, 35px);
+  @include width-container(1920px,auto, 0 35px);
 }
+
 
 .header-container-width {
   @include flex(flex, wrap, center);
@@ -443,7 +439,6 @@ nav {
 
 .user-container {
   @include flex();
-  padding-bottom: 75px;
 }
 
 .user-box {
@@ -508,8 +503,13 @@ nav {
 
 }
 
+.AboutUs {
+  .title-about-container {
+    padding-bottom: 150px;
+  }
+}
+
 .title-about-container {
-  padding-bottom: 150px;
   .title-page {
     padding-bottom: 40px;
   }
@@ -521,7 +521,7 @@ nav {
 }
 
 .about-container {
-  @include width-container(955px);
+  @include width-container(1140px);
 }
 
 .title-blog-container {

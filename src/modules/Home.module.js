@@ -42,23 +42,21 @@ export default withRouter(class Home extends React.Component {
 	render() {
 		const step = "step-" + this.state.step;
 		return (
-			<div className={"wrapper index-header " + step}>
-				<div className="wow animated fadeIn logo-container">
+			<div className={"wrapper index-page " + step}>
+				<div className="wow animated fadeIn logo-and-text">
 					<div className="logo">
-						<Link to="/portfolio">
+						<Link to={navigationScheme.about}>
 							<LogoSVG/>
 						</Link>
 					</div>
 					<div className="animate-text">
 						<h1 className="fixed-text">Реалізуй свої ідеї з</h1>
 						<div className="wrapper-change-text">
-							<p className="change-text" onTransitionEnd={this.transitionEnd}>
-								натхненням
-								<br/>
-								підтримкою
-								<br/>
-								shade design
-							</p>
+							<ul className="change-text" onTransitionEnd={this.transitionEnd}>
+								<li>натхненням</li>
+								<li>підтримкою</li>
+								<li>shade design</li>
+							</ul>
 						</div>
 					</div>
 				</div>

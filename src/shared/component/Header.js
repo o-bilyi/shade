@@ -31,6 +31,7 @@ class Header extends React.PureComponent {
 			menuShowed : !this.state.menuShowed,
 			toggleMenu : !this.state.toggleMenu,
 		});
+    	document.body.classList.toggle("active");
 		if (contentMobileAnimate) {
 			contentMobileAnimate.classList.toggle("active");
 		}

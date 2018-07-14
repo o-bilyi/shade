@@ -33,24 +33,26 @@
   }
 }
 
-@media all and (max-width: 1400px) {
+@media all and (max-width: 1440px) {
   .header-container-width,
   .title-about-container,
   .title-blog-container,
-  .title-contact-container{
+  .title-contact-container {
     @include width-container();
   }
-
-  .logo-sd {
-    max-width: 214px;
-  }
-
-  .fixed-text {
-    font-size: 32px;
+  .width-container {
+    @include width-container();
   }
 }
 
 @media all and (max-width: 1200px) {
+
+  .index-page {
+    .logo-sd {
+      max-width: 214px;
+    }
+  }
+
   .bottom-main {
     .form-container {
       max-width: 430px;
@@ -100,8 +102,15 @@
       width: 25px;
     }
   }
+
+  .AboutUs {
+    .title-about-container {
+      padding-bottom: 80px;
+    }
+  }
   .title-page {
     text-align: center;
+    padding: 25px 0;
   }
   .projects {
     figcaption {
@@ -120,9 +129,9 @@
   }
 
   .contact-block {
-    @include flex(flex,wrap,center,space-between,column);
+    @include flex(flex, wrap, center, space-between, column);
 
-    .left-block,.right-block {
+    .left-block, .right-block {
       @include transition(width);
       width: 100%;
     }
@@ -132,7 +141,7 @@
     }
 
     .right-block {
-      @include flex(flex,wrap,center,center,row);
+      @include flex(flex, wrap, center, center, row);
       padding: 25px 0;
     }
     .findUsHere {
@@ -284,27 +293,29 @@
   }
 
   .user-container {
-      @include flex(flex,wrap,center,center,column);
-      .user-box {
-        .user-head {
-          background-size: cover;
-        }
-        width: 100%;
+    @include flex(flex, wrap, center, center, column);
+    .user-box {
+      width: 100%;
+      &:not(:last-child) {
         margin-bottom: 130px;
       }
+      .user-head {
+        background-size: cover;
+      }
     }
+  }
 
   .blog-container {
-    @include flex(flex,wrap,center,center,column);
+    @include flex(flex, wrap, center, center, column);
     .item {
       width: 100%;
     }
   }
 
   .bottom-main {
-    background-position: -145px -25px;
+    background-position: -190px -25px;
     .form-container {
-      margin-left: 280px;
+      margin-left: 255px;
       margin-bottom: 45px;
     }
     .input-field, .big-btn {
@@ -316,8 +327,16 @@
 
 @media all and (max-width: 680px) {
 
-  .logo-sd {
-    max-width: 135px;
+  .index-page {
+    .logo-sd {
+      max-width: 135px;
+    }
+    .fixed-text {
+      font-size: 24px;
+    }
+    .change-text {
+      font-size: 22px;
+    }
   }
 
   nav {
@@ -366,7 +385,7 @@
     }
 
     .letter,
-    .phone-icon{
+    .phone-icon {
       width: 60px;
     }
 
@@ -381,7 +400,7 @@
   .title-page {
     font-size: 16px;
   }
-  .index-header {
+  .index-page {
     .title-logo {
       padding-top: 5px;
       font-size: 14px;
@@ -405,7 +424,7 @@
       max-width: 100px;
     }
     .user-title {
-      h2{
+      h2 {
         font-size: 18px;
       }
       span {
