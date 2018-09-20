@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {Link} from "react-router-dom";
+import {API_FOR_IMG} from "../../../utilits/index";
 
 const newPreviewProject = new CustomEvent("preview");
 
@@ -22,12 +23,12 @@ export default function Item(props) {
 							className="small-btn website">веб сайт</Link>
 						<button
 							className="small-btn preview"
-							onClick={() => previewProject(`/uploads-image/${props.previewImg}`, props.name)}
+							onClick={() => previewProject(`${API_FOR_IMG}uploads-image/${props.previewImg}`, props.name)}
 							children="зображення"/>
 					</div>
 				</figcaption>
 				<Link to={props.link} target="_blank">
-					<img className="item-img" src={`/uploads-image/${props.img}`} alt={props.name}/>
+					<img className="item-img" src={`${API_FOR_IMG}uploads-image/${props.img}`} alt={props.name}/>
 				</Link>
 			</figure>
 		</div>

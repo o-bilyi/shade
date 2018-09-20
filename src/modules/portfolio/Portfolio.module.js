@@ -3,7 +3,7 @@ import Item from "./components/Item.component";
 import Header from "../../shared/component/Header";
 import Footer from "../../shared/component/Footer";
 import Preload from "../../shared/component/Preload";
-import {Fetch, scrollTo} from "../../utilits/index";
+import {API, Fetch, scrollTo} from "../../utilits/index";
 import PreviewsProject from "../../shared/component/PreviewProject";
 import BottomMainForm from "../../shared/component/bottom-main-form";
 
@@ -20,11 +20,10 @@ export default class Portfolio extends React.Component {
 	}
 
 	_getProjects = () => {
-		// fetch("https://jsonplaceholder.typicode.com/posts/1")
-		Fetch("/api/projects").then(res => {
+		Fetch(`${API}projects`).then(res => {
 			if (res) {
 				this.setState({
-					projects : res
+					projects : res,
 				});
 			}
 		});
@@ -59,8 +58,8 @@ export default class Portfolio extends React.Component {
 										<strong className="crossed-out" children="роботи"/>
 										<span children="Рішення для ваших ідей"/>
 									</h2>
-									{ this._getProjectsItems() }
-									{ haveMore && <button className="more-project" onClick={this.showMore} children="Більше проектів"/> }
+									{this._getProjectsItems()}
+									{haveMore && <button className="more-project" onClick={this.showMore} children="Більше проектів"/>}
 								</div>
 								<BottomMainForm/>
 							</div>

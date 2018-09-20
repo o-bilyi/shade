@@ -3,7 +3,7 @@ import Header from "../../shared/component/Header";
 import Footer from "../../shared/component/Footer";
 import Item from "./components/Item.component";
 import Preload from "../../shared/component/Preload";
-import {Fetch, scrollTo} from "../../utilits/index";
+import {Fetch, scrollTo, API} from "../../utilits/index";
 import BottomMainForm from "../../shared/component/bottom-main-form";
 
 export default class AboutUs extends React.PureComponent {
@@ -17,7 +17,7 @@ export default class AboutUs extends React.PureComponent {
 	}
 
 	_getUsers = () => {
-		Fetch("/api/users").then(res => {
+		Fetch(`${API}users`).then(res => {
 			if (res) {
 				this.setState({
 					items : res
@@ -40,12 +40,9 @@ export default class AboutUs extends React.PureComponent {
 							<div data-wow-duration="1.5s" className="wow animated fadeInDown title-about-container">
 								<h2 className="title-page">
 									<span className="crossed-out" children="про нас"/>
-									<span children="Команда, натхненна дизайном"/>
+									{/* <span children="Команда, натхненна дизайном"/> */}
 								</h2>
-								<p className="description" children="Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                          nisi ut aliquip ex ea commodo consequat."/>
+								{/* <p className="description" children="description"/> */}
 							</div>
 							<main data-wow-offset="100" data-wow-duration="1.5s" className="wow animated fadeInUp about-container">
 								<section className="wow animated fadeIn user-container">

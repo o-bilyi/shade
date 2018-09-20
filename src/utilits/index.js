@@ -71,3 +71,6 @@ export const deviceType = {
 	tablet : "tablet",
 	mobile : "mobile",
 };
+
+export const API = process.env.NODE_ENV === "development" ? "http://shade-design.bender.org.ua/api/" : "/api/";
+export const API_FOR_IMG = process.env.NODE_ENV === "development" ? "http://shade-design.bender.org.ua/" : "/";
