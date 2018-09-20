@@ -1,12 +1,13 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import {scrollTo} from "../../utilits/index";
-import Header from "../../shared/component/Header";
-import Footer from "../../shared/component/Footer";
-import FindUs from "../../shared/component/FindUs";
+import {scrollTo} from "utilits/index";
+import Header from "shared/component/Header";
+import Footer from "shared/component/Footer";
+import FindUs from "shared/component/FindUs";
+import BottomMainForm from "shared/component/bottom-main-form";
+
 import PhoneIconSVG from "../../assets/svg/phone.svg";
 import LetterIconSVG from "../../assets/svg/letter.svg";
-import BottomMainForm from "../../shared/component/bottom-main-form";
 
 export default class ContactUs extends React.PureComponent {
 	componentDidMount() {

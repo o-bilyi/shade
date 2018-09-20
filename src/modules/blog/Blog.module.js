@@ -1,8 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import Header from "../../shared/component/Header";
-import Footer from "../../shared/component/Footer";
-import BottomMainForm from "../../shared/component/bottom-main-form";
+import Header from "shared/component/Header";
+import Footer from "shared/component/Footer";
+import BottomMainForm from "shared/component/bottom-main-form";
 
 const blogModule = [
 	{

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {API_FOR_IMG} from "../../../utilits/index";
-import FindUs from "../../../shared/component/FindUs";
+import {API_FOR_IMG} from "utilits/index";
+import FindUs from "shared/component/FindUs";
 
 export default function Item(props) {
 	return (

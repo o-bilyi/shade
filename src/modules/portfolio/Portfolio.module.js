@@ -1,11 +1,11 @@
 import React from "react";
 import Item from "./components/Item.component";
-import Header from "../../shared/component/Header";
-import Footer from "../../shared/component/Footer";
-import Preload from "../../shared/component/Preload";
-import {API, Fetch, scrollTo} from "../../utilits/index";
-import PreviewsProject from "../../shared/component/PreviewProject";
-import BottomMainForm from "../../shared/component/bottom-main-form";
+import Header from "shared/component/Header";
+import Footer from "shared/component/Footer";
+import Preload from "shared/component/Preload";
+import {API, Fetch, scrollTo} from "utilits/index";
+import PreviewsProject from "shared/component/PreviewProject";
+import BottomMainForm from "shared/component/bottom-main-form";
 
 export default class Portfolio extends React.Component {
 	state = {
