@@ -40,7 +40,7 @@ export default class AboutUs extends React.PureComponent {
 							<div data-wow-duration="1.5s" className="wow animated fadeInDown title-about-container">
 								<h2 className="title-page">
 									<span className="crossed-out" children="про нас"/>
-									{/* <span children="Команда, натхненна дизайном"/> */}
+									 <span children="Команда, яка працює на результат."/>
 								</h2>
 								{/* <p className="description" children="description"/> */}
 							</div>

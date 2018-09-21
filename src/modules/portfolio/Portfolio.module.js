@@ -56,7 +56,7 @@ export default class Portfolio extends React.Component {
 								<div className="top-main width-container">
 									<h2 className="title-page">
 										<strong className="crossed-out" children="роботи"/>
-										<span children="Рішення для ваших ідей"/>
+										<span children="Рішення для ваших ідей."/>
 									</h2>
 									{this._getProjectsItems()}
 									{haveMore && <button className="more-project" onClick={this.showMore} children="Більше проектів"/>}
