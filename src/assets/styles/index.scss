@@ -106,10 +106,7 @@ header {
   }
 }
 
-.header-container-width,
-.title-about-container,
-.title-blog-container,
-.title-contact-container{
+.header-container-width {
   @include width-container(1920px,auto, 0 35px);
 }
 
@@ -304,22 +301,30 @@ nav {
   margin-top: 50px;
 }
 
-.title-page {
+.title-page-wrap {
   padding: 55px 0 65px;
-  font-size: 24px;
-  color: #303030;
-  font-family: $RobotoLight;
-  .crossed-out {
-    font-family: $RobotoBold;
-    position: relative;
-    display: inline-block;
-    text-align: center;
-    text-transform: capitalize;
-    margin-right: 10px;
 
-    &:after {
-      content: ".";
-     }
+  .title-page {
+    color: #303030;
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-family: $RobotoLight;
+
+    .crossed-out {
+      font-family: $RobotoBold;
+      position: relative;
+      display: inline-block;
+      text-align: center;
+      text-transform: capitalize;
+      margin-right: 10px;
+    }
+
+  }
+
+  .description {
+    color: #797979;
+    font-size: 14px;
+    font-family: $RobotoLight;
   }
 }
 
@@ -510,14 +515,7 @@ nav {
 }
 
 .title-about-container {
-  .title-page {
-    padding-bottom: 40px;
-  }
-  .description {
-    font-size: 14px;
-    font-family: $RobotoLight;
-    color: #797979;
-  }
+
 }
 
 .about-container {

@@ -6,12 +6,14 @@ import Preload from "shared/component/Preload";
 import {API, Fetch, scrollTo} from "utilits/index";
 import PreviewsProject from "shared/component/PreviewProject";
 import BottomMainForm from "shared/component/bottom-main-form";
+import TitleAndDescriptionPage from "shared/component/TitleAndDescriptionPage.component";
 
 export default class Portfolio extends React.Component {
 	state = {
 		projects : [],
 		haveMore : true,
 		nextCountItem : 4,
+		titleAndDescription : [],
 	};
 
 	componentDidMount() {
@@ -20,13 +22,22 @@ export default class Portfolio extends React.Component {
 	}
 
 	_getProjects = () => {
-		Fetch(`${API}projects`).then(res => {
-			if (res) {
-				this.setState({
-					projects : res,
-				});
-			}
-		});
+		Promise.all([
+			Fetch(`${API}projects`).then(res => {
+				if (res) {
+					this.setState({
+						projects : res,
+					});
+				}
+			}),
+			Fetch(`${API}projects-text`).then(res => {
+				if (res) {
+					this.setState({
+						titleAndDescription : res,
+					});
+				}
+			})
+		]);
 	};
 
 	showMore = () => {
@@ -51,14 +62,17 @@ export default class Portfolio extends React.Component {
 				<Header/>
 				{
 					this.state.projects.length
-						? <main id="portfolio" className="wow animated fadeIn offset-section portfolio">
+						? <main id="portfolio" className="offset-section portfolio">
 							<div className="contentMobileAnimate">
-								<div className="top-main width-container">
-									<h2 className="title-page">
-										<strong className="crossed-out" children="роботи"/>
-										<span children="Рішення для ваших ідей."/>
-									</h2>
-									{this._getProjectsItems()}
+								<div className="width-container">
+
+									{
+										<TitleAndDescriptionPage titleAndDescription={this.state.titleAndDescription}/>
+									}
+
+									{
+										this._getProjectsItems()
+									}
 									{haveMore && <button className="more-project" onClick={this.showMore} children="Більше проектів"/>}
 								</div>
 								<BottomMainForm/>

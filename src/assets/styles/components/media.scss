@@ -35,9 +35,7 @@
 
 @media all and (max-width: 1440px) {
   .header-container-width,
-  .title-about-container,
-  .title-blog-container,
-  .title-contact-container {
+  .title-page-wrap{
     @include width-container();
   }
   .width-container {
@@ -103,12 +101,7 @@
     }
   }
 
-  .AboutUs {
-    .title-about-container {
-      padding-bottom: 80px;
-    }
-  }
-  .title-page {
+  .title-page-wrap {
     text-align: center;
     padding: 25px 0;
   }
@@ -123,7 +116,7 @@
     }
   }
   .portfolio {
-    .title-page {
+    .title-page-wrap {
       padding: 40px 0;
     }
   }
@@ -433,13 +426,6 @@
     }
     .user-description {
       font-size: 12px;
-    }
-  }
-  .title-about-container {
-    .title-page {
-      .crossed-out:after {
-        transform: translateY(4px);
-      }
     }
   }
 }

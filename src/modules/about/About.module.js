@@ -5,10 +5,12 @@ import Item from "./components/Item.component";
 import Preload from "shared/component/Preload";
 import {Fetch, scrollTo, API} from "utilits/index";
 import BottomMainForm from "shared/component/bottom-main-form";
+import TitleAndDescriptionPage from "shared/component/TitleAndDescriptionPage.component";
 
 export default class AboutUs extends React.PureComponent {
 	state = {
 		items : [],
+		titleAndDescription : []
 	};
 
 	componentDidMount() {
@@ -17,13 +19,22 @@ export default class AboutUs extends React.PureComponent {
 	}
 
 	_getUsers = () => {
-		Fetch(`${API}users`).then(res => {
-			if (res) {
-				this.setState({
-					items : res
-				});
-			}
-		});
+		Promise.all([
+			Fetch(`${API}users`).then(res => {
+				if (res) {
+					this.setState({
+						items : res,
+					});
+				}
+			}),
+			Fetch(`${API}users-text`).then(res => {
+				if (res) {
+					this.setState({
+						titleAndDescription : res,
+					});
+				}
+			})
+		]);
 	};
 
 	_getUserItems = () => {
@@ -37,18 +48,21 @@ export default class AboutUs extends React.PureComponent {
 				{
 					this.state.items.length
 						? <div className="offset-section contentMobileAnimate">
-							<div data-wow-duration="1.5s" className="wow animated fadeInDown title-about-container">
-								<h2 className="title-page">
-									<span className="crossed-out" children="про нас"/>
-									 <span children="Команда, яка працює на результат."/>
-								</h2>
-								{/* <p className="description" children="description"/> */}
+
+							<div className="width-container">
+
+								{
+									<TitleAndDescriptionPage titleAndDescription={this.state.titleAndDescription}/>
+								}
+
+								<main data-wow-offset="100" data-wow-duration="1.5s" className="wow animated fadeInUp about-container">
+									<section className="wow animated fadeIn user-container">
+										{this._getUserItems()}
+									</section>
+								</main>
+
 							</div>
-							<main data-wow-offset="100" data-wow-duration="1.5s" className="wow animated fadeInUp about-container">
-								<section className="wow animated fadeIn user-container">
-									{this._getUserItems()}
-								</section>
-							</main>
+
 							<BottomMainForm/>
 						</div>
 						: <Preload/>
