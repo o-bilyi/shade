@@ -1,3 +1,5 @@
+import {store} from "../index";
+import {changeDeviceType} from "config/actions/index";
 /**
  * scrollTo element, on default scroll to x = 0, y = 0
  * @param x{number}
@@ -44,10 +46,7 @@ export const getDeviceType = () => {
 export class onResize {
 	constructor(dispatch) {
 		window.addEventListener("resize", this.onResize, false);
-		dispatch({
-			type : "CHANGE_DEVICE_TYPE",
-			payload : getDeviceType(),
-		});
+		store.dispatch(changeDeviceType(getDeviceType()));
 		this._dispatch = dispatch;
 	}
 
@@ -58,10 +57,7 @@ export class onResize {
 			clearTimeout(this._interval);
 		}
 		this._interval = setTimeout(() => {
-			this._dispatch({
-				type : "CHANGE_DEVICE_TYPE",
-				payload : getDeviceType(),
-			});
+			store.dispatch(changeDeviceType(getDeviceType()));
 		}, 300);
 	};
 }

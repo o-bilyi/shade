@@ -6,7 +6,7 @@ import "./assets/styles/index.scss";
 import {Provider} from "react-redux";
 import configStore from "./config/store/configStore";
 
-const store = configStore();
+export const store = configStore();
 new onResize(store.dispatch);
 
 render(

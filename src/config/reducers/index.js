@@ -1,16 +1,8 @@
-const initialState = {
-	deviceType : "desktop",
-};
+import {combineReducers} from "redux";
+import {deviceType} from "./device-type";
+import {routerReducer as routing} from "react-router-redux";
 
-export default function globalState(state = initialState, action) {
-	switch (action.type) {
-		case "CHANGE_DEVICE_TYPE" : {
-			return {
-				...state,
-				deviceType : action.payload,
-			};
-		}
-		default :
-			return state;
-	}
-}
+export default combineReducers({
+	routing,
+	deviceType,
+});
