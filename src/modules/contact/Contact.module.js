@@ -1,9 +1,9 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import {API, Fetch, scrollTo} from "utilits/index";
 import Header from "shared/component/Header";
 import Footer from "shared/component/Footer";
 import FindUs from "shared/component/FindUs";
+import {API, Fetch, scrollTo} from "utilits/index";
 import BottomMainForm from "shared/component/bottom-main-form";
 import TitleAndDescriptionPage from "shared/component/TitleAndDescriptionPage.component";
 
@@ -12,8 +12,7 @@ import LetterIconSVG from "../../assets/svg/letter.svg";
 
 export default class ContactUs extends React.PureComponent {
 	state = {
-		contacts : [],
-		titleAndDescription : [],
+		contacts : []
 	};
 
 	componentDidMount() {
@@ -22,22 +21,13 @@ export default class ContactUs extends React.PureComponent {
 	}
 
 	_getContacts = () => {
-		Promise.all([
-			Fetch(`${API}contacts`).then(res => {
-				if (res) {
-					this.setState({
-						contacts : res,
-					});
-				}
-			}),
-			Fetch(`${API}contacts-text`).then(res => {
-				if (res) {
-					this.setState({
-						titleAndDescription : res,
-					});
-				}
-			}),
-		]);
+		Fetch(`${API}contacts`).then(res => {
+			if (res) {
+				this.setState({
+					contacts : res,
+				});
+			}
+		});
 	};
 
 	_getContactsBody = () => {
@@ -88,7 +78,7 @@ export default class ContactUs extends React.PureComponent {
 					<div className="width-container">
 
 						{
-							<TitleAndDescriptionPage titleAndDescription={this.state.titleAndDescription}/>
+							<TitleAndDescriptionPage pageName="contacts"/>
 						}
 
 						{

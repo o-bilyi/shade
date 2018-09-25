@@ -1,8 +1,8 @@
 import {combineReducers} from "redux";
 import {deviceType} from "./device-type";
-import {routerReducer as routing} from "react-router-redux";
+import {pagesText} from "./get-all-pages-text";
 
 export default combineReducers({
-	routing,
 	deviceType,
+	pagesText,
 });

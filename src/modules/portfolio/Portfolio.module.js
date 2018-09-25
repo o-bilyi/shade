@@ -13,7 +13,6 @@ export default class Portfolio extends React.Component {
 		projects : [],
 		haveMore : true,
 		nextCountItem : 4,
-		titleAndDescription : [],
 	};
 
 	componentDidMount() {
@@ -22,22 +21,13 @@ export default class Portfolio extends React.Component {
 	}
 
 	_getProjects = () => {
-		Promise.all([
-			Fetch(`${API}projects`).then(res => {
-				if (res) {
-					this.setState({
-						projects : res,
-					});
-				}
-			}),
-			Fetch(`${API}projects-text`).then(res => {
-				if (res) {
-					this.setState({
-						titleAndDescription : res,
-					});
-				}
-			})
-		]);
+		Fetch(`${API}projects`).then(res => {
+			if (res) {
+				this.setState({
+					projects : res,
+				});
+			}
+		});
 	};
 
 	showMore = () => {
@@ -67,7 +57,7 @@ export default class Portfolio extends React.Component {
 								<div className="width-container">
 
 									{
-										<TitleAndDescriptionPage titleAndDescription={this.state.titleAndDescription}/>
+										<TitleAndDescriptionPage pageName="projects"/>
 									}
 
 									{

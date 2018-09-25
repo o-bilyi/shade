@@ -1,8 +1,10 @@
 import Form from "./Form";
-import React, {Component} from "react";
+import React from "react";
+import connect from "react-redux/es/connect/connect";
 
-export default class bottomMainForm extends Component {
-	render() {
+function bottomMainForm(props) {
+	return {
+		props.pagesText && props.pagesText.map((item, key) => {
 		return (
 			<div className="bottom-main">
 				<div className="form-container">
@@ -10,6 +12,14 @@ export default class bottomMainForm extends Component {
 					<Form/>
 				</div>
 			</div>
-		);
+		)
+	})
 	}
 }
+const mapStateToProps = state => {
+	return {
+		pagesText : state.pagesText
+	};
+};
+
+export default connect(mapStateToProps)(bottomMainForm);

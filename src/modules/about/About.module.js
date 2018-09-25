@@ -9,8 +9,7 @@ import TitleAndDescriptionPage from "shared/component/TitleAndDescriptionPage.co
 
 export default class AboutUs extends React.PureComponent {
 	state = {
-		items : [],
-		titleAndDescription : []
+		items : []
 	};
 
 	componentDidMount() {
@@ -19,22 +18,13 @@ export default class AboutUs extends React.PureComponent {
 	}
 
 	_getUsers = () => {
-		Promise.all([
-			Fetch(`${API}users`).then(res => {
-				if (res) {
-					this.setState({
-						items : res,
-					});
-				}
-			}),
-			Fetch(`${API}users-text`).then(res => {
-				if (res) {
-					this.setState({
-						titleAndDescription : res,
-					});
-				}
-			})
-		]);
+		Fetch(`${API}users`).then(res => {
+			if (res) {
+				this.setState({
+					items : res,
+				});
+			}
+		});
 	};
 
 	_getUserItems = () => {
@@ -52,7 +42,7 @@ export default class AboutUs extends React.PureComponent {
 							<div className="width-container">
 
 								{
-									<TitleAndDescriptionPage titleAndDescription={this.state.titleAndDescription}/>
+									<TitleAndDescriptionPage pageName="users"/>
 								}
 
 								<main data-wow-offset="100" data-wow-duration="1.5s" className="wow animated fadeInUp about-container">
