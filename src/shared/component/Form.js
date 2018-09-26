@@ -39,6 +39,10 @@ const validation = {
 export default class Form extends React.Component {
 	static propTypes = {
 		hiddenModal : PropTypes.func,
+		labelNameText : PropTypes.string,
+		labelSiteText : PropTypes.string,
+		labelEmailText : PropTypes.string,
+		buttonSubmitText : PropTypes.string,
 	};
 
 	constructor(props) {
@@ -106,21 +110,21 @@ export default class Form extends React.Component {
 		return (
 			<form className="form" method="post" onSubmit={this.handleSubmit}>
 				<div className="input-field max-width-input">
-					<label htmlFor="your-name">Моє ім'я</label>
+					<label htmlFor="your-name">{this.props.labelNameText}</label>
 					<input id="your-name" value={user} onChange={this.onFieldsChange} type="text"
 								 required
 								 name="user" className="form-control"/>
 					{error.user && <p className="error-text">{error.user}</p>}
 				</div>
 				<div className="input-field">
-					<label htmlFor="your-name">Замовити сайт</label>
+					<label htmlFor="your-name">{this.props.labelSiteText}</label>
 					<input id="your-website" value={site} onChange={this.onFieldsChange} type="text"
 								 required
 								 name="site" className="form-control"/>
 					{error.site && <p className="error-text">{error.site}</p>}
 				</div>
 				<div className="input-field">
-					<label htmlFor="your-name">E-mail</label>
+					<label htmlFor="your-name">{this.props.labelEmailText}</label>
 					<input id="your-email" value={email} onChange={this.onFieldsChange} type="email"
 								 required
 								 name="email" className="form-control"/>
@@ -131,7 +135,7 @@ export default class Form extends React.Component {
 						disabled={this.haveError()}
 						className="more-projects_link"
 						name="submit"
-						children="відправити"/>
+						children={this.props.buttonSubmitText}/>
 				</div>
 			</form>
 		);

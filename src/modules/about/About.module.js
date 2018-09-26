@@ -4,7 +4,7 @@ import Footer from "shared/component/Footer";
 import Item from "./components/Item.component";
 import Preload from "shared/component/Preload";
 import {Fetch, scrollTo, API} from "utilits/index";
-import BottomMainForm from "shared/component/bottom-main-form";
+import BottomMainForm from "shared/component/bottom-main-form.component";
 import TitleAndDescriptionPage from "shared/component/TitleAndDescriptionPage.component";
 
 export default class AboutUs extends React.PureComponent {

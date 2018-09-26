@@ -5,7 +5,7 @@ import Footer from "shared/component/Footer";
 import Preload from "shared/component/Preload";
 import {API, Fetch, scrollTo} from "utilits/index";
 import PreviewsProject from "shared/component/PreviewProject";
-import BottomMainForm from "shared/component/bottom-main-form";
+import BottomMainForm from "shared/component/bottom-main-form.component";
 import TitleAndDescriptionPage from "shared/component/TitleAndDescriptionPage.component";
 
 export default class Portfolio extends React.Component {

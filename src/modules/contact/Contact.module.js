@@ -4,7 +4,7 @@ import Header from "shared/component/Header";
 import Footer from "shared/component/Footer";
 import FindUs from "shared/component/FindUs";
 import {API, Fetch, scrollTo} from "utilits/index";
-import BottomMainForm from "shared/component/bottom-main-form";
+import BottomMainForm from "shared/component/bottom-main-form.component";
 import TitleAndDescriptionPage from "shared/component/TitleAndDescriptionPage.component";
 
 import PhoneIconSVG from "../../assets/svg/phone.svg";
