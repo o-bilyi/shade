@@ -1,7 +1,7 @@
 import React from "react";
 import Loadable from "react-loadable";
 import {Route} from "react-router-dom";
-import Preload from "../shared/component/Preload";
+import Preload from "../shared/component/Preload.component";
 
 export const navigationScheme = {
 	home : "/",

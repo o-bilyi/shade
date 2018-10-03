@@ -1,8 +1,8 @@
 import React from "react";
-import Header from "shared/component/Header";
-import Footer from "shared/component/Footer";
+import Header from "shared/component/Header.component";
+import Footer from "shared/component/Footer.component";
 import Item from "./components/Item.component";
-import Preload from "shared/component/Preload";
+import Preload from "shared/component/Preload.component";
 import {Fetch, scrollTo, API} from "utilits/index";
 import BottomMainForm from "shared/component/bottom-main-form.component";
 import TitleAndDescriptionPage from "shared/component/TitleAndDescriptionPage.component";

@@ -1,7 +1,7 @@
-import Preload from "./Preload";
+import Preload from "./Preload.component";
 import React, {Component} from "react";
 
-export default class PreviewProject extends Component {
+export default class PreviewProjectComponent extends Component {
 	state = {
 		showModal : false,
 		preview : "",

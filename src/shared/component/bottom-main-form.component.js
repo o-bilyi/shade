@@ -1,4 +1,4 @@
-import Form from "./Form";
+import FormComponent from "./Form.component";
 import React from "react";
 import PropTypes from "prop-types";
 import connect from "react-redux/es/connect/connect";
@@ -11,7 +11,7 @@ function BottomMainForm(props) {
 					props.pagesText && props.pagesText.map((item, key) => {
 						return [
 							<h2 className="title-form" key={key} children={item.contactFormTitle}/>,
-							<Form
+							<FormComponent
 								key={2}
 								labelNameText={item.contactFormName}
 								labelSiteText={item.contactFormSite}

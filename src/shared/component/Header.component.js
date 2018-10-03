@@ -1,6 +1,6 @@
 import React from "react";
-import Modal from "./Modal";
-import FindUs from "./FindUs";
+import ModalComponent from "./Modal.component";
+import FindUs from "./FindUs.component";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import {MAIN_ROUTES} from "../../core/index";
@@ -16,7 +16,7 @@ const nameRoute = {
 
 const contentMobileAnimate = document.querySelector(".contentMobileAnimate");
 
-class Header extends React.PureComponent {
+class HeaderComponent extends React.PureComponent {
 	static propTypes = {
 		deviceType : PropTypes.string,
 	};
@@ -243,7 +243,7 @@ class Header extends React.PureComponent {
 						this._getMenu()
 					}
 					<div className="email-header">
-						<Modal/>
+						<ModalComponent/>
 					</div>
 				</div>
 			</header>
@@ -257,4 +257,4 @@ const mapStateToProps = state => {
 	};
 };
 
-export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps)(HeaderComponent);

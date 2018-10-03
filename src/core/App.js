@@ -4,15 +4,11 @@ import {store} from "../index";
 import {Switch} from "react-router";
 import {API, Fetch} from "../utilits";
 import Notifications from "react-notify-toast";
+import {getAllPagesText} from "../config/actions";
 import {generateRoutes, MAIN_ROUTES} from "./index";
 import {BrowserRouter as Router} from "react-router-dom";
-import {getAllPagesText} from "../config/actions";
 
 export default class App extends React.PureComponent {
-	state = {
-		texts : null
-	};
-
 	componentDidMount() {
 		this.initWow();
 		this._getTextPages();
@@ -21,9 +17,7 @@ export default class App extends React.PureComponent {
 	_getTextPages = () => {
 		Fetch(`${API}texts`).then(res => {
 			if (res) {
-				this.setState({
-					texts : res
-				}, () => store.dispatch(getAllPagesText(this.state.texts)));
+				store.dispatch(getAllPagesText(res));
 			}
 		});
 	};

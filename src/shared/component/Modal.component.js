@@ -1,9 +1,9 @@
 import React from "react";
-import Form from "./Form";
+import FormComponent from "./Form.component";
 import CloseIconSVG from "../../assets/svg/close.svg";
 import LetterIconSVG from "../../assets/svg/letter.svg";
 
-export default class Modal extends React.Component {
+export default class ModalComponent extends React.Component {
 	state = {
 		showModal : false,
 	};
@@ -29,7 +29,7 @@ export default class Modal extends React.Component {
 								</button>
 							</div>
 							<div className="modal-body">
-								<Form/>
+								<FormComponent/>
 							</div>
 						</div>
 					</div>

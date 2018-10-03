@@ -1,10 +1,10 @@
 import React from "react";
 import Item from "./components/Item.component";
-import Header from "shared/component/Header";
-import Footer from "shared/component/Footer";
-import Preload from "shared/component/Preload";
+import Header from "shared/component/Header.component";
+import Footer from "shared/component/Footer.component";
+import Preload from "shared/component/Preload.component";
 import {API, Fetch, scrollTo} from "utilits/index";
-import PreviewsProject from "shared/component/PreviewProject";
+import PreviewsProject from "shared/component/PreviewProject.component";
 import BottomMainForm from "shared/component/bottom-main-form.component";
 import TitleAndDescriptionPage from "shared/component/TitleAndDescriptionPage.component";
 

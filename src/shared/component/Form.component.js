@@ -36,7 +36,7 @@ const validation = {
 	},
 };
 
-export default class Form extends React.Component {
+export default class FormComponent extends React.Component {
 	static propTypes = {
 		hiddenModal : PropTypes.func,
 		labelNameText : PropTypes.string,

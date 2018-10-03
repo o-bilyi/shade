@@ -1,14 +1,13 @@
 import React from "react";
-import {Link} from "react-router-dom";
-import Header from "shared/component/Header";
-import Footer from "shared/component/Footer";
-import FindUs from "shared/component/FindUs";
 import {API, Fetch, scrollTo} from "utilits/index";
+import Header from "shared/component/Header.component";
+import Footer from "shared/component/Footer.component";
+import FindUs from "shared/component/FindUs.component";
 import BottomMainForm from "shared/component/bottom-main-form.component";
 import TitleAndDescriptionPage from "shared/component/TitleAndDescriptionPage.component";
 
-import PhoneIconSVG from "../../assets/svg/phone.svg";
-import LetterIconSVG from "../../assets/svg/letter.svg";
+import PhoneIconSVG from "assets/svg/phone.svg";
+import LetterIconSVG from "assets/svg/letter.svg";
 
 export default class ContactUs extends React.PureComponent {
 	state = {
@@ -41,7 +40,7 @@ export default class ContactUs extends React.PureComponent {
 							</div>
 							<div className="phone-and-email">
 								<p className="title-block">e-mail</p>
-								<Link className="link-block" to={`mailto:${item.email}`}>{item.email}</Link>
+								<a className="link-block" href={`mailto:${item.email}`}>{item.email}</a>
 							</div>
 						</div>
 						<div className="phone-us">
@@ -50,9 +49,9 @@ export default class ContactUs extends React.PureComponent {
 							</div>
 							<div className="phone-and-email">
 								<p className="title-block">phone / viber / telegram</p>
-								<Link className="link-block" to={`tel:${item.phoneOne}`}>{item.phoneOne}</Link>
+								<a className="link-block" href={`tel:${item.phoneOne}`}>{item.phoneOne}</a>
 								<span className="seperator">/</span>
-								<Link className="link-block" to={`tel:${item.phoneTwo}`}>{item.phoneTwo}</Link>
+								<a className="link-block" href={`tel:${item.phoneTwo}`}>{item.phoneTwo}</a>
 							</div>
 						</div>
 					</div>

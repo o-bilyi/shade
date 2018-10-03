@@ -20,11 +20,11 @@ export function Fetch(url, method = "GET", mode = "cors") {
 	return fetch(url, {method, mode})
 		.then(res => {
 			if (res.ok) return res.json();
-			console.error("error", res);
 			return false;
 		})
 		.catch((error) => {
 			console.error("Request failure: ", error);
+			return false;
 		});
 }
 
