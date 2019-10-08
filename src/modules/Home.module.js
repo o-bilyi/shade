@@ -10,13 +10,10 @@ export default withRouter(class Home extends React.Component {
 			push : PropTypes.func
 		}),
 	};
-	constructor(props) {
-		super(props);
 
-		this.state = {
-			step : 0
-		};
-	}
+	state = {
+		step : 0
+	};
 
 	componentDidMount() {
 		this._setState();
