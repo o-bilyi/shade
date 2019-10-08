@@ -1,9 +1,10 @@
 import React from "react";
+import { storage } from "../../db";
 import Item from "./components/Item.component";
+import { /* API, Fetch*/ scrollTo} from "utilits/index";
 import Header from "shared/component/Header.component";
 import Footer from "shared/component/Footer.component";
 import Preload from "shared/component/Preload.component";
-import {API, Fetch, scrollTo} from "utilits/index";
 import PreviewsProject from "shared/component/PreviewProject.component";
 import BottomMainForm from "shared/component/bottom-main-form.component";
 import TitleAndDescriptionPage from "shared/component/TitleAndDescriptionPage.component";
@@ -14,20 +15,25 @@ export default class Portfolio extends React.Component {
 		haveMore : true,
 		nextCountItem : 4,
 	};
-
 	componentDidMount() {
 		scrollTo();
 		this._getProjects();
 	}
 
 	_getProjects = () => {
-		Fetch(`${API}projects`).then(res => {
-			if (res) {
-				this.setState({
-					projects : res,
-				});
-			}
+		storage.ref("/user").once("value").then(snapshot => {
+			this.setState({
+				projects : snapshot.val()
+			});
 		});
+		console.warn(this.state.projects);
+		// Fetch(`${API}projects`).then(res => {
+		// 	if (res) {
+		// 		this.setState({
+		// 			projects : res,
+		// 		});
+		// 	}
+		// });
 	};
 
 	showMore = () => {
