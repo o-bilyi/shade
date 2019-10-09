@@ -1,16 +1,14 @@
 import React from "react";
-import Header from "shared/component/Header.component";
-import Footer from "shared/component/Footer.component";
+import {db} from "../../db";
+import {scrollTo} from "utilits/index";
 import Item from "./components/Item.component";
 import Preload from "shared/component/Preload.component";
-import { scrollTo } from "utilits/index";
-import BottomMainForm from "shared/component/bottom-main-form.component";
+import Wrapper from "../../shared/component/Wrapper.component";
 import TitleAndDescriptionPage from "shared/component/TitleAndDescriptionPage.component";
-import {storage} from "../../db";
 
 export default class AboutUs extends React.PureComponent {
 	state = {
-		items : []
+		items : [],
 	};
 
 	componentDidMount() {
@@ -19,16 +17,9 @@ export default class AboutUs extends React.PureComponent {
 	}
 
 	_getUsers = () => {
-		// Fetch(`${API}users`).then(res => {
-		// 	if (res) {
-		// 		this.setState({
-		// 			items : res,
-		// 		});
-		// 	}
-		// });
-		storage.ref("/about").once("value").then(snapshot => {
+		db.ref("/about").once("value").then(snapshot => {
 			this.setState({
-				items : snapshot.val()
+				items : snapshot.val(),
 			});
 		});
 	};
@@ -37,34 +28,30 @@ export default class AboutUs extends React.PureComponent {
 		return this.state.items.map((item, key) => <Item {...item} key={key}/>);
 	};
 
+	_getContent = () => {
+		if (this.state.items.length) {
+			return (
+				<div className="width-container">
+
+					{ <TitleAndDescriptionPage pageName="usersPage"/> }
+
+					<main data-wow-offset="100" data-wow-duration="1.5s" className="wow animated fadeInUp about-container">
+						<section className="wow animated fadeIn user-container">
+							{this._getUserItems()}
+						</section>
+					</main>
+
+				</div>
+			);
+		}
+		return <Preload/>;
+	}
+
 	render() {
 		return (
-			<div className="AboutUs">
-				<Header/>
-				{
-					this.state.items.length
-						? <div className="offset-section contentMobileAnimate">
-
-							<div className="width-container">
-
-								{
-									<TitleAndDescriptionPage pageName="users"/>
-								}
-
-								<main data-wow-offset="100" data-wow-duration="1.5s" className="wow animated fadeInUp about-container">
-									<section className="wow animated fadeIn user-container">
-										{this._getUserItems()}
-									</section>
-								</main>
-
-							</div>
-
-							<BottomMainForm/>
-						</div>
-						: <Preload/>
-				}
-				<Footer/>
-			</div>
+			<Wrapper pageName="contactUs" classNames="contact">
+				{ this._getContent() }
+			</Wrapper>
 		);
 	}
 }

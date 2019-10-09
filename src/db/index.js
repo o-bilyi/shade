@@ -1,27 +1,41 @@
-// import * as admin from "firebase-admin";
+// import * as firebase from "firebase";
 
-// admin.initializeApp();
+// const firebaseConfig = {
+// 	projectId : "shade-design",
+// 	apiKey : "AIzaSyDbGQTBG6EHxfqZGXoCw41dEgCtLMRKuWQ",
+// 	authDomain : "shade-design.firebaseapp.com",
+// 	databaseURL : "https://shade-design.firebaseio.com",
+// 	storageBucket : "shade-design.appspot.com",
+// };
 
-// Firebase App (the core Firebase SDK) is always required and
-// must be listed before other Firebase SDKs
-import * as firebase from "firebase/app";
+// firebase.initializeApp(firebaseConfig);
 
-// Add the Firebase services that you want to use
-// import "firebase/auth";
-// import "firebase/firestore";
+// export const db = firebase.database();
+// export const storage = firebase.storage();
+
+import firebase from "firebase/app";
+import "firebase/database";
+import "firebase/storage";
+import "firebase/auth";
+import "firebase/functions";
+
+import {API_KEY, AUTH_DOMAIN, DATABASE_URL, MESSAGING_SENDER_ID, PROJECT_ID, STORAGE_BUCKET} from "babel-dotenv";
 
 
-const firebaseConfig = {
-	apiKey : "AIzaSyDbGQTBG6EHxfqZGXoCw41dEgCtLMRKuWQ",
-	authDomain : "https://shade-design.firebaseapp.com",
-	databaseURL : "https://shade-design.firebaseio.com",
-	storageBucket : "gs://shade-design.appspot.com/",
-//     databaseURL: "https://urbech-admin.firebaseio.com",
-//     projectId: "urbech-admin",
-//     storageBucket: "urbech-admin.appspot.com",
+const config = {
+	apiKey : API_KEY,
+	authDomain : AUTH_DOMAIN,
+	databaseURL : DATABASE_URL,
+	projectId : PROJECT_ID,
+	storageBucket : STORAGE_BUCKET,
+	messagingSenderId : MESSAGING_SENDER_ID,
 };
 
-firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(config);
 
+export const functions = firebase.functions();
 export const db = firebase.database();
 export const storage = firebase.storage();
+export const firebaseAuth = firebase.auth();
+
+firebaseAuth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);

@@ -150,6 +150,11 @@ module.exports = {
 							// directory for faster rebuilds.
 							cacheDirectory : true,
 						},
+						plugins : [
+							["babel-plugin-dotenv", {
+								"replacedModuleName" : "babel-dotenv",
+							}],
+						],
 					},
 					{
 						test : /\.svg$/,

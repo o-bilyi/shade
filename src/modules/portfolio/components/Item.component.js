@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {API_FOR_IMG} from "utilits/index";
 
 const newPreviewProject = new CustomEvent("preview");
 
@@ -22,12 +21,12 @@ export default function Item(props) {
 							className="small-btn website">веб сайт</a>
 						<button
 							className="small-btn preview"
-							onClick={() => previewProject(`${API_FOR_IMG}uploads-image/${props.previewImg}`, props.name)}
+							onClick={() => previewProject(props.previewImg, props.name)}
 							children="зображення"/>
 					</div>
 				</figcaption>
 				<a href={props.link} target="_blank">
-					<img className="item-img" src={`${API_FOR_IMG}uploads-image/${props.img}`} alt={props.name}/>
+					<img className="item-img" src={props.img} alt={props.name}/>
 				</a>
 			</figure>
 		</div>

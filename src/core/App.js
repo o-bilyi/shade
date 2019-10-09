@@ -1,12 +1,11 @@
 import WOW from "wowjs";
 import React from "react";
-// import {store} from "../index";
-import {Switch} from "react-router";
-// import {API} from "../utilits";
+import {store} from "../index";
 import Notifications from "react-notify-toast";
-// import {getAllPagesText} from "../config/actions";
+import {getAllPagesText} from "../config/actions";
 import {generateRoutes, MAIN_ROUTES} from "./index";
-import {BrowserRouter as Router} from "react-router-dom";
+import {BrowserRouter as Router, Switch} from "react-router-dom";
+import {db} from "../db";
 
 export default class App extends React.PureComponent {
 	componentDidMount() {
@@ -15,11 +14,11 @@ export default class App extends React.PureComponent {
 	}
 
 	_getTextPages = () => {
-		// Fetch(`${API}texts`).then(res => {
-		// 	if (res) {
-		// 		store.dispatch(getAllPagesText(res));
-		// 	}
-		// });
+		db.ref("/textsOfPages").once("value").then(snapshot => {
+			if (snapshot) {
+				store.dispatch(getAllPagesText(snapshot.val()));
+			}
+		});
 	};
 
 	initWow = () => {

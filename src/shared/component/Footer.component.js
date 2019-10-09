@@ -3,37 +3,42 @@ import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import FindUs from "./FindUs.component";
 
+/**
+ * @return {null}
+ */
 function FooterComponent(props) {
-	return (
-		<footer>
-			<div className="footer-container">
-				{
-					props.pagesText && props.pagesText.map((item, key) => {
-						return[
-							<div className="left">
-								<p key={key}>{item.copyrightTitle}</p>
-							</div>,
-							<div className="right social">
-								<FindUs
-									facebook={item.facebook}
-									linkedin={item.linked}
-								/>
-							</div>
-						];
-					})
-				}
-			</div>
-		</footer>
-	);
+	if (props.textsOfPages) {
+		const {copyright, facebook, linked} = props.textsOfPages;
+		return (
+			<footer>
+				<div className="footer-container">
+					<div className="left">
+						<p>{copyright}</p>
+					</div>
+					<div className="right social">
+						<FindUs
+							facebook={facebook}
+							linkedin={linked}
+						/>
+					</div>
+				</div>
+			</footer>
+		);
+	}
+	return null;
 }
 
 FooterComponent.propTypes = {
-	pagesText : PropTypes.array,
+	textsOfPages : PropTypes.shape({
+		copyright : PropTypes.string,
+		facebook : PropTypes.string,
+		linked : PropTypes.string,
+	})
 };
 
 const mapStateToProps = state => {
 	return {
-		pagesText : state.pagesText,
+		textsOfPages : state.textsOfPages,
 	};
 };
 

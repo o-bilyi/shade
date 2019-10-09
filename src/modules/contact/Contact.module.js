@@ -1,13 +1,13 @@
 import React from "react";
+import {db} from "../../db";
 import {scrollTo} from "utilits/index";
-import Header from "shared/component/Header.component";
-import Footer from "shared/component/Footer.component";
 import FindUs from "shared/component/FindUs.component";
-import BottomMainForm from "shared/component/bottom-main-form.component";
 import TitleAndDescriptionPage from "shared/component/TitleAndDescriptionPage.component";
 
 import PhoneIconSVG from "assets/svg/phone.svg";
 import LetterIconSVG from "assets/svg/letter.svg";
+import Wrapper from "../../shared/component/Wrapper.component";
+import Preload from "../../shared/component/Preload.component";
 
 export default class ContactUs extends React.PureComponent {
 	state = {
@@ -20,19 +20,18 @@ export default class ContactUs extends React.PureComponent {
 	}
 
 	_getContacts = () => {
-		// Fetch(`${API}contacts`).then(res => {
-		// 	if (res) {
-		// 		this.setState({
-		// 			contacts : res,
-		// 		});
-		// 	}
-		// });
+		db.ref("/contacts").once("value").then(snapshot => {
+			this.setState({
+				contacts : snapshot.val()
+			});
+		});
 	};
 
 	_getContactsBody = () => {
-		return this.state.contacts.map((item, key) => {
+		if (this.state.contacts) {
+			const {email, phoneOne, phoneTwo, facebook, linked} = this.state.contacts;
 			return (
-				<section data-wow-offset="100" data-wow-duration="1.5s" key={key} className="wow animated fadeInUp contact-block">
+				<section data-wow-offset="100" data-wow-duration="1.5s" className="wow animated fadeInUp contact-block">
 					<div className="left-block">
 						<div className="mail-us">
 							<div className="icon-block">
@@ -40,7 +39,7 @@ export default class ContactUs extends React.PureComponent {
 							</div>
 							<div className="phone-and-email">
 								<p className="title-block">e-mail</p>
-								<a className="link-block" href={`mailto:${item.email}`}>{item.email}</a>
+								<a className="link-block" href={`mailto:${email}`}>{email}</a>
 							</div>
 						</div>
 						<div className="phone-us">
@@ -49,47 +48,37 @@ export default class ContactUs extends React.PureComponent {
 							</div>
 							<div className="phone-and-email">
 								<p className="title-block">phone / viber / telegram</p>
-								<a className="link-block" href={`tel:${item.phoneOne}`}>{item.phoneOne}</a>
+								<a className="link-block" href={`tel:${phoneOne}`}>{phoneOne}</a>
 								<span className="seperator">/</span>
-								<a className="link-block" href={`tel:${item.phoneTwo}`}>{item.phoneTwo}</a>
+								<a className="link-block" href={`tel:${phoneTwo}`}>{phoneTwo}</a>
 							</div>
 						</div>
 					</div>
 					<div className="right-block">
 						<p className="findUsHere" children="ми тут:"/>
 						<FindUs
-							facebook={item.facebook}
-							linkedin={item.linked}
+							facebook={facebook}
+							linkedin={linked}
 						/>
 					</div>
 				</section>
 			);
-		});
+		}
+		return <Preload/>;
 	};
 
 
 	render() {
 		return (
-			<div className="ContactUs">
-				<Header/>
-				<main className="offset-section contentMobileAnimate contact">
+			<Wrapper pageName="contactUs" classNames="contact">
+				<div className="width-container">
 
-					<div className="width-container">
+					{ <TitleAndDescriptionPage pageName="contactsPage"/> }
 
-						{
-							<TitleAndDescriptionPage pageName="contacts"/>
-						}
+					{ this._getContactsBody() }
 
-						{
-							this._getContactsBody()
-						}
-
-					</div>
-
-				</main>
-				<BottomMainForm/>
-				<Footer/>
-			</div>
+				</div>
+			</Wrapper>
 		);
 	}
 }

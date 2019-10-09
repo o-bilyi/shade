@@ -3,36 +3,35 @@ import React from "react";
 import PropTypes from "prop-types";
 import connect from "react-redux/es/connect/connect";
 
+/**
+ * @return {null}
+ */
 function BottomMainForm(props) {
-	return (
-		<div className="bottom-main">
-			<div className="form-container">
-				{
-					props.pagesText && props.pagesText.map((item, key) => {
-						return [
-							<h2 className="title-form" key={key} children={item.contactFormTitle}/>,
-							<FormComponent
-								key={2}
-								labelNameText={item.contactFormName}
-								labelSiteText={item.contactFormSite}
-								labelEmailText={item.contactFormEmail}
-								buttonSubmitText={item.contactFormButton}
-							/>
-						];
-					})
-				}
+	if (props.textsOfPages) {
+		const title = props.textsOfPages.formFields.title;
+		return (
+			<div className="bottom-main">
+				<div className="form-container">
+					<h2 className="title-form" children={title}/>
+					<FormComponent/>
+				</div>
 			</div>
-		</div>
-	);
+		);
+	}
+	return null;
 }
 
 BottomMainForm.propTypes = {
-	pagesText : PropTypes.array,
+	textsOfPages : PropTypes.shape({
+		formFields : PropTypes.shape({
+			title : PropTypes.string
+		})
+	})
 };
 
 const mapStateToProps = state => {
 	return {
-		pagesText : state.pagesText,
+		textsOfPages : state.textsOfPages,
 	};
 };
 

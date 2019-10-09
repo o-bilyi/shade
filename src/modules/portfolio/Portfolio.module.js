@@ -1,12 +1,10 @@
 import React from "react";
-import { storage } from "../../db";
+import {db} from "../../db";
+import {scrollTo} from "utilits/index";
 import Item from "./components/Item.component";
-import { /* API, Fetch*/ scrollTo} from "utilits/index";
-import Header from "shared/component/Header.component";
-import Footer from "shared/component/Footer.component";
 import Preload from "shared/component/Preload.component";
+import Wrapper from "../../shared/component/Wrapper.component";
 import PreviewsProject from "shared/component/PreviewProject.component";
-import BottomMainForm from "shared/component/bottom-main-form.component";
 import TitleAndDescriptionPage from "shared/component/TitleAndDescriptionPage.component";
 
 export default class Portfolio extends React.Component {
@@ -15,25 +13,18 @@ export default class Portfolio extends React.Component {
 		haveMore : true,
 		nextCountItem : 4,
 	};
+
 	componentDidMount() {
 		scrollTo();
 		this._getProjects();
 	}
 
 	_getProjects = () => {
-		storage.ref("/user").once("value").then(snapshot => {
+		db.ref("/projects").once("value").then(snapshot => {
 			this.setState({
-				projects : snapshot.val()
+				projects : snapshot.val(),
 			});
 		});
-		console.warn(this.state.projects);
-		// Fetch(`${API}projects`).then(res => {
-		// 	if (res) {
-		// 		this.setState({
-		// 			projects : res,
-		// 		});
-		// 	}
-		// });
 	};
 
 	showMore = () => {
@@ -51,33 +42,28 @@ export default class Portfolio extends React.Component {
 			</div>);
 	};
 
+	_getContent = () =>{
+		if (this.state.projects.length) {
+			const {haveMore} = this.state;
+			return (
+				<div className="width-container">
+
+					{<TitleAndDescriptionPage pageName="projectsPage"/>}
+
+					{this._getProjectsItems()}
+					{haveMore && <button className="more-project" onClick={this.showMore} children="Більше проектів"/>}
+				</div>
+			);
+		}
+		return <Preload/>;
+	}
+
 	render() {
-		const {haveMore} = this.state;
 		return (
-			<div>
-				<Header/>
-				{
-					this.state.projects.length
-						? <main id="portfolio" className="offset-section portfolio">
-							<div className="contentMobileAnimate">
-								<div className="width-container">
-
-									{
-										<TitleAndDescriptionPage pageName="projects"/>
-									}
-
-									{
-										this._getProjectsItems()
-									}
-									{haveMore && <button className="more-project" onClick={this.showMore} children="Більше проектів"/>}
-								</div>
-								<BottomMainForm/>
-							</div>
-						</main>
-						: <Preload/>
-				}
-				<Footer/>
+			<Wrapper pageName="portfolio" classNames="portfolio">
+				{ this._getContent() }
 				<PreviewsProject/>
-			</div>);
+			</Wrapper>
+		);
 	}
 }

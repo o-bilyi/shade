@@ -2,39 +2,41 @@ import React from "react";
 import PropTypes from "prop-types";
 import connect from "react-redux/es/connect/connect";
 
+/**
+ * @return {null}
+ */
 function TitleAndDescriptionPage(props) {
-	return (
-		<div data-wow-duration="1.5s" className="wow animated fadeInDown title-page-wrap">
-			{
-				props.pagesText && props.pagesText.map((item, key) => {
-					const title = props.pageName + "Title";
-					const description = props.pageName + "Description";
-					return [
-						<h1 className="title-page" key={key}>
-							<strong className="crossed-out" children={item[title]}/>
-							<span children={item["sub-title"]}/>
-						</h1>,
-						<p className="description" key={"key-2"} children={item[description]}/>
-					];
-				})
-			}
-		</div>
-	);
+	if (props.textsOfPages) {
+		const pageName = props.pageName;
+		const titlePage = props.textsOfPages[pageName].title;
+		const subTitlePage = props.textsOfPages[pageName].subTitle;
+		const description = props.textsOfPages[pageName].description;
+
+		return (
+			<div data-wow-duration="1.5s" className="wow animated fadeInDown title-page-wrap">
+				<h1 className="title-page">
+					<strong className="crossed-out" children={titlePage}/>
+					<span children={subTitlePage}/>
+				</h1>
+				<p className="description" children={description}/>
+			</div>
+		);
+	}
+	return null;
 }
 
 TitleAndDescriptionPage.propTypes = {
 	pageName : PropTypes.string,
-	pagesText : PropTypes.array
-	// titleAndDescription : PropTypes.arrayOf({
-	// 	title : PropTypes.string,
-	// 	"sub-title" : PropTypes.string,
-	// 	description : PropTypes.string,
-	// })
+	textsOfPages : PropTypes.shape({
+		title : PropTypes.string,
+		subTitle : PropTypes.string,
+		description : PropTypes.string
+	})
 };
 
 const mapStateToProps = state => {
 	return {
-		pagesText : state.pagesText
+		textsOfPages : state.textsOfPages
 	};
 };
 

@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import {API_FOR_IMG} from "utilits/index";
 import FindUs from "shared/component/FindUs.component";
 
 export default function Item(props) {
@@ -8,7 +7,7 @@ export default function Item(props) {
 		<div className={`wow animated ${props.animateClass} user-box`}>
 			<div className="user-head">
 				<div className="user-img">
-					<img src={`${API_FOR_IMG}uploads-image/${props.img}`} alt="text"/>
+					<img src={props.img} alt="text"/>
 				</div>
 				<div className="user-title">
 					<h2>{props.name}</h2>

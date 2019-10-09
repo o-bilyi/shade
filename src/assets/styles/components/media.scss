@@ -263,14 +263,6 @@
     transform: translate(-300px, 0);
   }
 
-  .contentMobileAnimate {
-    @include transition(transform);
-    transform: translate(0, 0);
-    &.active {
-      transform: translate(230px, 0);
-    }
-  }
-
   .portfolio {
     .flex-container {
       @include flex(flex, wrap, center, center, column);

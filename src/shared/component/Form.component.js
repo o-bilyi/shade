@@ -1,26 +1,27 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {notify} from "react-notify-toast";
+import connect from "react-redux/es/connect/connect";
 
 const initialState = {
-	user : "",
-	site : "",
-	email : "",
+	userState : "",
+	siteState : "",
+	emailState : "",
 	error : {
-		user : null,
-		site : null,
-		email : null,
+		userState : null,
+		siteState : null,
+		emailState : null,
 	},
 };
 
 const validation = {
-	user : (val) => {
+	userState : (val) => {
 		if (val.length < 2) {
 			return "Не менше 2 символів!";
 		}
 		return null;
 	},
-	email : (val) => {
+	emailState : (val) => {
 		let error = null;
 		const emailValidation = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
 		if (!emailValidation.test(val)) {
@@ -28,7 +29,7 @@ const validation = {
 		}
 		return error;
 	},
-	site : (val) => {
+	siteState : (val) => {
 		if (val.length < 10) {
 			return "не менше 10 символів!";
 		}
@@ -36,19 +37,24 @@ const validation = {
 	},
 };
 
-export default class FormComponent extends React.Component {
+class FormComponent extends React.Component {
 	static propTypes = {
 		hiddenModal : PropTypes.func,
 		labelNameText : PropTypes.string,
 		labelSiteText : PropTypes.string,
 		labelEmailText : PropTypes.string,
 		buttonSubmitText : PropTypes.string,
+		textsOfPages : PropTypes.shape({
+			formFields : PropTypes.shape({
+				email : PropTypes.string,
+				name : PropTypes.string,
+				site : PropTypes.string,
+				button : PropTypes.string,
+			})
+		})
 	};
 
-	constructor(props) {
-		super(props);
-		this.state = initialState;
-	}
+	state = initialState;
 
 	onFieldsChange = event => {
 		const errorText = validation[event.target.name](event.target.value);
@@ -106,38 +112,71 @@ export default class FormComponent extends React.Component {
 	};
 
 	render() {
-		const {user, site, email, error} = this.state;
-		return (
-			<form className="form" method="post" onSubmit={this.handleSubmit}>
-				<div className="input-field max-width-input">
-					<label htmlFor="your-name">{this.props.labelNameText}</label>
-					<input id="your-name" value={user} onChange={this.onFieldsChange} type="text"
-								 required
-								 name="user" className="form-control"/>
-					{error.user && <p className="error-text">{error.user}</p>}
-				</div>
-				<div className="input-field">
-					<label htmlFor="your-name">{this.props.labelSiteText}</label>
-					<input id="your-website" value={site} onChange={this.onFieldsChange} type="text"
-								 required
-								 name="site" className="form-control"/>
-					{error.site && <p className="error-text">{error.site}</p>}
-				</div>
-				<div className="input-field">
-					<label htmlFor="your-name">{this.props.labelEmailText}</label>
-					<input id="your-email" value={email} onChange={this.onFieldsChange} type="email"
-								 required
-								 name="email" className="form-control"/>
-					{error.email && <p className="error-text">{error.email}</p>}
-				</div>
-				<div className="big-btn">
-					<button type="submit"
-						disabled={this.haveError()}
-						className="more-projects_link"
-						name="submit"
-						children={this.props.buttonSubmitText}/>
-				</div>
-			</form>
-		);
+		if (this.props.textsOfPages) {
+			const {userState, siteState, emailState, error} = this.state;
+
+			const {email, name, site, button} = this.props.textsOfPages.formFields;
+			return (
+				<form className="form" method="post" onSubmit={this.handleSubmit}>
+					<div className="input-field max-width-input">
+						<label htmlFor="your-name">{name}</label>
+						<input
+							required
+							type="text"
+							id="your-name"
+							name="userState"
+							value={userState}
+							className="form-control"
+							onChange={this.onFieldsChange}
+						/>
+						{error.userState && <p className="error-text">{error.userState}</p>}
+					</div>
+					<div className="input-field">
+						<label htmlFor="your-name">{site}</label>
+						<input
+							required
+							type="text"
+							name="siteState"
+							id="your-website"
+							value={siteState}
+							className="form-control"
+							onChange={this.onFieldsChange}
+						/>
+						{error.siteState && <p className="error-text">{error.siteState}</p>}
+					</div>
+					<div className="input-field">
+						<label htmlFor="your-name">{email}</label>
+						<input
+							required
+							type="email"
+							id="your-email"
+							name="emailState"
+							value={emailState}
+							className="form-control"
+							onChange={this.onFieldsChange}
+						/>
+						{error.emailState && <p className="error-text">{error.emailState}</p>}
+					</div>
+					<div className="big-btn">
+						<button
+							type="submit"
+							name="submit"
+							children={button}
+							disabled={this.haveError()}
+							className="more-projects_link"
+						/>
+					</div>
+				</form>
+			);
+		}
+		return null;
 	}
 }
+
+const mapStateToProps = state => {
+	return {
+		textsOfPages : state.textsOfPages,
+	};
+};
+
+export default connect(mapStateToProps)(FormComponent);
