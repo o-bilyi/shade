@@ -1,10 +1,10 @@
 import WOW from "wowjs";
 import React from "react";
-import {store} from "../index";
+// import {store} from "../index";
 import {Switch} from "react-router";
-import {API, Fetch} from "../utilits";
+// import {API} from "../utilits";
 import Notifications from "react-notify-toast";
-import {getAllPagesText} from "../config/actions";
+// import {getAllPagesText} from "../config/actions";
 import {generateRoutes, MAIN_ROUTES} from "./index";
 import {BrowserRouter as Router} from "react-router-dom";
 
@@ -15,11 +15,11 @@ export default class App extends React.PureComponent {
 	}
 
 	_getTextPages = () => {
-		Fetch(`${API}texts`).then(res => {
-			if (res) {
-				store.dispatch(getAllPagesText(res));
-			}
-		});
+		// Fetch(`${API}texts`).then(res => {
+		// 	if (res) {
+		// 		store.dispatch(getAllPagesText(res));
+		// 	}
+		// });
 	};
 
 	initWow = () => {
@@ -35,7 +35,6 @@ export default class App extends React.PureComponent {
 	};
 
 	render() {
-		console.warn("render app");
 		return (
 			<Router>
 				<div className="App">

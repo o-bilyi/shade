@@ -1,5 +1,5 @@
 import React from "react";
-import {API, Fetch, scrollTo} from "utilits/index";
+import {scrollTo} from "utilits/index";
 import Header from "shared/component/Header.component";
 import Footer from "shared/component/Footer.component";
 import FindUs from "shared/component/FindUs.component";
@@ -20,13 +20,13 @@ export default class ContactUs extends React.PureComponent {
 	}
 
 	_getContacts = () => {
-		Fetch(`${API}contacts`).then(res => {
-			if (res) {
-				this.setState({
-					contacts : res,
-				});
-			}
-		});
+		// Fetch(`${API}contacts`).then(res => {
+		// 	if (res) {
+		// 		this.setState({
+		// 			contacts : res,
+		// 		});
+		// 	}
+		// });
 	};
 
 	_getContactsBody = () => {
