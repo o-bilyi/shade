@@ -1,18 +1,3 @@
-// import * as firebase from "firebase";
-
-// const firebaseConfig = {
-// 	projectId : "shade-design",
-// 	apiKey : "AIzaSyDbGQTBG6EHxfqZGXoCw41dEgCtLMRKuWQ",
-// 	authDomain : "shade-design.firebaseapp.com",
-// 	databaseURL : "https://shade-design.firebaseio.com",
-// 	storageBucket : "shade-design.appspot.com",
-// };
-
-// firebase.initializeApp(firebaseConfig);
-
-// export const db = firebase.database();
-// export const storage = firebase.storage();
-
 import firebase from "firebase/app";
 import "firebase/database";
 import "firebase/storage";

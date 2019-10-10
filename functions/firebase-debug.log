@@ -1,0 +1,59 @@
+[debug] [2019-10-10T14:04:23.275Z] ----------------------------------------------------------------------
+[debug] [2019-10-10T14:04:23.277Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\1\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve --only functions
+[debug] [2019-10-10T14:04:23.277Z] CLI Version:   7.5.0
+[debug] [2019-10-10T14:04:23.277Z] Platform:      win32
+[debug] [2019-10-10T14:04:23.277Z] Node Version:  v10.15.3
+[debug] [2019-10-10T14:04:23.278Z] Time:          Thu Oct 10 2019 17:04:23 GMT+0300 (Eastern European Summer Time)
+[debug] [2019-10-10T14:04:23.278Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-10T14:04:23.289Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-10T14:04:23.290Z] > authorizing via signed-in user
+[debug] [2019-10-10T14:04:23.290Z] [iam] checking project shade-design for permissions ["firebase.projects.get"]
+[debug] [2019-10-10T14:04:23.292Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/shade-design:testIamPermissions  
+
+[debug] [2019-10-10T14:04:24.301Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-10T14:04:24.303Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/shade-design  
+ 
+[debug] [2019-10-10T14:04:24.632Z] <<< HTTP RESPONSE 200
+[info] +  functions: Using node@10 from host.
+[info] +  functions: Emulator started at http://localhost:5000
+[info] i  functions: Watching "D:\shade\functions" for Cloud Functions...
+[debug] [2019-10-10T14:04:27.640Z] [runtime-status] Functions runtime initialized. {"cwd":"D:\\shade\\functions","node_version":"10.15.3"}
+[debug] [2019-10-10T14:04:27.640Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-10-10T14:04:27.643Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.0","resolution":"D:\\shade\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-10-10T14:04:27.644Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"D:\\shade\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-10T14:04:27.645Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"D:\\shade\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[info] >  o.d.bilyi@gmail.com sasha452  hasel
+[info] +  functions[sendUserMail]: http function initialized (http://localhost:5000/shade-design/us-central1/sendUserMail).
+[debug] [2019-10-10T14:14:06.295Z] Accepted request OPTIONS /shade-design/us-central1/sendUserMail --> sendUserMail
+[debug] [2019-10-10T14:14:06.779Z] [runtime-status] Functions runtime initialized. {"cwd":"D:\\shade\\functions","node_version":"10.15.3"}
+[info] i  functions: Beginning execution of "sendUserMail"
+[debug] [2019-10-10T14:14:06.780Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-10-10T14:14:06.785Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.0","resolution":"D:\\shade\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-10-10T14:14:06.787Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"D:\\shade\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-10T14:14:06.788Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"D:\\shade\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[info] >  o.d.bilyi@gmail.com sasha452  hasel
+[debug] [2019-10-10T14:14:06.921Z] [runtime-status] Trigger "sendUserMail" has been found, beginning invocation! {}
+[debug] [2019-10-10T14:14:06.922Z] [runtime-status]  {"httpsTrigger":{},"name":"sendUserMail","entryPoint":"sendUserMail"}
+[debug] [2019-10-10T14:14:06.922Z] [runtime-status] Running sendUserMail in mode HTTPS {}
+[debug] [2019-10-10T14:14:06.932Z] {"socketPath":"\\\\?\\pipe\\D:\\shade\\functions\\11896"}
+[debug] [2019-10-10T14:14:06.934Z] [functions] Runtime ready! Sending request! {"socketPath":"\\\\?\\pipe\\D:\\shade\\functions\\11896"}
+[debug] [2019-10-10T14:14:06.940Z] [runtime-status] Ephemeral server used! {}
+[debug] [2019-10-10T14:14:06.944Z] [runtime-status] Ephemeral server survived. {}
+[info] i  functions: Finished "sendUserMail" in ~1s
+[debug] [2019-10-10T14:14:06.950Z] Accepted request POST /shade-design/us-central1/sendUserMail --> sendUserMail
+[debug] [2019-10-10T14:14:07.410Z] [runtime-status] Functions runtime initialized. {"cwd":"D:\\shade\\functions","node_version":"10.15.3"}
+[info] i  functions: Beginning execution of "sendUserMail"
+[debug] [2019-10-10T14:14:07.410Z] [runtime-status] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true} {}
+[debug] [2019-10-10T14:14:07.414Z] [runtime-status] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.6.0","resolution":"D:\\shade\\functions\\node_modules\\firebase-admin\\lib\\index.js"}
+[debug] [2019-10-10T14:14:07.416Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"D:\\shade\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[debug] [2019-10-10T14:14:07.418Z] [runtime-status] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.2.0","resolution":"D:\\shade\\functions\\node_modules\\firebase-functions\\lib\\index.js"}
+[info] >  o.d.bilyi@gmail.com sasha452  hasel
+[debug] [2019-10-10T14:14:07.549Z] [runtime-status] Trigger "sendUserMail" has been found, beginning invocation! {}
+[debug] [2019-10-10T14:14:07.549Z] [runtime-status]  {"httpsTrigger":{},"name":"sendUserMail","entryPoint":"sendUserMail"}
+[debug] [2019-10-10T14:14:07.549Z] [runtime-status] Running sendUserMail in mode HTTPS {}
+[debug] [2019-10-10T14:14:07.560Z] {"socketPath":"\\\\?\\pipe\\D:\\shade\\functions\\10780"}
+[debug] [2019-10-10T14:14:07.565Z] [functions] Runtime ready! Sending request! {"socketPath":"\\\\?\\pipe\\D:\\shade\\functions\\10780"}
+[debug] [2019-10-10T14:14:07.584Z] [runtime-status] Ephemeral server used! {}
+[debug] [2019-10-10T14:14:07.592Z] [runtime-status] Ephemeral server survived. {}
+[info] i  functions: Finished "sendUserMail" in ~2s

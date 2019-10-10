@@ -72,9 +72,9 @@ class FormComponent extends React.Component {
 		event.preventDefault();
 
 		const inputs = {
-			user : this.state.user,
-			site : this.state.site,
-			email : this.state.email,
+			name : this.state.userState,
+			message : this.state.siteState,
+			email : this.state.emailState,
 		};
 
 		function status(response) {
@@ -84,7 +84,8 @@ class FormComponent extends React.Component {
 			return Promise.reject(response.statusText);
 		}
 
-		fetch("/api/sendMessage", {
+		// fetch("https://us-central1-shade-design.cloudfunctions.net/sendUserMail", {
+		fetch("http://localhost:5000/shade-design/us-central1/sendUserMail", {
 			headers : {
 				"Accept" : "application/json",
 				"Content-Type" : "application/json",

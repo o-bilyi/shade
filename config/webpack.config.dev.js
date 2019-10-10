@@ -149,12 +149,10 @@ module.exports = {
 							// It enables caching results in ./node_modules/.cache/babel-loader/
 							// directory for faster rebuilds.
 							cacheDirectory : true,
+							plugins : [["babel-plugin-dotenv", {
+								"replacedModuleName" : "babel-dotenv"}
+							]]
 						},
-						plugins : [
-							["babel-plugin-dotenv", {
-								"replacedModuleName" : "babel-dotenv",
-							}],
-						],
 					},
 					{
 						test : /\.svg$/,
