@@ -1,42 +1,30 @@
-import * as nodemailer from "nodemailer";
-import {config, Request, Response} from "firebase-functions";
+// import * as nodemailer from "nodemailer";
+import {Request, Response} from "firebase-functions";
+const sendGmail = require("gmail-send");
 
-const {gmail : { email, password }} = config();
-// const gmailPassword = config().gmail.password;
+// const {gmail : { email, password }} = config();
 
-console.log(email, password, " hasel");
-
-const mailTransport = nodemailer.createTransport({
-	service : "gmail",
-	auth : {
-		user : email,
-		pass : password,
-	},
+const emailClient = sendGmail({
+	user : "shade.design.web@gmail.com",
+	pass : "sasha452",
 });
 
-function send(name: string, userEmail: string, message: string) {
-	const text = `Email: ${userEmail} Message: ${message}`;
-	const mailOptions = {
-		from : `Shade Design ${userEmail}`,
-		to : "beluy845@gmail.com",
-		subject : `Message from ${name}`,
-		text : text
-	};
-
-	return mailTransport.sendMail(mailOptions);
-}
-function throwHttpError(res : Response, code : number, text ?: string) {
-	res.statusCode = code;
-	res.send(text || "Error");
-}
 export function sendUserEmail(req : Request, res: Response) {
-	if (req.body.name && req.body.email && req.body.message) {
-		send(req.body.name, req.body.email, req.body.message).then(() => {
-			res.send("Success");
-		}).catch((error : any) => {
-			throwHttpError(res, 401, JSON.stringify(error));
+	const {name, message} = req.body;
+	const email2 = req.body.email;
+	try {
+		emailClient({
+			to : "o.d.bilyi@gmail.com",
+			subject : "Her",
+			html : `<h2>Request from ${email2} and user name is: ${name}</h2><h3>Message</h3><p>${message}</p>`
+		}, function() {
+		    console.log(`email send from ${email2}`, JSON.stringify(arguments));
+			res.status(200);
+			res.send("ok");
 		});
-		return;
+	} catch (e) {
+		console.warn(e, "error");
+		res.status(405);
+		res.send("error");
 	}
-	throwHttpError(res, 400);
 }
