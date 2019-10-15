@@ -1,8 +1,5 @@
-// import * as nodemailer from "nodemailer";
 import {Request, Response} from "firebase-functions";
 const sendGmail = require("gmail-send");
-
-// const {gmail : { email, password }} = config();
 
 const emailClient = sendGmail({
 	user : "shade.design.web@gmail.com",
@@ -17,10 +14,15 @@ export function sendUserEmail(req : Request, res: Response) {
 			to : "o.d.bilyi@gmail.com",
 			subject : "Her",
 			html : `<h2>Request from ${email2} and user name is: ${name}</h2><h3>Message</h3><p>${message}</p>`
-		}, function() {
-		    console.log(`email send from ${email2}`, JSON.stringify(arguments));
-			res.status(200);
-			res.send("ok");
+		}, function(error ?: Error) {
+		    if(error) {
+		    	console.log(`email send from ${email2}`, JSON.stringify(arguments));
+				res.status(405);
+				res.send("error");
+			} else {
+				res.status(200);
+				res.send("ok");
+			}
 		});
 	} catch (e) {
 		console.warn(e, "error");

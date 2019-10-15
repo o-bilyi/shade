@@ -440,6 +440,11 @@ nav {
     margin: 0;
     width: 30%;
   }
+
+  .full-width {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .user-container {
@@ -691,7 +696,7 @@ form {
     margin-bottom: 50px;
   }
 
-  input {
+  .form-control {
     border: none;
     border-bottom: 1px solid #e5e5e5;
     background-color: transparent;
@@ -701,6 +706,7 @@ form {
     font-size: 16px;
     color: #595959;
     font-family: $RobotoLight;
+    resize: none;
   }
 
   label {

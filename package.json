@@ -57,7 +57,8 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js"
+    "build": "node scripts/build.js",
+    "deploy": "firebase deploy"
   },
   "devDependencies": {
     "eslint": "4.10.0",

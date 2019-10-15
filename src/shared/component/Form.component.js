@@ -84,8 +84,8 @@ class FormComponent extends React.Component {
 			return Promise.reject(response.statusText);
 		}
 
-		// fetch("https://us-central1-shade-design.cloudfunctions.net/sendUserMail", {
-		fetch("http://localhost:5000/shade-design/us-central1/sendUserMail", {
+		fetch("https://us-central1-shade-design.cloudfunctions.net/sendUserMail", {
+		// fetch("http://localhost:5000/shade-design/us-central1/sendUserMail", {
 			headers : {
 				"Accept" : "application/json",
 				"Content-Type" : "application/json",
@@ -119,7 +119,7 @@ class FormComponent extends React.Component {
 			const {email, name, site, button} = this.props.textsOfPages.formFields;
 			return (
 				<form className="form" method="post" onSubmit={this.handleSubmit}>
-					<div className="input-field max-width-input">
+					<div className="input-field">
 						<label htmlFor="your-name">{name}</label>
 						<input
 							required
@@ -133,19 +133,6 @@ class FormComponent extends React.Component {
 						{error.userState && <p className="error-text">{error.userState}</p>}
 					</div>
 					<div className="input-field">
-						<label htmlFor="your-name">{site}</label>
-						<input
-							required
-							type="text"
-							name="siteState"
-							id="your-website"
-							value={siteState}
-							className="form-control"
-							onChange={this.onFieldsChange}
-						/>
-						{error.siteState && <p className="error-text">{error.siteState}</p>}
-					</div>
-					<div className="input-field">
 						<label htmlFor="your-name">{email}</label>
 						<input
 							required
@@ -157,6 +144,18 @@ class FormComponent extends React.Component {
 							onChange={this.onFieldsChange}
 						/>
 						{error.emailState && <p className="error-text">{error.emailState}</p>}
+					</div>
+					<div className="input-field full-width">
+						<label htmlFor="your-name">{site}</label>
+						<textarea
+							required
+							name="siteState"
+							id="your-website"
+							value={siteState}
+							className="form-control"
+							onChange={this.onFieldsChange}
+						/>
+						{error.siteState && <p className="error-text">{error.siteState}</p>}
 					</div>
 					<div className="big-btn">
 						<button

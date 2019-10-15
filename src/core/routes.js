@@ -9,6 +9,14 @@ export const navigationScheme = {
 	about : "/about",
 	contact : "/contact",
 	blog : "/blog",
+
+	admin : {
+		users : "admin/users",
+		projects : "admin/projects",
+		contacts : "admin/contacts",
+		blog : "admin/blog",
+		texts : "admin/texts"
+	}
 };
 
 export const MAIN_ROUTES = [
@@ -41,6 +49,39 @@ export const MAIN_ROUTES = [
 		exact : true,
 		show : false,
 		component : () => import("../modules/blog/Blog.module"),
+	},
+];
+
+export const ADMIN_ROUTES = [
+	{
+		path : navigationScheme.admin.users,
+		exact : true,
+		show : true,
+		component : () => import("../modules/admin/pages/Users.module"),
+	},
+	{
+		path : navigationScheme.projects,
+		exact : true,
+		show : true,
+		component : () => import("../modules/admin/pages/Projects.module"),
+	},
+	{
+		path : navigationScheme.contacts,
+		exact : true,
+		show : true,
+		component : () => import("../modules/admin/pages/Contacts.module"),
+	},
+	{
+		path : navigationScheme.blog,
+		exact : true,
+		show : true,
+		component : () => import("../modules/admin/pages/Blog.module"),
+	},
+	{
+		path : navigationScheme.texts,
+		exact : true,
+		show : true,
+		component : () => import("../modules/admin/pages/Text.module"),
 	},
 ];
 
