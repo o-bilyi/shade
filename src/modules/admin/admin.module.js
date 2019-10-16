@@ -2,7 +2,9 @@ import React from "react";
 import {Navigation} from "./components/Navigation.component";
 import {generateRoutes, ADMIN_ROUTES} from "../../core";
 import {BrowserRouter as Router, Switch} from "react-router-dom";
+import {userIsAuthenticated} from "../../core/auth-redirect";
 
+@userIsAuthenticated
 export default class Admin extends React.Component {
 	render() {
 		return (
