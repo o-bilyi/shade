@@ -5,6 +5,7 @@ import Preload from "../shared/component/Preload.component";
 
 export const navigationScheme = {
 	home : "/",
+	login : "/login",
 	portfolio : "/portfolio",
 	about : "/about",
 	contact : "/contact",
@@ -20,6 +21,12 @@ export const navigationScheme = {
 };
 
 export const MAIN_ROUTES = [
+	{
+		path : navigationScheme.login,
+		exact : true,
+		show : true,
+		component : () => import("../modules/login/Login.module"),
+	},
 	{
 		path : navigationScheme.home,
 		exact : true,
