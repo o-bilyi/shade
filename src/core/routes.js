@@ -22,12 +22,6 @@ export const navigationScheme = {
 
 export const MAIN_ROUTES = [
 	{
-		path : navigationScheme.login,
-		exact : true,
-		show : true,
-		component : () => import("../modules/login/Login.module"),
-	},
-	{
 		path : navigationScheme.home,
 		exact : true,
 		show : false,
@@ -56,6 +50,12 @@ export const MAIN_ROUTES = [
 		exact : true,
 		show : false,
 		component : () => import("../modules/blog/Blog.module"),
+	},
+	{
+		path : navigationScheme.login,
+		exact : true,
+		show : true,
+		component : () => import("../modules/login/Container/Login.Container"),
 	},
 ];
 
