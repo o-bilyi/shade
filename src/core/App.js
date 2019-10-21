@@ -10,10 +10,10 @@ import {loginAction} from "../config/actions/login";
 import {MD5} from "../config/reducers/utils";
 
 const code = "bob";
-let str = "";
 
 export default class App extends React.PureComponent {
 	componentDidMount() {
+		this.str = "";
 		this.initWow();
 		this._getTextPages();
 		addEventListener("keyup", this._onKeyUp);
@@ -28,18 +28,19 @@ export default class App extends React.PureComponent {
 	};
 
 	_onKeyUp = (e) => {
-		str += e.key;
-		if (str === code) {
-			store.dispatch(loginAction({
+		this.str += e.key;
+		this.str = this.str.slice(-5);
+
+		if (this.str === code) {
+			loginAction({
 				email : "bob",
 				pass : MD5('625436')
-			})).then((res) => {
+			}).then((res) => {
 				console.warn(res);
+			}).catch(e => {
+				console.warn(e);
 			});
-		} else if (str.length > 5) {
-			str.substr(1)
 		}
-		console.warn(str)
 	};
 
 	initWow = () => {
