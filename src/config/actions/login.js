@@ -1,20 +1,48 @@
-import {baseHandlerAction} from "./utils";
-import {storageService} from "../../core/services/StorageService";
-import {changeUserInformation, loginActionTypes} from "../models/auth";
+import {loginActionTypes} from "../models/auth";
 
-export const loginSuccess = (payload) => {
-	storageService.setLocal("user", JSON.stringify(payload));
-	return baseHandlerAction(loginActionTypes.LOGIN_SUCCESS_ACTION, payload);
-};
+const password = "9357923285ede651cbdce2a7fc42538d"
 
-export const dashboardChangeUserInformationSuccess = (payload) => {
-	storageService.setLocal("user", JSON.stringify(payload));
-	return baseHandlerAction(changeUserInformation.DASHBOARD_CHANGE_USER_ACTION, payload);
-};
-
-export function loginAction(cred) {
-	return dispatch => {
-		dispatch(baseHandlerAction(loginActionTypes.LOGIN_INIT_ACTION, {cred}));
-		// const FAIL_ACTION = (res) => dispatch(baseHandlerAction(loginActionTypes.LOGIN_FAIL_ACTION, {res}));
+function loginActionSuccess(date) {
+	return {
+		type : loginActionTypes.LOGIN_SUCCESS_ACTION,
+		payload : date
 	};
 }
+
+function loginActionFail(date) {
+	return {
+		type : loginActionTypes.LOGIN_FAIL_ACTION,
+		payload : date
+	};
+}
+
+export function loginAction(cred) {
+	return dispatch => new Promise((resolve, reject) => {
+		if (cred.pass === password) {
+			resolve()
+			return loginActionSuccess(true);
+		} else {
+			reject()
+			return loginActionFail(false)
+		}
+		// request().then((response) => {
+		// 	dispatch({type: SOME_ACTION, value: response.value});
+		// 	resolve(response);
+		// });
+	});
+}
+
+// dispatch(myAsyncAction()).then(() => this.setState({updateLocalComponentState: true}));
+
+/*export function loginAction(cred) {
+	return new Promise((resolve, reject) => {
+		if (cred.pass === password) {
+			resolve()
+			return loginActionSuccess(true);
+		} else {
+			reject()
+			return loginActionFail(false)
+		}
+	})
+
+}*/

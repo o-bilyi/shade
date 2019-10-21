@@ -1,5 +1,13 @@
 import {store} from "../index";
 import {changeDeviceType} from "config/actions/index";
+
+export const baseHandlerAction = (type, data) => {
+	return {
+		type,
+		payload : data,
+	};
+};
+
 /**
  * scrollTo element, on default scroll to x = 0, y = 0
  * @param x{number}

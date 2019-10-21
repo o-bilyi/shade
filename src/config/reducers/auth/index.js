@@ -1,5 +1,5 @@
 import {generateReducer} from "../utils";
-import {loginActionTypes, logoutActionTypes, registrationActionTypes} from "../../models/auth";
+import {loginActionTypes, logoutActionTypes} from "../../models/auth";
 
 const initialState = {
 	isAuthorized : false,
@@ -51,10 +51,6 @@ const logoutFailReducer = (state) => {
 };
 
 export const auth = generateReducer(initialState, {
-	[loginActionTypes.REGISTRATION_INIT_ACTION] : loginInitReducer,
-	[registrationActionTypes.REGISTRATION_SUCCESS_ACTION] : loginSuccessReducer,
-	[loginActionTypes.REGISTRATION_FAIL_ACTION] : loginFailReducer,
-
 	[loginActionTypes.LOGIN_SUCCESS_ACTION] : loginSuccessReducer,
 
 	[loginActionTypes.LOGIN_INIT_ACTION] : loginInitReducer,
