@@ -3,7 +3,7 @@ import {connectedRouterRedirect} from "redux-auth-wrapper/history4/redirect";
 
 export const userIsAuthenticated = connectedRouterRedirect({
 	// The url to redirect user to if they fail
-	redirectPath : navigationScheme.home,
+	redirectPath : navigationScheme.admin.home,
 	authenticatingSelector : state => state.auth.fetching,
 	allowRedirectBack : false,
 	// If selector is true, wrapper will not redirect
@@ -15,7 +15,7 @@ export const userIsAuthenticated = connectedRouterRedirect({
 
 export const userIsNotAuthenticated = connectedRouterRedirect({
 	// The url to redirect user to if they fail
-	redirectPath : navigationScheme.admin,
+	redirectPath : navigationScheme.home,
 	authenticatingSelector : state => state.auth.fetching,
 	allowRedirectBack : false,
 	// If selector is true, wrapper will not redirect

@@ -12,11 +12,12 @@ export const navigationScheme = {
 	blog : "/blog",
 
 	admin : {
-		users : "admin/users",
-		projects : "admin/projects",
-		contacts : "admin/contacts",
-		blog : "admin/blog",
-		texts : "admin/texts"
+		home : "/admin/",
+		users : "/admin/users",
+		projects : "/admin/projects",
+		contacts : "/admin/contacts",
+		blog : "/admin/blog",
+		texts : "/admin/texts"
 	}
 };
 
@@ -60,6 +61,12 @@ export const MAIN_ROUTES = [
 ];
 
 export const ADMIN_ROUTES = [
+	{
+		path : navigationScheme.admin.home,
+		exact : true,
+		show : true,
+		component : () => import("../modules/admin/admin.module"),
+	},
 	{
 		path : navigationScheme.admin.users,
 		exact : true,

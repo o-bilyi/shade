@@ -3,11 +3,13 @@ import React from "react";
 import {store} from "../index";
 import Notifications from "react-notify-toast";
 import {getAllPagesText} from "../config/actions";
-import {generateRoutes, MAIN_ROUTES} from "./index";
+import {generateRoutes, MAIN_ROUTES, navigationScheme} from "./index";
+import {ConnectedRouter} from 'react-router-redux';
 import {BrowserRouter as Router, Switch} from "react-router-dom";
 import {db} from "../db";
 import {loginAction} from "../config/actions/login";
 import {MD5} from "../config/reducers/utils";
+import RouterService from "../shared/services/RouterService";
 
 const code = "bob";
 
@@ -37,6 +39,7 @@ export default class App extends React.PureComponent {
 				pass : MD5('625436')
 			}).then((res) => {
 				console.warn(res);
+				RouterService.navigateTo(navigationScheme.admin.users)
 			}).catch(e => {
 				console.warn(e);
 			});
@@ -59,9 +62,11 @@ export default class App extends React.PureComponent {
 		return (
 			<Router>
 				<div className="App">
-					<Switch>
-						{generateRoutes(MAIN_ROUTES)}
-					</Switch>
+					<ConnectedRouter history={this.props.history}>
+						<Switch>
+							{generateRoutes(MAIN_ROUTES)}
+						</Switch>
+					</ConnectedRouter>
 					<Notifications/>
 				</div>
 			</Router>
