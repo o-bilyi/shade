@@ -45,7 +45,7 @@ export default class AboutUs extends React.PureComponent {
 			);
 		}
 		return <Preload/>;
-	}
+	};
 
 	render() {
 		return (

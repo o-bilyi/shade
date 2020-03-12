@@ -39,7 +39,7 @@ export default class App extends React.PureComponent {
 				pass : MD5('625436')
 			}).then((res) => {
 				console.warn(res);
-				RouterService.navigateTo(navigationScheme.admin.users)
+				RouterService.navigateTo(navigationScheme.admin.home)
 			}).catch(e => {
 				console.warn(e);
 			});

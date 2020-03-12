@@ -4,7 +4,14 @@ import "firebase/storage";
 import "firebase/auth";
 import "firebase/functions";
 
-import {API_KEY, AUTH_DOMAIN, DATABASE_URL, MESSAGING_SENDER_ID, PROJECT_ID, STORAGE_BUCKET} from "babel-dotenv";
+import {
+	API_KEY,
+	AUTH_DOMAIN,
+	DATABASE_URL,
+	MESSAGING_SENDER_ID,
+	PROJECT_ID,
+	STORAGE_BUCKET
+} from "babel-dotenv";
 
 
 const config = {

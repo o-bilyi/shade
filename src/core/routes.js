@@ -9,16 +9,16 @@ export const navigationScheme = {
 	portfolio : "/portfolio",
 	about : "/about",
 	contact : "/contact",
-	blog : "/blog",
+	blog : "/blog"
+};
 
-	admin : {
-		home : "/admin/",
-		users : "/admin/users",
-		projects : "/admin/projects",
-		contacts : "/admin/contacts",
-		blog : "/admin/blog",
-		texts : "/admin/texts"
-	}
+export const navigationSchemeAdmin = {
+	home : "/admin",
+	users : "/admin/users",
+	projects : "/admin/projects",
+	contacts : "/admin/contacts",
+	blog : "/admin/blog",
+	texts : "/admin/texts"
 };
 
 export const MAIN_ROUTES = [
@@ -58,17 +58,54 @@ export const MAIN_ROUTES = [
 		show : true,
 		component : () => import("../modules/login/Container/Login.Container"),
 	},
+
+	{
+		path : navigationSchemeAdmin.home,
+		exact : true,
+		show : false,
+		component : () => import("../modules/admin/admin.module"),
+	},
+	{
+		path : navigationSchemeAdmin.users,
+		exact : true,
+		show : false,
+		component : () => import("../modules/admin/pages/Users.module"),
+	},
+	{
+		path : navigationScheme.projects,
+		exact : true,
+		show : false,
+		component : () => import("../modules/admin/pages/Projects.module"),
+	},
+	{
+		path : navigationScheme.contacts,
+		exact : true,
+		show : false,
+		component : () => import("../modules/admin/pages/Contacts.module"),
+	},
+	{
+		path : navigationScheme.blog,
+		exact : true,
+		show : false,
+		component : () => import("../modules/admin/pages/Blog.module"),
+	},
+	{
+		path : navigationScheme.texts,
+		exact : true,
+		show : false,
+		component : () => import("../modules/admin/pages/Text.module"),
+	},
 ];
 
 export const ADMIN_ROUTES = [
 	{
-		path : navigationScheme.admin.home,
+		path : navigationSchemeAdmin.home,
 		exact : true,
 		show : true,
 		component : () => import("../modules/admin/admin.module"),
 	},
 	{
-		path : navigationScheme.admin.users,
+		path : navigationSchemeAdmin.users,
 		exact : true,
 		show : true,
 		component : () => import("../modules/admin/pages/Users.module"),

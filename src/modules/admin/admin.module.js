@@ -12,9 +12,9 @@ export default class Admin extends React.Component {
 				<div className="admin-page">
 					<h2 className="title-admin-page">Welcome to Admin Panel</h2>
 					<Navigation/>
-					<Switch>
-						{generateRoutes(ADMIN_ROUTES)}
-					</Switch>
+					{/*<Switch>*/}
+					{/*	{generateRoutes(ADMIN_ROUTES)}*/}
+					{/*</Switch>*/}
 				</div>
 			</Router>
 		);
